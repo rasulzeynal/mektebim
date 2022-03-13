@@ -1,10 +1,11 @@
-import Login from "./components/pages/Login";
-import "./assets/scss/main.scss"
+import NavBar from "./components/common/NavBar"
+import "./assets/bootstrap/bootstrap.scss";
+import "./assets/scss/style.scss"
 
 function App() {
   return (
     <div className="wrapper">
-      <Login/>
+      <NavBar/>
     </div>
   );
 }

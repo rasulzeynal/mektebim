@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Button, Form, Input} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSignInAlt, faSyncAlt} from '@fortawesome/free-solid-svg-icons';
 
-class Login extends Component {
+class Login extends React.Component {
     constructor(props) {
         super(props);
 
@@ -25,7 +25,7 @@ class Login extends Component {
                       <Input name="username" type="text" placeholder="İstifadəçi adını daxil edin"/>
                       <Input name="password" type="password" placeholder="Şifrəni daxil edin" className="mt-2"/>
                       <Button color="success" className="mt-2" block>
-                        <FontAwesomeIcon icon={faSignInAlt} className="me-2"/>
+                        <FontAwesomeIcon icon={faSignInAlt} className="mr-2"/>
                         Daxil ol
                       </Button>
                     </Form>
