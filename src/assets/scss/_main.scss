@@ -1,4 +1,9 @@
 .wrapper {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  align-items: stretch;
+
   
     .sidebar {
       color: #fff;

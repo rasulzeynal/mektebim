@@ -1,9 +1,8 @@
 import SideBar from "./components/common/SideBar";
-import Home from "./components/pages/Home";
-import "./assets/bootstrap/bootstrap.scss";
-import "./assets/scss/style.scss";
 import React from "react";
 import Content from "./components/common/Content";
+import "./assets/bootstrap/bootstrap.scss";
+import "./assets/scss/style.scss";
 
 
 

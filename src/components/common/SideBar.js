@@ -5,6 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
   faUsers, faBuilding, faCalendarCheck,
 } from '@fortawesome/free-solid-svg-icons';
+import logo from "../../assets/img/school.png"
 
 
 
@@ -12,10 +13,11 @@ class SideBar extends React.Component {
     
     render(){
     return (
-      <div className={'sidebar ' + (this.isOpen ? 'is-open' : '')}>
+      <div className={'sidebar ' + (this.props.isOpen ? 'is-open' : '')}>
         <div className="fixed">
           <div className="sidebar-header">
-            <p className="times" onClick={this.toggle}>&times;</p>
+            <a className="times" onClick={this.props.toggle}>&times;</a>
+            <img src={logo} alt="school"/>
           </div>
           <HashRouter>
             <Nav vertical className="list-unstyled p-3 mt-3 flex-column">
