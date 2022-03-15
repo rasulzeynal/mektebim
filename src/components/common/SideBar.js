@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
   faUsers, faBuilding, faCalendarCheck,
 } from '@fortawesome/free-solid-svg-icons';
-import logo from "../../assets/img/school.png"
+import logo from "../../assets/img/edu.png"
 
 
 
