@@ -3,9 +3,9 @@ import {HashRouter,NavLink} from "react-router-dom";
 import {Nav, NavItem} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
-  faUsers, faBuilding, faCalendarCheck,
+  faGraduationCap, faScrewdriverWrench,faChalkboardUser
 } from '@fortawesome/free-solid-svg-icons';
-import logo from "../../assets/img/edu.png"
+import logo from "../../assets/img/edu.png";
 
 
 
@@ -23,17 +23,17 @@ class SideBar extends React.Component {
             <Nav vertical className="list-unstyled p-3 mt-3 flex-column">
                 <NavItem>
                   <NavLink exact className="nav-link" to="/users">
-                    <FontAwesomeIcon icon={faUsers} className="mr-2"/>İstifadəçilər
+                    <FontAwesomeIcon icon={faScrewdriverWrench} className="mr-2"/>Admin
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink exact className="nav-link" to="/organizations">
-                    <FontAwesomeIcon icon={faBuilding} className="mr-2"/>Təşkilatlar
+                  <FontAwesomeIcon icon={faGraduationCap}  className='mr-2'/>Tələbələr
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink exact className="nav-link" to="/countries">
-                    <FontAwesomeIcon icon={faCalendarCheck} className="mr-2"/>Giriş icazələri
+                    <FontAwesomeIcon icon={faChalkboardUser} className="mr-2"/>Müəllimlər
                   </NavLink>
                 </NavItem>
             </Nav>
