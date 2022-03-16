@@ -25,11 +25,12 @@ class NavBar extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
-
+  
+  
   render() {
     return (
       <Navbar className="navbar p-3 mb-3" expand="sm">
-        <Button color="light">
+        <Button color="light" onClick={this.props.toggle}>
           <FontAwesomeIcon icon={faAlignLeft}/>
         </Button>
         <Button color="dark" onClick={this.toggle} className="d-block d-sm-none">

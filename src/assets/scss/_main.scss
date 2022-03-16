@@ -5,22 +5,22 @@
   align-items: stretch;
 
   
-    .sidebar {
-      color: #fff;
-      font-family: 'Montserrat', sans-serif;
-      min-width: 240px;
-      max-width: 240px;
-      margin-left: -240px;
-      transition: all 0.5s;
+  .sidebar {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  min-width: 240px;
+  max-width: 240px;
+  margin-left: -240px;
+  transition: all 0.5s;
   
-      &.is-open {
-        margin-left: 0;
-        transition: 0.5s;
+    &.is-open {
+      margin-left: 0;
+      transition: 0.5s;
   
-        @media only screen and (max-width: 575px) {
-          min-width: 100%;
-          max-width: 100%;
-          transition: all 0.5s, height 0s;
+      @media only screen and (max-width: 575px) {
+        min-width: 100%;
+        max-width: 100%;
+        transition: all 0.5s, height 0s;
   
           .fixed {
             min-width: 100%;
