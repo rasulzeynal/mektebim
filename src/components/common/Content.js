@@ -3,6 +3,7 @@ import {HashRouter, Switch, Route, Redirect} from "react-router-dom";
 import NavBar from './NavBar';
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
+import Admin from "../admin/Admin"
 
 class Content extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class Content extends React.Component {
             <NavBar toggle={this.props.toggle}/>
             <div className="p-3">
               <Switch>
-                <Route path="/" exact component={Home}/>
+                <Route path="/" exact component={Admin}/>
                 <NotFound/>
               </Switch>
             </div>

@@ -3,6 +3,7 @@ import React from "react";
 import Content from "./components/common/Content";
 import "./assets/bootstrap/bootstrap.scss";
 import "./assets/scss/style.scss";
+import Admin from "./components/admin/Admin";
 
 
 
@@ -34,3 +35,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+
