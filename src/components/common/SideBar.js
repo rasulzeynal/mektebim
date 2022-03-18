@@ -22,7 +22,7 @@ class SideBar extends React.Component {
           <HashRouter>
             <Nav vertical className="list-unstyled p-3 mt-3 flex-column">
                 <NavItem>
-                  <NavLink exact className="nav-link" to="/users">
+                  <NavLink exact className="nav-link" to="/admin">
                     <FontAwesomeIcon icon={faScrewdriverWrench} className="mr-2"/>Admin
                   </NavLink>
                 </NavItem>
