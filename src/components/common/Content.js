@@ -3,7 +3,9 @@ import {HashRouter, Switch, Route, Redirect} from "react-router-dom";
 import NavBar from './NavBar';
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
-import Admin from "../admin/Admin"
+import Admin from "../admin/Admin";
+import Teacher from "../teacher/Teacher";
+import Student from "../student/Student";
 
 class Content extends React.Component {
   render() {
@@ -14,7 +16,10 @@ class Content extends React.Component {
             <NavBar toggle={this.props.toggle}/>
             <div className="p-3">
               <Switch>
-                <Route path="/" exact component={Admin}/>
+                <Route path="/" exact component={Home}/>
+                <Route path="/admin" exact component={Admin}/>
+                <Route path="/teacher" exact component={Teacher}/>
+                <Route path="/student" exact component={Student}/>
                 <NotFound/>
               </Switch>
             </div>

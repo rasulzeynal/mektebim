@@ -4,26 +4,23 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
   faRectangleList
 } from '@fortawesome/free-solid-svg-icons';
+import "../../assets/scss/_main.scss";
 
 const Example = (props) => {
   return (
     <div>
-      <CardGroup>
-      <Card body inverse color="primary" style={{borderRadius:"15px", height:"150px"}}>
+      <CardGroup className='card-group' >
+      <Card body inverse color="primary" className='teacherList cards' >
         <CardTitle>Müəllim siyahısı</CardTitle>
-        <FontAwesomeIcon icon="faRectangleList" />
       </Card>
-      <Card body inverse color="success" className='ml-4' style={{borderRadius:"15px", height:"150px"}}>
+      <Card body inverse color="success" className='addTeacher cards'>
         <CardTitle>Müəllim əlavə et</CardTitle>
-        <Button color="secondary">Button</Button>
       </Card>
-      <Card body inverse color="warning" className='ml-4' style={{borderRadius:"15px", height:"150px"}}>
+      <Card body inverse color="warning" className='studentList cards'>
         <CardTitle>Şagird Siyahısı</CardTitle>
-        <Button color="secondary">Button</Button>
       </Card>
-      <Card body inverse color="info" className='ml-4' style={{borderRadius:"15px", height:"150px"}}>
+      <Card body inverse color="info" className='addStudent cards'>
         <CardTitle>Şagird əlavə et</CardTitle>
-        <Button color="secondary">Button</Button>
       </Card>
       </CardGroup>
     </div>
