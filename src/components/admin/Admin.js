@@ -11,6 +11,7 @@ import "../../assets/scss/_main.scss";
 const Example = (props) => {
   return (
     <HashRouter>
+    <div className='card-body'>
     <CardGroup className='cards'>
       <Card body inverse color="primary" className='teacher-list card' >
         <CardTitle>Müəllim siyahısı</CardTitle>
@@ -29,6 +30,8 @@ const Example = (props) => {
         <NavLink exact className="nav-link" to="/addStudent" ><FontAwesomeIcon className='icon' icon={faUserPlus} /></NavLink>
       </Card>
       </CardGroup>
+      <hr/>
+      </div>
       </HashRouter>
   );
 };

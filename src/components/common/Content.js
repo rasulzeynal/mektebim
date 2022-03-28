@@ -1,5 +1,6 @@
 import React from 'react';
 import {HashRouter, Switch, Route, Redirect} from "react-router-dom";
+import Login from "../pages/Login"
 import NavBar from './NavBar';
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
@@ -20,6 +21,7 @@ class Content extends React.Component {
             <NavBar toggle={this.props.toggle}/>
             <div className="p-3">
               <Switch>
+                <Route path="/login" exact component={Login}/>
                 <Route path="/" exact component={Home}/>
                 <Route path="/admin" exact component={Admin}/>
                 <Route path="/teacher" exact component={Teacher}/>
