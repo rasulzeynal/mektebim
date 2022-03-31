@@ -172,22 +172,43 @@
     min-height: 100vh;
     align-items: center;
   }
-  .cardss {
+  .cards {
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
 
     .card {
-      max-width: 250px;
+      width: 350px;
       min-height: 120px;
       border-radius: 10px !important;
       color:white !important;
       font-weight: 600;
+      margin-bottom: 20px;
+      margin-left: 10px;
       
+      .card-title{
+        font-size: 20px;;
+      }
 
       .icon {
-        font-size:20px;
+        font-size:40px;
         margin-top: 18px;
+        text-align: left !important;
+      }
+      .nav-link{
+        text-align: left !important;
       }
     }
-    
+    .teacher-list {
+      background-color: rgb(40, 82, 58) !important;
+    }
+    .add-teacher {
+      background-color: #7a9465 !important;
+    }
+    .student-list {
+      background-color: #4a745b !important;
+    }
+    .add-student {
+      background-color: #14f36d !important;
+    }
   }

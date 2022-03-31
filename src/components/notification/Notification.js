@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {UncontrolledAlert} from "reactstrap";
 
 class Notification extends Component {
   render() {
     return (
-      <div>
-        
-      </div>
+      <UncontrolledAlert color="info">
+      I am an alert and I can be dismissed!
+    </UncontrolledAlert>
     )
   }
 }

@@ -11,10 +11,10 @@ import "../../assets/scss/_main.scss";
 const Example = (props) => {
   return (
     <HashRouter>
-    <CardGroup className='cardss'>
-    <Card body inverse color="primary" className='teacher-list card' >
+    <div className='cards p-3'>
+    <Card body inverse color="secondary" className='admin card' >
         <CardTitle>Admin</CardTitle>
-        <NavLink exact className="nav-link" to="/admin" ><FontAwesomeIcon className='icon' icon={faUserLock} /></NavLink>
+        <NavLink exact className="nav-link" to="/adminList" ><FontAwesomeIcon className='icon' icon={faUserLock} /></NavLink>
       </Card>
       <Card body inverse color="primary" className='teacher-list card' >
         <CardTitle>Müəllim</CardTitle>
@@ -32,15 +32,11 @@ const Example = (props) => {
         <CardTitle>Şagird əlavə et</CardTitle>
         <NavLink exact className="nav-link" to="/addStudent" ><FontAwesomeIcon className='icon' icon={faUserPlus} /></NavLink>
       </Card>
-      <Card body inverse color="danger" className='add-student card'>
+      <Card body inverse color="danger" className='notifications card'>
         <CardTitle>Bildirişlər</CardTitle>
         <NavLink exact className="nav-link" to="/notifications" ><FontAwesomeIcon className='icon' icon={faMessage} /></NavLink>
       </Card>
-      <Card body inverse color="success" className='add-student card'>
-        <CardTitle>Siniflər</CardTitle>
-        <NavLink exact className="nav-link" to="/classes" ><FontAwesomeIcon className='icon' icon={faAlignLeft} /></NavLink>
-      </Card>
-      </CardGroup>
+      </div>
       <hr/>
       </HashRouter>
   );

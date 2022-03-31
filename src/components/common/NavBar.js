@@ -39,10 +39,10 @@ class NavBar extends React.Component {
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto mt-3 mt-sm-0" navbar>
             <NavItem>
-              <a exact to="/" className="nav-link c-pointer">
+              <NavLink exact to="/" className="nav-link c-pointer">
                 <FontAwesomeIcon icon={faHome} className="mr-2 text-secondary" />
                 <strong>Ana səhifə</strong>
-              </a>
+              </NavLink>
             </NavItem>
             <NavItem>
                 <a className="nav-link c-pointer">
