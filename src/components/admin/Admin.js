@@ -11,21 +11,21 @@ import "../../assets/scss/_main.scss";
 const Example = (props) => {
   return (
     <HashRouter>
-    <CardGroup className='cards'>
+    <CardGroup className='cardss'>
     <Card body inverse color="primary" className='teacher-list card' >
         <CardTitle>Admin</CardTitle>
-         <NavLink exact className="nav-link" to="/admin" ><FontAwesomeIcon className='icon' icon={faUserLock} /></NavLink>
+        <NavLink exact className="nav-link" to="/admin" ><FontAwesomeIcon className='icon' icon={faUserLock} /></NavLink>
       </Card>
       <Card body inverse color="primary" className='teacher-list card' >
         <CardTitle>Müəllim</CardTitle>
-         <NavLink exact className="nav-link" to="/teacherList" ><FontAwesomeIcon className='icon' icon={faAddressBook} /></NavLink>
+        <NavLink exact className="nav-link" to="/teacherList" ><FontAwesomeIcon className='icon' icon={faAddressBook} /></NavLink>
       </Card>
       <Card body inverse color="success" className='add-teacher card'>
         <CardTitle>Müəllim əlavə et</CardTitle>
         <NavLink exact className="nav-link" to="/addTeacher" ><FontAwesomeIcon className='icon' icon={faUserPlus} /></NavLink>
       </Card>
       <Card body inverse color="warning" className='student-list card'>
-        <CardTitle>Şagird Siyahısı</CardTitle>
+        <CardTitle>Şagird</CardTitle>
         <NavLink exact className="nav-link" to="/studentList" ><FontAwesomeIcon className='icon' icon={faAddressBook} /></NavLink>
       </Card>
       <Card body inverse color="info" className='add-student card'>
