@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import {Alert} from "reactstrap";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
-  faXmark
+  faRectangleXmark
 } from '@fortawesome/free-solid-svg-icons';
-
 
 class Notification extends Component {
   constructor(props) {
@@ -22,10 +21,10 @@ class Notification extends Component {
 
   render() {
     return (
-      <Alert color="danger" isOpen={this.state.visible} toggle={this.onDismiss} className="container">
+      {this.state.visible ? <Alert color="danger"  className="container">
         I am an alert and I can be dismissed!
-        <FontAwesomeIcon icon="faXmark" color='primary ' />
-      </Alert>
+         <FontAwesomeIcon className='icon' onClick={this.onDismiss}  icon={faRectangleXmark} /> 
+        </Alert> : null }
     );
   }
 }

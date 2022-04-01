@@ -1,9 +1,9 @@
 import React from 'react';
 import { HashRouter,NavLink } from 'react-router-dom';
-import { Card, CardTitle, CardGroup } from 'reactstrap';
+import { Card, CardTitle } from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
-  faUserPlus,faAddressBook,faMessage,faUserLock,faAlignLeft
+  faUserPlus,faAddressBook,faMessage,faUserLock
 } from '@fortawesome/free-solid-svg-icons';
 import "../../assets/scss/_main.scss";
 
