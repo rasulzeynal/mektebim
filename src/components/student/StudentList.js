@@ -1,12 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class StudentList extends Component {
   render() {
+    
     return (
       <div>
-        StudentList
+      test
       </div>
-    )
+          )
   }
 }
 export default  StudentList;

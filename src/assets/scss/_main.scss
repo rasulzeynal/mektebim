@@ -199,10 +199,25 @@
         text-align: left !important;
       }
     }
+    .add-teacher {
+      background-color: rgba(23, 152, 56,0.7) !important;
+    }
     .student-list {
       background-color: #4a745b !important;
     }
     .add-student {
-      background-color: #622375 !important;
+      background-color: rgba(79, 8, 72,0.8) !important;
+    }
+    .notifications{
+      background-color:rgba(235, 113, 52 ,0.9) !important ;
+    }
+  }
+  .alert {
+    position: relative;
+
+    .icon {
+      position: absolute;
+      right: 20px;
+      font-size: 25px;
     }
   }

@@ -1,31 +1,21 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import {Alert} from "reactstrap";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
-  faRectangleXmark
+  faXmark
 } from '@fortawesome/free-solid-svg-icons';
 
-class Notification extends Component {
-  constructor(props) {
-    super(props);
+const Notification = () => {
+   const [visible,setVisible] = useState(true);
 
-    this.state = {
-      visible: true
-    };
-
+ const dismiss = () => {
+    setVisible(false);
   }
-
-  onDismiss = () => {
-    this.setState({ visible: false });
-  }
-
-  render() {
     return (
-      {this.state.visible ? <Alert color="danger"  className="container">
+      visible ? <Alert color="danger"  className="container alert">
         I am an alert and I can be dismissed!
-         <FontAwesomeIcon className='icon' onClick={this.onDismiss}  icon={faRectangleXmark} /> 
-        </Alert> : null }
+        <FontAwesomeIcon className='icon' onClick={dismiss}   icon={faXmark} /> 
+        </Alert> : null 
     );
   }
-}
 export default Notification;

@@ -25,7 +25,7 @@ class AddStudent extends Component {
                   <Input type="email"  className="form-control form-control" placeholder="Mail" />
                 </div>
                 <select className="custom-select mb-4" required > 
-                      <option selected>Sinif</option>
+                      <option value="">Sinif</option>
                       <option value="0">0</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -39,7 +39,7 @@ class AddStudent extends Component {
                 </div>
                 <div className="d-flex justify-content-center">
                   <Button type="button" className="btn btn-success btn-block btn gradient-custom-4 text-body">
-                  <FontAwesomeIcon icon={faUserPlus}  size="0.2x" className=" mt-2 mr-2"/>Əlavə et</Button>
+                  <FontAwesomeIcon icon={faUserPlus}  size="sm" className=" mt-2 mr-2"/>Əlavə et</Button>
                   </div>
               </Form>
 

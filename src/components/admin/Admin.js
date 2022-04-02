@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter,NavLink } from 'react-router-dom';
-import { Card, CardTitle } from 'reactstrap';
+import { Card, CardTitle,Row } from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
   faUserPlus,faAddressBook,faMessage,faUserLock
@@ -11,7 +11,7 @@ import "../../assets/scss/_main.scss";
 const Example = (props) => {
   return (
     <HashRouter>
-    <row className='cards p-3'>
+    <Row className='cards p-3'>
     <Card body inverse color="primary" className='admin card' >
         <CardTitle>Admin</CardTitle>
         <NavLink exact className="nav-link" to="/adminList" ><FontAwesomeIcon className='icon' icon={faUserLock} /></NavLink>
@@ -24,8 +24,8 @@ const Example = (props) => {
         <CardTitle>Müəllim əlavə et</CardTitle>
         <NavLink exact className="nav-link" to="/addTeacher" ><FontAwesomeIcon className='icon' icon={faUserPlus} /></NavLink>
       </Card>
-    </row>
-    <row className='cards p-3'>
+    </Row>
+    <Row className='cards p-3'>
       <Card body inverse color="warning" className='student-list card'>
         <CardTitle>Şagird</CardTitle>
         <NavLink exact className="nav-link" to="/studentList" ><FontAwesomeIcon className='icon' icon={faAddressBook} /></NavLink>
@@ -38,7 +38,7 @@ const Example = (props) => {
         <CardTitle>Bildirişlər</CardTitle>
         <NavLink exact className="nav-link" to="/notifications" ><FontAwesomeIcon className='icon' icon={faMessage} /></NavLink>
       </Card>
-      </row>
+      </Row>
       <hr/>
       </HashRouter>
   );
