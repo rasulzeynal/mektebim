@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {HashRouter,NavLink} from "react-router-dom";
-import {Card,CardTitle} from "reactstrap";
+import {Card,CardTitle,Row} from "reactstrap";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
   faAddressBook,faMessage
@@ -11,7 +11,7 @@ class Teacher extends Component {
   render() {
     return (
       <HashRouter>
-    <raw className='cards p-3'>
+    <Row className='cards p-3'>
       <Card body inverse color="warning" className='teacher-list card' >
         <CardTitle>Müəllim</CardTitle>
          <NavLink exact className="nav-link" to="/teacherList" ><FontAwesomeIcon className='icon' icon={faAddressBook} /></NavLink>
@@ -24,7 +24,7 @@ class Teacher extends Component {
         <CardTitle>Bildirişlər</CardTitle>
         <NavLink exact className="nav-link" to="/notifications" ><FontAwesomeIcon className='icon' icon={faMessage} /></NavLink>
       </Card>
-      </raw>
+      </Row>
       <hr/>
       </HashRouter>
     )

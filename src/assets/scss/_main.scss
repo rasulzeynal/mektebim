@@ -199,11 +199,18 @@
         text-align: left !important;
       }
     }
+    .admin {
+      opacity: 0.7;
+    }
+    .teacher-list {
+      opacity: 0.7;
+    }
     .add-teacher {
       background-color: rgba(23, 152, 56,0.7) !important;
     }
     .student-list {
       background-color: #4a745b !important;
+      opacity: 0.8;
     }
     .add-student {
       background-color: rgba(79, 8, 72,0.8) !important;
