@@ -13,6 +13,7 @@ import StudentList from "../student/StudentList";
 import AddStudent from "../student/AddStudent";
 import AdminList from '../admin/AdminList';
 import Notification from '../notification/Notification';
+import Register from '../pages/Register';
 
 class Content extends React.Component {
   render() {
@@ -33,6 +34,7 @@ class Content extends React.Component {
                 <Route path="/studentList" exact component={StudentList}/>
                 <Route path="/addStudent" exact component={AddStudent}/>
                 <Route path="/notifications" exact component={Notification}/>
+                <Route path='/register' exact component={Register}/>
                 <NotFound/>
               </Switch>
           </HashRouter>
