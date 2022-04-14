@@ -32,17 +32,17 @@ console.log(student)
               <div className='mb-3 d-flex' style={{justifyContent:"space-between"}}>
               <FormGroup check inline>
           <Label check>
-            <Input type="radio" onChange={adminSelected} name="admin"/> Admin
+            <Input type="checkbox" onChange={adminSelected} name="admin"/> Admin
           </Label>
         </FormGroup>
         <FormGroup check inline>
           <Label check>
-             <Input type="radio" onChange={teacherSelected} name="teacher" /> Müəllim
+             <Input type="checkbox" onChange={teacherSelected} name="teacher" /> Müəllim
           </Label>
         </FormGroup>
         <FormGroup check inline>
           <Label check>
-             <Input type="radio" onChange={studentSelected}  name="student"/> Şagird
+             <Input type="checkbox" onChange={studentSelected}  name="student"/> Şagird
           </Label>
         </FormGroup>
         </div>

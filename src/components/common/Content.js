@@ -8,12 +8,11 @@ import Admin from "../admin/Admin";
 import Teacher from "../teacher/Teacher";
 import Student from "../student/Student";
 import TeacherList from "../teacher/TeacherList";
-import AddTeacher from "../teacher/AddTeacher";
 import StudentList from "../student/StudentList";
-import AddStudent from "../student/AddStudent";
 import AdminList from '../admin/AdminList';
 import Notification from '../notification/Notification';
 import Register from '../pages/Register';
+import Tasks from "../pages/Tasks"
 
 class Content extends React.Component {
   render() {
@@ -30,11 +29,10 @@ class Content extends React.Component {
                 <Route path="/teacher" exact component={Teacher}/>
                 <Route path="/student" exact component={Student}/>
                 <Route path="/teacherList" exact component={TeacherList}/>
-                <Route path="/addTeacher" exact component={AddTeacher}/>
                 <Route path="/studentList" exact component={StudentList}/>
-                <Route path="/addStudent" exact component={AddStudent}/>
                 <Route path="/notifications" exact component={Notification}/>
                 <Route path='/register' exact component={Register}/>
+                <Route path='/tasks' exact component={Tasks}/>
                 <NotFound/>
               </Switch>
           </HashRouter>
