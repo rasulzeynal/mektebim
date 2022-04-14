@@ -16,7 +16,7 @@ class Login extends React.Component {
         <div className="login">
         <div className="container">
           <div className="row mb-5">
-            <div className="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+            <div className="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4" style={{borderRadius: "15px",border:"1px solid rgba(0,0,0,0.125)"}}>
               <h1 className="text-center mb-4 display-4">Daxil ol</h1>
               {
                 !this.state.loading ?

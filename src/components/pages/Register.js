@@ -1,10 +1,25 @@
-import React, { Component } from 'react';
+import {useState } from 'react';
 import { Form,Button, Input,FormGroup,Label} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faUserPlus} from '@fortawesome/free-solid-svg-icons';
 
-class Register extends Component {
-  render() {
+const Register = () => {
+
+  const [admin,setAdmin] = useState(false);
+  const [teacher,setTeacher] = useState(false);
+  const [student,setStudent] = useState(false);
+
+    const adminSelected = () => {
+      setAdmin(!admin)
+    }
+    const teacherSelected = () => {
+      setTeacher(!teacher)
+    }
+    const studentSelected = () => {
+      setStudent(!student)
+    }
+
+console.log(student)
     return (
       <section>
     <div className="container">
@@ -12,22 +27,22 @@ class Register extends Component {
         <div className="col-12 col-md-9 col-lg-7 col-xl-6">
           <div className="card" style={{borderRadius: "15px"}}>
             <div className="card-body p-5">
-              <h2 className="text-center mb-5">Şagird əlavə et</h2>
+              <h2 className="text-center mb-5">İstifadəçi əlavə et</h2>
               <Form>
               <div className='mb-3 d-flex' style={{justifyContent:"space-between"}}>
               <FormGroup check inline>
           <Label check>
-            <Input type="checkbox" /> Admin
+            <Input type="radio" onChange={adminSelected} name="admin"/> Admin
           </Label>
         </FormGroup>
         <FormGroup check inline>
           <Label check>
-             <Input type="checkbox" /> Müəllim
+             <Input type="radio" onChange={teacherSelected} name="teacher" /> Müəllim
           </Label>
         </FormGroup>
         <FormGroup check inline>
           <Label check>
-             <Input type="checkbox" /> Şagird
+             <Input type="radio" onChange={studentSelected}  name="student"/> Şagird
           </Label>
         </FormGroup>
         </div>
@@ -41,13 +56,19 @@ class Register extends Component {
                 <div className="form-outline mb-4">
                   <Input type="email"  className="form-control form-control" placeholder="Mail" />
                 </div>
-                <select className="custom-select mb-4" required > 
+                {student ? <select className="custom-select mb-4" required > 
                       <option value="">Sinif</option>
                       <option value="0">0</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
-                </select>
+                </select> : teacher ? <select className="custom-select mb-4" required > 
+                      <option value="">Tədris etdiyi fənn</option>
+                      <option value="0">Riyaziyyat</option>
+                      <option value="1">Azərbaycan dili</option>
+                      <option value="2">İngilis dili</option>
+                      <option value="3">Tarix</option>
+                </select>: null}
                 <div className="form-outline mb-4">
                   <Input type="password"  className="form-control form-control" placeholder='Şifrə' />
                 </div>
@@ -68,5 +89,4 @@ class Register extends Component {
 </section>
     )
   }
-}
 export default Register;
