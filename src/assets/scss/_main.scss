@@ -179,7 +179,7 @@
     text-align: center;
 
     .card {
-      width: 400px;
+      width: 450px;
       min-height: 120px;
       border-radius: 10px;
       font-weight: 600;
@@ -196,7 +196,18 @@
         text-align: left;
       }
       .nav-link{
-        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+
+        &:hover {
+          padding-left: 1.3rem;
+        }
+      }
+      .card-text {
+        font-size: 25px;
+        display: flex;
+        align-items:flex-end;
       }
     }
     .admin {
