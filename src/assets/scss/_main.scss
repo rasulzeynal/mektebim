@@ -87,6 +87,7 @@
           padding: 0.5rem 1rem;
           border-radius: 5px;
           margin-top: 4px;
+          color: white;
   
           &:hover {
             padding-left: 1.3rem;
@@ -147,6 +148,7 @@
   
           .nav-link {
             margin-left: 1.5rem;
+            color: black;
           }
         }
   
@@ -194,11 +196,13 @@
         font-size:40px;
         margin-top: 18px;
         text-align: left;
+        color: white;
       }
       .nav-link{
         display: flex;
         justify-content: space-between;
         cursor: pointer;
+        color: white;
 
         &:hover {
           padding-left: 1.3rem;

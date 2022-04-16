@@ -1,5 +1,9 @@
 import { useState,useEffect } from "react";
 import axios from "axios";
+import { Card, CardText, CardBody,
+  CardTitle, CardSubtitle, Button,CardImg, Row } from 'reactstrap';
+  import logo from "../../assets/img/user.png"
+
 
  const AdminList = () =>  {
 
@@ -13,27 +17,24 @@ import axios from "axios";
     })
   },[]);
 
-  console.log(admin)
     
     return (
-        <div className="card_item" >
-        {admin.map((user) => {
+      <Row style={{display:"flex",float:"left",justifyContent:"space-around"}} className="container">
+      {admin.map((user) => {
         return (
-        <div key={user.id} className="card_inner">
-            <img alt="" />
-            <div className="userName">{user.name}</div>
-            <div className="userUrl">url</div>
-            <div className="detail-box">
-
-                <div className="gitDetail"><span>Articles</span>23</div>
-                <div className="gitDetail"><span>Following</span>45</div>
-                <div className="gitDetail"><span>Followers</span>11</div>
-            </div>
-            <button className="seeMore">See More</button>
-        </div>
-
-)
-      })} </div>
+          <Card key={user.id} style={{width:"300px"}}>
+          <CardImg top width="100%" src={logo} alt="Card image cap" style={{width:"50px"}} />
+          <CardBody>
+            <CardTitle>{user.name}</CardTitle>
+            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+            <Button>Button</Button>
+          </CardBody>
+        </Card>
+        )
+      })}
+      
+    </Row>
     )
   }
 export default AdminList;
