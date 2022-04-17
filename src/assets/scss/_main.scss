@@ -176,12 +176,10 @@
     align-items: center;
   }
   .cards {
-    display: flex;
-    flex-wrap: wrap;
     text-align: center;
 
     .card {
-      width: 450px;
+      width: 350px;
       min-height: 120px;
       border-radius: 10px;
       font-weight: 600;
@@ -237,3 +235,39 @@
       font-size: 25px;
     }
   }
+  .paginationBttns {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.paginationBttns a {
+    padding: 8px;
+    margin: 30px 10px;
+    border-radius: 5px;
+    border: 1px solid #f58a42;
+    color: #f58a42;
+    cursor: pointer;
+}
+
+.paginationBttns a:hover{
+    color: white;
+    background-color: #f58a42;
+}
+
+.paginationActive a {
+    color: white;
+    background-color: #f58a42;
+}
+.nextBttn{
+    text-decoration: none;
+}
+.previousBttn{
+    text-decoration: none;
+}
+.paginationActive{
+    color: white;
+}

@@ -9,7 +9,7 @@ import "../../assets/scss/_main.scss";
 import axios from 'axios';
 
 
-const Example = (props) => {
+const Example = () => {
 
   const [dataAdmin,setDataAdmin] = useState([]);
   const [dataTeacher,setDataTeacher] = useState([]);

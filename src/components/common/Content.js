@@ -17,7 +17,7 @@ import Tasks from "../pages/Tasks"
 class Content extends React.Component {
   render() {
     return (
-      <div className="outer-border">
+      <div className="outer-border" >
         <div className={'content ' + (this.props.isOpen ? 'is-open' : '')}>
           <HashRouter>
             <NavBar toggle={this.props.toggle}/>

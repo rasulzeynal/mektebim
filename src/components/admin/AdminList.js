@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
 import axios from "axios";
-import { Card, CardText, CardBody,
-  CardTitle, CardSubtitle, Button,CardImg, Row } from 'reactstrap';
+import { Card, CardBody,
+  CardTitle,Button,CardImg, Row } from 'reactstrap';
   import logo from "../../assets/img/user.png"
 
 
@@ -19,16 +19,14 @@ import { Card, CardText, CardBody,
 
     
     return (
-      <Row style={{display:"flex",float:"left",justifyContent:"space-around"}} className="container">
+      <Row style={{display:"flex",float:"left"}} className="container">
       {admin.map((user) => {
         return (
-          <Card key={user.id} style={{width:"300px"}}>
-          <CardImg top width="100%" src={logo} alt="Card image cap" style={{width:"50px"}} />
+          <Card key={user.id} style={{width:"200px",textAlign:"center"}} className="ms-4 shadow ">
+          <CardImg top width="100%" src={logo} alt="Card image cap" style={{width:"100px",alignSelf:"center",marginTop:"15px"}} />
           <CardBody>
             <CardTitle>{user.name}</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-            <Button>Button</Button>
+            <Button block color="info">Ətraflı</Button>
           </CardBody>
         </Card>
         )

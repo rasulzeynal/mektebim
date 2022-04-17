@@ -19,7 +19,6 @@ const Register = () => {
       setStudent(!student)
     }
 
-console.log(student)
     return (
       <section>
     <div className="container">
