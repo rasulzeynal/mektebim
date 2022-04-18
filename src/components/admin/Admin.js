@@ -3,7 +3,7 @@ import { HashRouter,NavLink } from 'react-router-dom';
 import { Card, CardSubtitle, CardTitle,Row } from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
-  faUserPlus,faAddressBook,faMessage,faUserLock,faListCheck
+  faUserPlus,faAddressBook,faMessage,faUserLock,faListCheck,faUserGraduate
 } from '@fortawesome/free-solid-svg-icons';
 import "../../assets/scss/_main.scss";
 import axios from 'axios';
@@ -46,6 +46,12 @@ const Example = () => {
     <Card body inverse color="success" className='add-user card'>
         <CardTitle>İstifadəçi əlavə et</CardTitle>
         <NavLink exact className="nav-link" to="/register" ><FontAwesomeIcon className='icon' icon={faUserPlus} /></NavLink>
+      </Card>
+      <Card body inverse color="secondary" className='admin card' >
+        <CardTitle>Kurslar</CardTitle>
+        <NavLink exact className="nav-link" to="/classes" ><FontAwesomeIcon className='icon' icon={faUserGraduate} />
+        <CardSubtitle className='card-text'>0</CardSubtitle>
+        </NavLink>
       </Card>
     <Card body inverse color="primary" className='admin card' >
         <CardTitle>Admin</CardTitle>

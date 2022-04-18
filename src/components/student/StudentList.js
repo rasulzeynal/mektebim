@@ -10,7 +10,7 @@ const StudentList =() => {
   const [student,setStudent] = useState([])
   const [searchQuery, setSearchQuery] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
-  const usersPerPage = 10;
+  const usersPerPage = 14;
   const pagesVisited = pageNumber * usersPerPage;
 
   useEffect(() => {
@@ -31,10 +31,10 @@ const changePage = ({ selected }) => {
 
 
     return (
-      <Row className="container">
+      <Row style={{display:"flex",marginRight:"40px"}} >
         <input
           type="text"
-          className="form-control mb-4 ms-3"
+          className="form-control mb-4 ms-4"
           placeholder="Axtar"
           onChange={(e) => {
             setSearchQuery(e.target.value);
