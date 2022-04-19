@@ -271,3 +271,44 @@
 .paginationActive{
     color: white;
 }
+.row-classes{
+  text-align: center;
+
+  .container-classes {
+    border-right: 1px solid #e3e9e4;
+  }
+    .card {
+      border-radius: 10px;
+      background-color: #f0f0f0;
+      box-shadow:0 6px 10px 0 rgba(0, 0, 0, 0.19) ;
+      color: black;
+      margin: 15px;
+
+      &:hover {
+        background-color: #cecbcb;
+      }
+      
+      .card-title{
+        font-size: 20px;;
+        color: black;
+      }
+
+      .icon {
+        font-size:30px;
+        color: rgb(110, 101, 101);
+      }
+      .nav-link{
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        color:rgb(110, 101, 101);
+
+        &:hover {
+          padding-left: 1.3rem;
+        }
+      }
+      .card-text {
+        font-size: 25px;
+      }
+    }
+}

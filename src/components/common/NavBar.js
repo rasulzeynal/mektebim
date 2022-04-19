@@ -29,7 +29,7 @@ class NavBar extends React.Component {
   
   render() {
     return (
-      <Navbar className="navbar p-3 mb-3" expand="sm">
+      <Navbar className="navbar p-3 " expand="sm">
         <Button color="light" onClick={this.props.toggle}>
           <FontAwesomeIcon icon={faAlignLeft}/>
         </Button>
