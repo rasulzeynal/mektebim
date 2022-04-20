@@ -1,14 +1,13 @@
 import { NavLink} from "react-router-dom";
-import { Container, Row,Card,CardTitle,CardSubtitle, Form,FormGroup,Label,Input,Button } from 'reactstrap';
+import { Container, Row,Card,CardTitle,CardSubtitle, Form, Input} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faUserPlus} from '@fortawesome/free-solid-svg-icons';
-import { useState } from "react";
+import {faUserPlus,faPlus} from '@fortawesome/free-solid-svg-icons';
 
 const Classes = () => {
-  const [enable,setEnable] = useState(false);
+ 
   return (
     <Row className="row-classes">
-      <Container className='col-6 container-classes' >
+      <Container className='col-7 container-classes' >
         <Card body inverse className='add-user card' >
         <CardTitle >Ingilis dili </CardTitle>
         <NavLink exact className="nav-link" to="/course" ><FontAwesomeIcon className='icon' icon={faUserPlus} />
@@ -16,26 +15,18 @@ const Classes = () => {
         </NavLink>
       </Card>
       </Container>
-      <Container className='col-6' style={{height:"100vh"}}>
-       <Card body inverse className="card" onClick={()=>{setEnable(!enable)}}>
-       <CardTitle >Qrup yarat </CardTitle>
-       </Card>
-       {enable ? (
-         <Form>
-           <FormGroup check inline>
-          <Label check>
-            <Input type="text" block name="admin"/> Admin
-          </Label>
-        </FormGroup>
-        <div className="d-flex justify-content-center">
-                  <Button type="button" className="btn btn-success btn-block btn gradient-custom-4 text-body">
-                  <FontAwesomeIcon icon={faUserPlus}  size="sm" className=" mt-2 mr-2"/>Əlavə et</Button>
-                  </div>
-         </Form> 
-       ): null}
+      <Container className='col-5' style={{height:"100vh"}}>
+        <div className="add-course-button mb-4" style={{backgroundColor:"#388c23",margin:"20px 20px 0 0 ",height:"35px",borderRadius:"7px",display:"inline-block"}}>
+        <NavLink exact className="nav-link" to="/" style={{display:"flex"}}><FontAwesomeIcon className='icon mr-2' icon={faPlus}  style={{color:"white"}}/><h3 style={{fontSize:"15px",color:"white"}}>Kurs əlavə et</h3></NavLink>
+        </div>
+        <Form>
+        <div className="form-group form-outline mb-4 d-flex justify-content-between">
+                  <Input type="text" className="form-control form-control mr-2 col-8" placeholder='Ad' />
+                </div>
+        </Form>
       </Container>
     </Row>
   )
 }
 
-export default Classes
+export default Classes;
