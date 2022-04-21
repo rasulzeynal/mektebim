@@ -13,7 +13,7 @@ import AdminList from '../admin/AdminList';
 import Notification from '../notification/Notification';
 import Register from '../pages/Register';
 import Tasks from "../pages/Tasks";
-import Classes from "../pages/Classes";
+import Classes from "../class/Classes";
 
 class Content extends React.Component {
   render() {

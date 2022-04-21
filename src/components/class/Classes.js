@@ -5,17 +5,27 @@ import {faUserPlus,faPlus} from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 
 const Classes = () => {
-  const [open,setOpen]=useState(false)
+  const [open,setOpen]=useState(false);
+  const [names,setNames]=useState({
+    name:"Ingilis dili"
+  });
+  const [name,setName]= useState({name:""})
   
   const openForm = () => {
     setOpen(!open)
   }
- 
+
+  const Submit = (e) => {
+    e.preventDefault();
+    setNames(names => [...names,name])
+
+  }
+  console.log(name);
   return (
     <Row className="row-classes">
       <Container className='col-7 container-classes' >
         <Card body inverse className='add-user card' >
-        <CardTitle >Ingilis dili </CardTitle>
+        <CardTitle >{names.name} </CardTitle>
         <NavLink exact className="nav-link" to="/course" ><FontAwesomeIcon className='icon' icon={faUserPlus} />
         <CardSubtitle className='card-text'>12/14</CardSubtitle>
         </NavLink>
@@ -26,8 +36,8 @@ const Classes = () => {
         <Button onClick={openForm} color="success" style={{display:"flex",transition:"ease",height:"32px",borderRadius:"6px",margin:"15px 0"}}><FontAwesomeIcon className='icon mr-2' icon={faPlus}  style={{color:"white"}}/><h3 style={{fontSize:"15px",color:"white"}}>Kurs əlavə et</h3></Button>
         </div>
         {
-          open ? <Form className="col-10">
-                    <Input type="text" block className="form-control form-control mr-2 mb-2" placeholder='Kursun adı' />
+          open ? <Form className="col-10" onSubmit={Submit} >
+                    <Input type="text" block className="form-control form-control mr-2 mb-2" placeholder='Kursun adı' name="name" />
                     <Button  color="secondary" block>Yarat</Button>
           </Form> : null
         }
