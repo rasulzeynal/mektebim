@@ -6,21 +6,28 @@ import { useState } from "react";
 
 const Classes = () => {
   const [open,setOpen]=useState(false);
-  const [names,setNames]=useState({
-    name:"Ingilis dili"
-  });
-  const [name,setName]= useState({name:""})
-  
+
   const openForm = () => {
     setOpen(!open)
   }
 
-  const Submit = (e) => {
-    e.preventDefault();
-    setNames(names => [...names,name])
+  const [names,setNames]=useState({
+    name:"Ingilis dili"
+  });
+  const [newClass,setNewClass]= useState({name:""})
 
+  const {name} = names;
+  
+  const onInputChange = (e) => {
+    setNewClass({...newClass,[e.target.name]: e.target.value})
   }
-  console.log(name);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setNames([...names,newClass])
+  }
+  
+  
   return (
     <Row className="row-classes">
       <Container className='col-7 container-classes' >
@@ -36,8 +43,8 @@ const Classes = () => {
         <Button onClick={openForm} color="success" style={{display:"flex",transition:"ease",height:"32px",borderRadius:"6px",margin:"15px 0"}}><FontAwesomeIcon className='icon mr-2' icon={faPlus}  style={{color:"white"}}/><h3 style={{fontSize:"15px",color:"white"}}>Kurs əlavə et</h3></Button>
         </div>
         {
-          open ? <Form className="col-10" onSubmit={Submit} >
-                    <Input type="text" block className="form-control form-control mr-2 mb-2" placeholder='Kursun adı' name="name" />
+          open ? <Form className="col-10" onSubmit={handleSubmit}>
+                    <Input type="text" block className="form-control form-control mr-2 mb-2" placeholder='Kursun adı' name="name" value={name} onChange={e => onInputChange(e)}/>
                     <Button  color="secondary" block>Yarat</Button>
           </Form> : null
         }
