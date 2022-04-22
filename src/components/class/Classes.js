@@ -1,8 +1,9 @@
 import { NavLink} from "react-router-dom";
 import { Container, Row,Card,CardTitle,CardSubtitle, Form, Input, Button} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faUserPlus,faPlus} from '@fortawesome/free-solid-svg-icons';
+import {faUserPlus,faPlus,faTrash,faPenToSquare} from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
+import {v4 as uuidv4} from "uuid"
 
 const Classes = () => {
   const [open,setOpen]=useState(false);
@@ -11,32 +12,49 @@ const Classes = () => {
     setOpen(!open)
   }
 
-  const [names,setNames]=useState({
-    name:"Ingilis dili"
-  });
-  const [newClass,setNewClass]= useState({name:""})
 
-  const {name} = names;
+  const initialState=[
+    {
+      id:1,
+      name:"Ingilis dili"
+    },
+    {
+      id:2,
+      name:"IELTS"
+    }
+  ]
+  const [className,setClassName] = useState(initialState)
+
+  const [newClass,setNewClass]= useState([{
+    id:uuidv4(),
+    name:""
+  }])
+
   
   const onInputChange = (e) => {
-    setNewClass({...newClass,[e.target.name]: e.target.value})
+    setNewClass({
+      id:uuidv4(),
+      name: e.target.value})
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setNames([...names,newClass])
+    setClassName([...className,newClass]);
+    
   }
   
   
   return (
     <Row className="row-classes">
       <Container className='col-7 container-classes' >
-        <Card body inverse className='add-user card' >
-        <CardTitle >{names.name} </CardTitle>
-        <NavLink exact className="nav-link" to="/course" ><FontAwesomeIcon className='icon' icon={faUserPlus} />
-        <CardSubtitle className='card-text'>12/14</CardSubtitle>
-        </NavLink>
+      {className.map((name) => (
+        <Card body inverse className='add-user card' key={name.id}>
+        <CardTitle >{name.name}</CardTitle>
+        <NavLink exact className="nav-link" to="/course" ><FontAwesomeIcon className='icon' icon={faPenToSquare} style={{color:"#ffc107"}} />
+        </NavLink><FontAwesomeIcon className='icon' icon={faTrash} style={{color:"#dc3545"}} />
+        
       </Card>
+      ))}
       </Container>
       <Container className='col-5' style={{height:"100vh"}}>
         <div className="me-4" style={{display:"flex",justifyContent:"end"}}>
@@ -44,7 +62,7 @@ const Classes = () => {
         </div>
         {
           open ? <Form className="col-10" onSubmit={handleSubmit}>
-                    <Input type="text" block className="form-control form-control mr-2 mb-2" placeholder='Kursun adı' name="name" value={name} onChange={e => onInputChange(e)}/>
+                    <Input type="text" block className="form-control form-control mr-2 mb-2" placeholder='Kursun adı'  onChange={onInputChange}/>
                     <Button  color="secondary" block>Yarat</Button>
           </Form> : null
         }
