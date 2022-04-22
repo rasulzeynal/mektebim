@@ -14,6 +14,7 @@ import Notification from '../notification/Notification';
 import Register from '../pages/Register';
 import Tasks from "../pages/Tasks";
 import Classes from "../class/Classes";
+import ClassEdit from "../class/ClassEdit"
 
 class Content extends React.Component {
   render() {
@@ -35,6 +36,7 @@ class Content extends React.Component {
                 <Route path='/register' exact component={Register}/>
                 <Route path='/tasks' exact component={Tasks}/>
                 <Route path='/classes' exact component={Classes}/>
+                <Route path='/classedit' exact component={ClassEdit}/>
                 <NotFound/>
               </Switch>
           </HashRouter>

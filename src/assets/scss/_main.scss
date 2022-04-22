@@ -285,14 +285,23 @@
       margin: 15px;
 
       &:hover {
-        background-color: #cecbcb;
+        background-color: #e4e1e1;
       }
       
       .card-title{
         font-size: 20px;;
         color: black;
       }
+      .card-body {
+        display: flex;
+        justify-content: space-between;
 
+        .icon {
+          color: #f58a42;
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
       .icon {
         font-size:30px;
         color: rgb(110, 101, 101);
@@ -303,9 +312,6 @@
         cursor: pointer;
         color:rgb(110, 101, 101);
 
-        &:hover {
-          padding-left: 1.3rem;
-        }
       }
       .card-text {
         font-size: 25px;

@@ -1,5 +1,5 @@
 import { NavLink} from "react-router-dom";
-import { Container, Row,Card,CardTitle,CardSubtitle, Form, Input, Button} from 'reactstrap';
+import { Container, Row,Card,CardTitle,CardSubtitle, Form, Input, Button, CardBody} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faUserPlus,faPlus,faTrash,faPenToSquare} from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
@@ -50,9 +50,10 @@ const Classes = () => {
       {className.map((name) => (
         <Card body inverse className='add-user card' key={name.id}>
         <CardTitle >{name.name}</CardTitle>
-        <NavLink exact className="nav-link" to="/course" ><FontAwesomeIcon className='icon' icon={faPenToSquare} style={{color:"#ffc107"}} />
-        </NavLink><FontAwesomeIcon className='icon' icon={faTrash} style={{color:"#dc3545"}} />
-        
+        <CardBody className="card-body">
+        <NavLink exact className="nav-link" to="/classedit" ><FontAwesomeIcon className='icon' icon={faPenToSquare} /></NavLink>
+        <FontAwesomeIcon className='icon' icon={faTrash} style={{color:"#dc3545"}} />
+        </CardBody>
       </Card>
       ))}
       </Container>
