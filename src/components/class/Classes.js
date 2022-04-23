@@ -23,7 +23,7 @@ const Classes = () => {
       name:"IELTS"
     }
   ]
-  const [className,setClassName] = useState(initialState)
+  const [courseName,setCourseName] = useState(initialState)
 
   const [newClass,setNewClass]= useState([{
     id:uuidv4(),
@@ -39,20 +39,24 @@ const Classes = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setClassName([...className,newClass]);
+    setCourseName([...courseName,newClass]);
     
+  }
+  const removeCourse = (e) => {
+    const name1 = e.target.getAttribute("name")
+      setCourseName(courseName.filter((course) => course.id !== name1 ))
   }
   
   
   return (
     <Row className="row-classes">
       <Container className='col-7 container-classes' >
-      {className.map((name) => (
-        <Card body inverse className='add-user card' key={name.id}>
+      {courseName.map((name) => (
+        <Card body inverse className='add-user card' key={name.id} >
         <CardTitle >{name.name}</CardTitle>
         <CardBody className="card-body">
         <NavLink exact className="nav-link" to="/classedit" ><FontAwesomeIcon className='icon' icon={faPenToSquare} /></NavLink>
-        <FontAwesomeIcon className='icon' icon={faTrash} style={{color:"#dc3545"}} />
+        <FontAwesomeIcon className='icon' icon={faTrash} style={{color:"#dc3545"}}  onClick={removeCourse} name={name.id}/>
         </CardBody>
       </Card>
       ))}
