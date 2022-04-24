@@ -1,7 +1,7 @@
 import { NavLink} from "react-router-dom";
-import { Container, Row,Card,CardTitle,CardSubtitle, Form, Input, Button, CardBody} from 'reactstrap';
+import { Container, Row,Card,CardTitle, Form, Input, Button, CardBody} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faUserPlus,faPlus,faTrash,faPenToSquare} from '@fortawesome/free-solid-svg-icons';
+import {faPlus,faTrash,faPenToSquare} from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 import {v4 as uuidv4} from "uuid"
 
@@ -23,40 +23,42 @@ const Classes = () => {
       name:"IELTS"
     }
   ]
-  const [courseName,setCourseName] = useState(initialState)
+  const [courseList,setCourseList] = useState(initialState)
 
-  const [newClass,setNewClass]= useState([{
+  const [newList,setNewList]= useState([{
     id:uuidv4(),
     name:""
   }])
 
   
   const onInputChange = (e) => {
-    setNewClass({
+    setNewList({
       id:uuidv4(),
       name: e.target.value})
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setCourseName([...courseName,newClass]);
+    setCourseList([...courseList,newList]);
     
   }
-  const removeCourse = (e) => {
-    const name1 = e.target.getAttribute("name")
-      setCourseName(courseName.filter((course) => course.id !== name1 ))
-  }
+  const deleteCourse = (id) => {
+    console.log(id)
+    const newList = courseList.filter((item) => item.id !== id);
+
+    setCourseList(newList);
+  };
   
   
   return (
     <Row className="row-classes">
       <Container className='col-7 container-classes' >
-      {courseName.map((name) => (
-        <Card body inverse className='add-user card' key={name.id} >
+      {courseList.map((name) => (
+        <Card body inverse className='add-user card' key={name.id} name={name.name} >
         <CardTitle >{name.name}</CardTitle>
         <CardBody className="card-body">
         <NavLink exact className="nav-link" to="/classedit" ><FontAwesomeIcon className='icon' icon={faPenToSquare} /></NavLink>
-        <FontAwesomeIcon className='icon' icon={faTrash} style={{color:"#dc3545"}}  onClick={removeCourse} name={name.id}/>
+        <FontAwesomeIcon className='icon' icon={faTrash} style={{color:"#dc3545"}}  onClick={() => deleteCourse(name.id)}/>
         </CardBody>
       </Card>
       ))}
