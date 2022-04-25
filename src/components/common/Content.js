@@ -5,7 +5,7 @@ import NavBar from './NavBar';
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 import Admin from "../admin/Admin";
-import Users from '../../users/Users';
+import Users from '../users/Users';
 import Teacher from "../teacher/Teacher";
 import Student from "../student/Student";
 import TeacherList from "../teacher/TeacherList";

@@ -3,14 +3,13 @@ import {HashRouter,NavLink} from "react-router-dom";
 import {Nav, NavItem} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
-  faMessage, faScrewdriverWrench,faListCheck,faUserPlus,faUser,faUserGraduate
+  faMessage, faScrewdriverWrench,faUser,faUserGraduate
 } from '@fortawesome/free-solid-svg-icons';
 import logo from "../../assets/img/edu.png";
 
 
 
-class SideBar extends React.Component {
-    
+class SideBar extends React.Component { 
     render(){
     return (
       <div className={'sidebar ' + (this.props.isOpen ? 'is-open' : '')}>
