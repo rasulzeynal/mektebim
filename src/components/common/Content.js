@@ -5,6 +5,7 @@ import NavBar from './NavBar';
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 import Admin from "../admin/Admin";
+import Users from '../../users/Users';
 import Teacher from "../teacher/Teacher";
 import Student from "../student/Student";
 import TeacherList from "../teacher/TeacherList";
@@ -25,6 +26,7 @@ class Content extends React.Component {
             <NavBar toggle={this.props.toggle}/>
               <Switch>
                 <Route path="/login" exact component={Login}/>
+                <Route path='/users' exact component={Users}/>
                 <Route path="/adminList" exact component={AdminList}/>
                 <Route path="/" exact component={Home}/>
                 <Route path="/admin" exact component={Admin}/>
@@ -33,9 +35,9 @@ class Content extends React.Component {
                 <Route path="/teacherList" exact component={TeacherList}/>
                 <Route path="/studentList" exact component={StudentList}/>
                 <Route path="/notifications" exact component={Notification}/>
-                <Route path='/register' exact component={Register}/>
+                <Route path='/add-user' exact component={Register}/>
                 <Route path='/tasks' exact component={Tasks}/>
-                <Route path='/classes' exact component={Classes}/>
+                <Route path='/courses' exact component={Classes}/>
                 <Route path='/classedit' exact component={ClassEdit}/>
                 <NotFound/>
               </Switch>

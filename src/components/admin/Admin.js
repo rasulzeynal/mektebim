@@ -45,7 +45,7 @@ const Example = () => {
     <Row className='cards p-3'>
     <Card body inverse color="success" className='add-user card'>
         <CardTitle>İstifadəçi əlavə et</CardTitle>
-        <NavLink exact className="nav-link" to="/register" ><FontAwesomeIcon className='icon' icon={faUserPlus} /></NavLink>
+        <NavLink exact className="nav-link" to="/add-user" ><FontAwesomeIcon className='icon' icon={faUserPlus} /></NavLink>
       </Card>
       <Card body inverse color="secondary" className='admin card' >
         <CardTitle>Kurslar</CardTitle>
