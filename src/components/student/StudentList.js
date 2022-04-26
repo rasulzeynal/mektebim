@@ -1,5 +1,6 @@
-import { useState,useEffect } from "react";
-import axios from "axios";
+import React, { useEffect,useState} from 'react';
+import { useSelector,useDispatch } from 'react-redux';
+import { fetchUser } from '../../store/userSlice';
 import { Card, CardBody,
   CardTitle,Button,CardImg, Row } from 'reactstrap';
 import logo from "../../assets/img/user.png";
@@ -7,25 +8,22 @@ import ReactPaginate from "react-paginate";
 
 const StudentList =() => { 
 
-  const [student,setStudent] = useState([])
+  const dispatch = useDispatch();
+  const {users} = useSelector(state => state.users)
+
+  useEffect(() => {
+    dispatch(fetchUser())
+  },[dispatch])
+
+  const student = users.filter((user) => user.position === "sagird");
+
   const [searchQuery, setSearchQuery] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
   const usersPerPage = 14;
   const pagesVisited = pageNumber * usersPerPage;
-
-  useEffect(() => {
-    axios
-    .get("http://localhost:3002/data")
-    .then ((users) => {
-    const user=users.data.filter((data) => data.position === "sagird")
-       setStudent(user)
-    })
-  },[]);
-  
-
-const pageCount = Math.ceil(student.length / usersPerPage);
-const changePage = ({ selected }) => {
-    setPageNumber(selected);
+  const pageCount = Math.ceil(student.length / usersPerPage);
+  const changePage = ({ selected }) => {
+      setPageNumber(selected);
   };
 
 

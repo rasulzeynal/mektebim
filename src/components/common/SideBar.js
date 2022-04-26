@@ -20,12 +20,7 @@ class SideBar extends React.Component {
           </div>
           <HashRouter>
             <Nav vertical className="list-unstyled p-3 mt-3 flex-column">
-                <NavItem>
-                  <NavLink exact className="nav-link" to="/admin" >
-                    <FontAwesomeIcon icon={faScrewdriverWrench} className="mr-2"/>Admin
-                  </NavLink>
-                </NavItem>
-                <NavItem>
+            <NavItem>
                   <NavLink exact className="nav-link" to="/users" >
                     <FontAwesomeIcon icon={faUser} className="mr-2"/>İstifadəçilər
                   </NavLink>
@@ -53,6 +48,12 @@ export default SideBar;
 
 
 /* 
+<NavItem>
+                  <NavLink exact className="nav-link" to="/admin" >
+                    <FontAwesomeIcon icon={faScrewdriverWrench} className="mr-2"/>Admin
+                  </NavLink>
+                </NavItem>
+               
 <NavItem>
                   <NavLink exact className="nav-link" to="/teacher">
                   <FontAwesomeIcon icon={faChalkboardUser} className="mr-2"/>Müəllimlər

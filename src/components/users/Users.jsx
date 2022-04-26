@@ -66,29 +66,24 @@ const Users = () => {
           <ModalBody>
             <h2 className="text-center mb-5">İstifadəçi əlavə et</h2>
             <Form>
-              <div className="form-group form-outline mb-4 d-flex justify-content-between">
+              <div className="form-outline mb-4">
                 <Input
                   type="text"
-                  className="form-control form-control mr-2"
-                  placeholder="Ad"
-                />
-                <Input
-                  type="text"
-                  className="form-control form-control "
-                  placeholder="Soyad"
+                  className="form-control "
+                  placeholder="Ad Soyad"
                 />
               </div>
               <div className="form-outline mb-4">
                 <Input
                   type="text"
-                  className="form-control form-control"
+                  className="form-control"
                   placeholder="Ata adı"
                 />
               </div>
               <div className="form-outline mb-4">
                 <Input
                   type="email"
-                  className="form-control form-control"
+                  className="form-control"
                   placeholder="Mail"
                 />
               </div>
@@ -101,15 +96,8 @@ const Users = () => {
               <div className="form-outline mb-4">
                 <Input
                   type="password"
-                  className="form-control form-control"
+                  className="form-control"
                   placeholder="Şifrə"
-                />
-              </div>
-              <div className="form-outline mb-4">
-                <Input
-                  type="password"
-                  className="form-control form-control"
-                  placeholder="Şifrəni təkrarla"
                 />
               </div>
               <div className="d-flex justify-content-center">

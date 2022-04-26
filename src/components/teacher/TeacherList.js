@@ -1,20 +1,20 @@
-import { useState,useEffect } from "react";
-import axios from "axios";
+import React, { useEffect} from 'react';
+import { useSelector,useDispatch } from 'react-redux';
+import { fetchUser } from '../../store/userSlice';
 import { Card, CardBody,
   CardTitle,Button,CardImg, Row } from 'reactstrap';
 import logo from "../../assets/img/user.png"
 
 const TeacherList =() => { 
 
-  const [teacher,setTeacher] = useState([])
+  const dispatch = useDispatch();
+  const {users} = useSelector(state => state.users)
 
   useEffect(() => {
-    axios.get("http://localhost:3002/data")
-    .then ((users) => {
-    const user=users.data.filter((data) => data.position === "Muellim")
-       setTeacher(user)
-    })
-  },[]);
+    dispatch(fetchUser())
+  },[dispatch])
+
+  const teacher = users.filter((user) => user.position === "Muellim");
   
     return (
       <Row style={{display:"flex",float:"left"}} className="container">
