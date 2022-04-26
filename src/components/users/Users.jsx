@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect,useState} from 'react';
+import { useSelector,useDispatch } from 'react-redux';
+import { fetchUser } from '../../store/userSlice';
 import { HashRouter, NavLink } from "react-router-dom";
 import {
   Row,
@@ -25,6 +27,18 @@ const Users = () => {
   const toggle = () => {
     setModal(!modal);
   };
+
+  const dispatch = useDispatch();
+  const {users} = useSelector(state => state.users)
+
+  useEffect(() => {
+    dispatch(fetchUser())
+  },[dispatch])
+
+
+  const admin = users.filter((user) => user.position === "Admin");
+  const muellim = users.filter((user) => user.position === "Muellim");
+  const sagird = users.filter((user) => user.position === "sagird");
 
   return (
     <HashRouter>
@@ -102,21 +116,22 @@ const Users = () => {
                 <Button
                   type="button"
                   className="btn btn-success btn-block btn gradient-custom-4 text-body"
+                  style={{display:"flex",justifyContent:"center",alignItems:"center"}}
                 >
                   <FontAwesomeIcon
                     icon={faUserPlus}
                     size="sm"
-                    className=" mt-2 mr-2"
-                    style={{ color: "white" }}
+                    className="mr-2 "
+                    style={{ color: "white"}}
                   />
-                  <p style={{ color: "white" }}>Əlavə et</p>
+                  <p style={{ color: "white",margin:"0" }}>Əlavə et</p>
                 </Button>
               </div>
             </Form>
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={toggle}>
-              Cancel
+              Ləğv et
             </Button>
           </ModalFooter>
         </Modal>
@@ -127,21 +142,21 @@ const Users = () => {
           <CardTitle>Admin</CardTitle>
           <NavLink exact className="nav-link" to="/adminList">
             <FontAwesomeIcon className="icon" icon={faUserLock} />
-            <CardSubtitle className="card-text">1</CardSubtitle>
+            <CardSubtitle className="card-text">{admin.length}</CardSubtitle>
           </NavLink>
         </Card>
         <Card body inverse color="warning" className="teacher-list card col">
           <CardTitle>Müəllim</CardTitle>
           <NavLink exact className="nav-link" to="/teacherList">
             <FontAwesomeIcon className="icon" icon={faAddressBook} />
-            <CardSubtitle className="card-text">3</CardSubtitle>
+            <CardSubtitle className="card-text">{muellim.length}</CardSubtitle>
           </NavLink>
         </Card>
         <Card body inverse color="warning" className="student-list card col">
           <CardTitle>Şagird</CardTitle>
           <NavLink exact className="nav-link" to="/studentList">
             <FontAwesomeIcon className="icon" icon={faAddressBook} />
-            <CardSubtitle className="card-text">20</CardSubtitle>
+            <CardSubtitle className="card-text">{sagird.length}</CardSubtitle>
           </NavLink>
         </Card>
       </Row>

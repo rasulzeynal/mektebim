@@ -2,300 +2,371 @@
     "data":[{  
         "id":1,
         "name":"Rasul Zeynalov",
+        "ata_adi":"Zeynal",
+        "mail":"rasul.zeynalov.95@gmail.com",
         "dogum_tarixi":"26.07.1999",
-        "sinif":"11",
         "position":"Admin",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":2,
         "name":"Rasul Aliyev",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     
     {
         "id":3,
         "name":"Tərlan Qafarov",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"Admin",
-        "fənlər":[]
+        "sifre":[]
     },
     
     {
         "id":4,
         "name":"Aytən Əliyeva",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     
     {
         "id":5,
         "name":"Könül Şiralıyeva",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     
     {
         "id":6,
         "name":"Ayxan Cabbarlı",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     
     {
         "id":7,
         "name":"Həsən Əliyev",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     
     {
         "id":8,
         "name":"Gülanə Zeynalova",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":9,
         "name":"Həsən Həsənov",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     
     {
         "id":10,
         "name":"İlkin Haqverdiyev",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     
     {
         "id":11,
         "name":"Ülvi Orucov",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     
     {
         "id":12,
         "name":"Sahil Musayev",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     
     {
         "id":13,
         "name":"Gülnar Həsənova",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":14,
         "name":"Zeynəb Zeynalova",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":15,
         "name":"Əli Ağayev",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":16,
         "name":"Babək Salamov",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":17,
         "name":"Cavad Cavadov",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":18,
         "name":"Cəmalə Əzizova",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":19,
         "name":"Nazlı Şirinova",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":20,
         "name":"Anar Rəşidov",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":21,
         "name":"Bəyaz Cəfərli",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":22,
         "name":"Fətəli Rüstəmov",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":23,
         "name":"Zöhrə Qurbanova",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":24,
         "name":"Kənan Salmanov",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":25,
         "name":"Cəvahir Vəlizadə",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":26,
         "name":"Heydər Rzayev",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":27,
         "name":"Əfsanə Qurbanova",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":28,
         "name":"Nəsrəddin Xıdırov",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"Muellim",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":29,
         "name":"Şövqiyyə Zərbəliyeva",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":30,
         "name":"Hüriyyə Sultanova",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":31,
         "name":"Bəhərçin Yusubov",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":32,
         "name":"Rəşad Yusublu",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"Muellim",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":33,
         "name":"Bahar Səfərli",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":34,
         "name":"Cavid Sevdimalıyev",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":35,
         "name":"Emil Vəliyev",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     },
     {
         "id":36,
         "name":"Nərmin Şirinova",
+        "ata_adi":"Test",
+        "mail":"test.testov@gmail.com",
         "dogum_tarixi":"26.07.1999",
         "sinif":"11",
         "position":"sagird",
-        "fənlər":[]
+        "sifre":[]
     }
 ]
 }
