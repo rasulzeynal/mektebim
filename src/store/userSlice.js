@@ -15,14 +15,14 @@ const userSlice = createSlice({
     name:"user",
     initialState,
     extraReducers: {
-        [fetchUser.pending]:(state,action) => {
+        [fetchUser.pending]:(state) => {
             state.status = "loading"
         },
         [fetchUser.fulfilled]: (state,action) => {
             state.status = "success";
             state.users = action.payload
         },
-        [fetchUser.rejected]: (state,action) => {
+        [fetchUser.rejected]: (state) => {
             state.status = "failed"
         }
     }    
