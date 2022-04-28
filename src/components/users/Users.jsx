@@ -21,12 +21,39 @@ import {
   faPlus,
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
+import { createtedUser } from '../../store/userSlice';
+import {v4 as uuidv4} from "uuid"
+
+
+
 
 const Users = () => {
+  const [formData,setFormData] = useState({
+    id:uuidv4(),
+    name:"",
+    ata_adi:"",
+    mail:"",
+    position:"",
+    sifre:""
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(createtedUser(formData));
+    setFormData({
+      id:uuidv4(),
+      name:"",
+      ata_adi:"",
+      mail:"",
+      position:"",
+      sifre:""
+    })
+  }
+
   const [modal, setModal] = useState(false);
   const toggle = () => {
     setModal(!modal);
-  };
+  }
 
   const dispatch = useDispatch();
   const {users} = useSelector(state => state.users)
@@ -65,12 +92,14 @@ const Users = () => {
         <Modal isOpen={modal} toggle={toggle}>
           <ModalBody>
             <h2 className="text-center mb-5">İstifadəçi əlavə et</h2>
-            <Form>
+            <Form onSubmit={handleSubmit}>
               <div className="form-outline mb-4">
                 <Input
                   type="text"
                   className="form-control "
                   placeholder="Ad Soyad"
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData,name:e.target.value})}
                 />
               </div>
               <div className="form-outline mb-4">
@@ -78,6 +107,8 @@ const Users = () => {
                   type="text"
                   className="form-control"
                   placeholder="Ata adı"
+                  value={formData.ata_adi}
+                  onChange={(e) => setFormData({...formData,ata_adi:e.target.value})}
                 />
               </div>
               <div className="form-outline mb-4">
@@ -85,24 +116,29 @@ const Users = () => {
                   type="email"
                   className="form-control"
                   placeholder="Mail"
+                  value={formData.mail}
+                  onChange={(e) => setFormData({...formData,mail:e.target.value})}
                 />
               </div>
-              <select className="custom-select mb-4" required>
-                <option value="">Status</option>
-                <option value="admin">Admin</option>
-                <option value="muellim">Muellim</option>
-                <option value="sagird">Sagird</option>
+              <select className="custom-select mb-4" required
+              onChange={(e) => setFormData({...formData,position:e.target.value})}>
+                <option value="">--</option>
+                <option value="Admin">Admin</option>
+                <option value="Müəllim">Muellim</option>
+                <option value="Şagird">Sagird</option>
               </select>
               <div className="form-outline mb-4">
                 <Input
                   type="password"
                   className="form-control"
                   placeholder="Şifrə"
+                  value={formData.sifre}
+                  onChange={(e) => setFormData({...formData,sifre:e.target.value})}
                 />
               </div>
               <div className="d-flex justify-content-center">
                 <Button
-                  type="button"
+                  type="submit"
                   className="btn btn-success btn-block btn gradient-custom-4 text-body"
                   style={{display:"flex",justifyContent:"center",alignItems:"center"}}
                 >
