@@ -26,7 +26,7 @@ class Content extends React.Component {
             <NavBar toggle={this.props.toggle}/>
               <Switch>
                 <Route path="/login" exact component={Login}/>
-                <Route path='/users' exact component={Users}/>
+                <Route path='/users' exact component={Register}/>
                 <Route path="/adminList" exact component={AdminList}/>
                 <Route path="/" exact component={Home}/>
                 <Route path="/admin" exact component={Admin}/>

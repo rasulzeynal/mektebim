@@ -8,7 +8,7 @@ const initialState = {
     selectedUser:{}
 }
 
-export const fetchUser = createAsyncThunk("data/fetchUser",async() => {
+export const fetchUser = createAsyncThunk("fetchUser",async() => {
     const response = await axios.get("http://localhost:3002/data");
     return response.data;
 })
@@ -20,10 +20,7 @@ const userSlice = createSlice({
     name:"user",
     initialState,
     reducers:{
-        selectedUser: (state,action) => {
-            state.selectedUser = action.payload;
-        },
-        createtedUser: (state,action) => {
+        createdUser: (state,action) => {
             state.users = [...state.users,action.payload];
         },
     },
@@ -39,10 +36,11 @@ const userSlice = createSlice({
             state.status = "failed"
         },
         [postUser.fulfilled]: (state,action) => {
-            state.users = [action.payload.data, ...state.data]
+            state.users = [...state.data,action.payload.data ]
+            state.status = "yuklendi"
         }
     }    
 });
 
-export const {selectedUser,createtedUser} = userSlice.actions
+export const {selectedUser,createdUser} = userSlice.actions
 export default userSlice.reducer;

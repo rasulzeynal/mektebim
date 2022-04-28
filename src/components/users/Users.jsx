@@ -21,7 +21,7 @@ import {
   faPlus,
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
-import { createtedUser } from '../../store/userSlice';
+import { createdUser } from '../../store/userSlice';
 import {v4 as uuidv4} from "uuid"
 
 
@@ -39,7 +39,7 @@ const Users = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createtedUser(formData));
+    dispatch(createdUser(formData));
     setFormData({
       id:uuidv4(),
       name:"",
@@ -47,7 +47,8 @@ const Users = () => {
       mail:"",
       position:"",
       sifre:""
-    })
+    });
+    setModal(!modal)
   }
 
   const [modal, setModal] = useState(false);
@@ -66,6 +67,7 @@ const Users = () => {
   const admin = users.filter((user) => user.position === "Admin");
   const muellim = users.filter((user) => user.position === "Muellim");
   const sagird = users.filter((user) => user.position === "sagird");
+
 
   return (
     <HashRouter>
