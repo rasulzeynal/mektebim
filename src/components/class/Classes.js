@@ -1,82 +1,129 @@
-import { NavLink} from "react-router-dom";
-import { Container, Row,Card,CardTitle, Form, Input, Button, CardBody} from 'reactstrap';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faPlus,faTrash,faPenToSquare} from '@fortawesome/free-solid-svg-icons';
+import { NavLink } from "react-router-dom";
+import {
+  Container,
+  Row,
+  Card,
+  CardTitle,
+  Form,
+  Input,
+  Button,
+  CardBody,
+} from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPlus,
+  faTrash,
+  faPenToSquare,
+} from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import {v4 as uuidv4} from "uuid"
+import { v4 as uuidv4 } from "uuid";
+import { connect } from "react-redux";
 
-const Classes = () => {
-  const [open,setOpen]=useState(false);
+const Classes = (props) => {
+  const [open, setOpen] = useState(false);
 
   const openForm = () => {
-    setOpen(!open)
-  }
+    setOpen(!open);
+  };
 
-
-  const initialState=[
+  /*   const [courseList,setCourseList] = useState(initialState)
+   */
+  const [newList, setNewList] = useState([
     {
-      id:1,
-      name:"Ingilis dili"
+      id: uuidv4(),
+      name: "",
     },
-    {
-      id:2,
-      name:"IELTS"
-    }
-  ]
-  const [courseList,setCourseList] = useState(initialState)
+  ]);
 
-  const [newList,setNewList]= useState([{
-    id:uuidv4(),
-    name:""
-  }])
-
-  
   const onInputChange = (e) => {
     setNewList({
-      id:uuidv4(),
-      name: e.target.value})
-  }
+      id: uuidv4(),
+      name: e.target.value,
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setCourseList([...courseList,newList]);
-    
-  }
-  const deleteCourse = (id) => {
-    console.log(id)
-    const newList = courseList.filter((item) => item.id !== id);
+    /* setCourseList([...courseList,newList]); */
+  };
+  /* const deleteCourse = (id) => {
+    const newList = props.courses.filter((item) => item.id !== id);
 
     setCourseList(newList);
-  };
-  
-  
+  }; */
+
   return (
     <Row className="row-classes">
-      <Container className='col-7 container-classes' >
-      {courseList.map((name) => (
-        <Card body inverse className='add-user card' key={name.id} name={name.name} >
-        <CardTitle >{name.name}</CardTitle>
-        <CardBody className="card-body">
-        <NavLink exact className="nav-link" to="/classedit" ><FontAwesomeIcon className='icon' icon={faPenToSquare} /></NavLink>
-        <FontAwesomeIcon className='icon' icon={faTrash} style={{color:"#dc3545"}}  onClick={() => deleteCourse(name.id)}/>
-        </CardBody>
-      </Card>
-      ))}
+      <Container className="col-7 container-classes">
+        {props.courses.map((course) => (
+          <Card
+            body
+            inverse
+            className="add-user card"
+            key={course.id}
+            name={course.name}
+          >
+            <CardTitle>{course.name}</CardTitle>
+            <CardBody className="card-body">
+              <NavLink exact className="nav-link" to="/classedit">
+                <FontAwesomeIcon className="icon" icon={faPenToSquare} />
+              </NavLink>
+              <FontAwesomeIcon
+                className="icon"
+                icon={faTrash}
+                style={{
+                  color: "#dc3545",
+                }} /* onClick={() => deleteCourse(course.id)} */
+              />
+            </CardBody>
+          </Card>
+        ))}
       </Container>
-      <Container className='col-5' style={{height:"100vh"}}>
-        <div className="me-4" style={{display:"flex",justifyContent:"end"}}>
-        <Button onClick={openForm} color="success" style={{display:"flex",transition:"ease",height:"32px",borderRadius:"6px",margin:"15px 0"}}><FontAwesomeIcon className='icon mr-2' icon={faPlus}  style={{color:"white"}}/><h3 style={{fontSize:"15px",color:"white"}}>Kurs əlavə et</h3></Button>
+      <Container className="col-5" style={{ height: "100vh" }}>
+        <div
+          className="me-4"
+          style={{ display: "flex", justifyContent: "end" }}
+        >
+          <Button
+            onClick={openForm}
+            color="success"
+            style={{
+              display: "flex",
+              transition: "ease",
+              height: "32px",
+              borderRadius: "6px",
+              margin: "15px 0",
+            }}
+          >
+            <FontAwesomeIcon
+              className="icon mr-2"
+              icon={faPlus}
+              style={{ color: "white" }}
+            />
+            <h3 style={{ fontSize: "15px", color: "white" }}>Kurs əlavə et</h3>
+          </Button>
         </div>
-        {
-          open ? <Form className="col-10" onSubmit={handleSubmit}>
-                    <Input type="text" block className="form-control form-control mr-2 mb-2" placeholder='Kursun adı'  onChange={onInputChange}/>
-                    <Button  color="secondary" block>Yarat</Button>
-          </Form> : null
-        }
-        
+        {open ? (
+          <Form className="col-10" onSubmit={handleSubmit}>
+            <Input
+              type="text"
+              block
+              className="form-control form-control mr-2 mb-2"
+              placeholder="Kursun adı"
+              onChange={onInputChange}
+            />
+            <Button color="secondary" block>
+              Yarat
+            </Button>
+          </Form>
+        ) : null}
       </Container>
     </Row>
-  )
-}
-
-export default Classes;
+  );
+};
+const mapStateToProps = (state) => {
+  return {
+    courses: state.courses,
+  };
+};
+export default connect(mapStateToProps)(Classes);

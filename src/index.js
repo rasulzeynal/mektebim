@@ -2,8 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
+import {legacy_createStore as createStore} from 'redux';
 import {Provider} from "react-redux";
-import store from "./store/index";
+import  {reducer} from "./redux/reducers/index"
+
+
+const store = createStore(reducer);
 
 ReactDOM.render(
   <Provider store={store}>
