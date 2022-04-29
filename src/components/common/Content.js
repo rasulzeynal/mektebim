@@ -16,6 +16,7 @@ import Register from '../pages/Register';
 import Tasks from "../pages/Tasks";
 import Classes from "../class/Classes";
 import ClassEdit from "../class/ClassEdit"
+import Test from "../test"
 
 class Content extends React.Component {
   render() {
@@ -26,7 +27,7 @@ class Content extends React.Component {
             <NavBar toggle={this.props.toggle}/>
               <Switch>
                 <Route path="/login" exact component={Login}/>
-                <Route path='/users' exact component={Register}/>
+                <Route path='/users' exact component={Users}/>
                 <Route path="/adminList" exact component={AdminList}/>
                 <Route path="/" exact component={Home}/>
                 <Route path="/admin" exact component={Admin}/>
@@ -39,6 +40,7 @@ class Content extends React.Component {
                 <Route path='/tasks' exact component={Tasks}/>
                 <Route path='/courses' exact component={Classes}/>
                 <Route path='/classedit' exact component={ClassEdit}/>
+                <Route path='/test' exact component={Test}/>
                 <NotFound/>
               </Switch>
           </HashRouter>

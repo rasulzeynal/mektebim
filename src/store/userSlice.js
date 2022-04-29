@@ -13,17 +13,10 @@ export const fetchUser = createAsyncThunk("fetchUser",async() => {
     return response.data;
 })
 
-export const postUser = createAsyncThunk("postUser",
-    async (post) => await axios.post("data/http://localhost:3002/data",post));
 
 const userSlice = createSlice({
     name:"user",
     initialState,
-    reducers:{
-        createdUser: (state,action) => {
-            state.users = [...state.users,action.payload];
-        },
-    },
     extraReducers: {
         [fetchUser.pending]:(state) => {
             state.status = "loading"
@@ -34,13 +27,8 @@ const userSlice = createSlice({
         },
         [fetchUser.rejected]: (state) => {
             state.status = "failed"
-        },
-        [postUser.fulfilled]: (state,action) => {
-            state.users = [...state.data,action.payload.data ]
-            state.status = "yuklendi"
         }
     }    
 });
 
-export const {selectedUser,createdUser} = userSlice.actions
 export default userSlice.reducer;
