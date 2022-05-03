@@ -4,10 +4,10 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 import {legacy_createStore as createStore} from 'redux';
 import {Provider} from "react-redux";
-import  {reducer} from "./redux/reducers/index"
+import  {courseReducer} from "./redux/course/courseReducer"
 
 
-const store = createStore(reducer);
+const store = createStore(courseReducer);
 
 ReactDOM.render(
   <Provider store={store}>

@@ -19,6 +19,8 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { connect } from "react-redux";
 
+
+
 const Classes = (props) => {
   const [open, setOpen] = useState(false);
 
@@ -44,6 +46,7 @@ const Classes = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  
     /* setCourseList([...courseList,newList]); */
   };
   /* const deleteCourse = (id) => {
@@ -123,7 +126,13 @@ const Classes = (props) => {
 };
 const mapStateToProps = (state) => {
   return {
-    courses: state.courses,
+    courses: state,
   };
 };
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addNewCourse: () => dispatch(addNewCourse)
+  }
+}
 export default connect(mapStateToProps)(Classes);

@@ -1,4 +1,4 @@
-export const courseData = [
+export default [
 {
     id:1,
     name:"Ingilis dili"
