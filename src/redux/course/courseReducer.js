@@ -1,25 +1,12 @@
-import { ADD_NEW_COURSE } from "./courseActionTypes"
+import { LIST_COURSES } from "./courseActionTypes";
 
-const INITIAL_STATE = [
-        {
-            id:1,
-            name:"Ingilis dili"
-        },
-        {
-            id:2,
-            name:"IELTS"
-          }
-        ]
-
-
-export const courseReducer = (state=INITIAL_STATE,action) => {
-    switch(action.type) {
-         case ADD_NEW_COURSE :return [
-            ...state,
-            {
-            name:action.courseName
-            }
-        ]
-            default: return state
+const courseReducer = (state={},action) => {
+    switch (action.type) {
+        case LIST_COURSES : 
+            return {...state,users:action.payload};
+        default:
+            return state;
     }
 }
+
+export default courseReducer;

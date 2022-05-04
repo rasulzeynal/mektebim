@@ -1,3 +1,4 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 import {
   Container,
@@ -15,56 +16,25 @@ import {
   faTrash,
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { connect } from "react-redux";
+import {getCourses} from "../../redux/course/courseActions"
 
 
 
-const Classes = (props) => {
-  const [open, setOpen] = useState(false);
-
-  const openForm = () => {
-    setOpen(!open);
-  };
-
-  /*   const [courseList,setCourseList] = useState(initialState)
-   */
-  const [newList, setNewList] = useState([
-    {
-      id: uuidv4(),
-      name: "",
-    },
-  ]);
-
-  const onInputChange = (e) => {
-    setNewList({
-      id: uuidv4(),
-      name: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  
-    /* setCourseList([...courseList,newList]); */
-  };
-  /* const deleteCourse = (id) => {
-    const newList = props.courses.filter((item) => item.id !== id);
-
-    setCourseList(newList);
-  }; */
-
+class Courses extends React.Component {
+  componentDidMount() { console.log(this.props.getUsers()); }
+  render() {
+    const courses = this.props.courses;
   return (
     <Row className="row-classes">
       <Container className="col-7 container-classes">
-        {props.courses.map((course) => (
-          <Card
+      {courses.map(course => (
+        <Card
             body
             inverse
             className="add-user card"
             key={course.id}
-            name={course.name}
           >
             <CardTitle>{course.name}</CardTitle>
             <CardBody className="card-body">
@@ -80,7 +50,8 @@ const Classes = (props) => {
               />
             </CardBody>
           </Card>
-        ))}
+      ))}
+          
       </Container>
       <Container className="col-5" style={{ height: "100vh" }}>
         <div
@@ -88,7 +59,7 @@ const Classes = (props) => {
           style={{ display: "flex", justifyContent: "end" }}
         >
           <Button
-            onClick={openForm}
+            onClick={this.openForm}
             color="success"
             style={{
               display: "flex",
@@ -106,14 +77,14 @@ const Classes = (props) => {
             <h3 style={{ fontSize: "15px", color: "white" }}>Kurs əlavə et</h3>
           </Button>
         </div>
-        {open ? (
-          <Form className="col-10" onSubmit={handleSubmit}>
+        {this.formIsOpen ? (
+          <Form className="col-10" /* onSubmit={handleSubmit} */>
             <Input
               type="text"
               block
               className="form-control form-control mr-2 mb-2"
               placeholder="Kursun adı"
-              onChange={onInputChange}
+              /* onChange={onInputChange} */
             />
             <Button color="secondary" block>
               Yarat
@@ -122,17 +93,14 @@ const Classes = (props) => {
         ) : null}
       </Container>
     </Row>
-  );
-};
-const mapStateToProps = (state) => {
-  return {
-    courses: state,
-  };
+  )
+        }
 };
 
-const mapDispatchToProps = (dispatch) => {
+
+const mapStateToProps = state => {
   return {
-    addNewCourse: () => dispatch(addNewCourse)
+    courses:state.couse.courses
   }
-}
-export default connect(mapStateToProps)(Classes);
+} 
+export default connect(mapStateToProps,{getCourses})(Courses) ;

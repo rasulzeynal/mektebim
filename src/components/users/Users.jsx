@@ -1,6 +1,6 @@
-import React, { useEffect,useState} from 'react';
-import { useSelector,useDispatch } from 'react-redux';
-import { fetchUser } from '../../store/userSlice';
+import React from 'react';
+import {getUsers} from "../../redux/user/userAction";
+import {connect} from "react-redux";
 import { HashRouter, NavLink } from "react-router-dom";
 import {
   Row,
@@ -25,32 +25,17 @@ import {
 
 
 
-const Users = () => {
+class Users extends React.Component{
+    componentDidMount() { this.props.getUsers(); }
+    
 
-
-  const [modal, setModal] = useState(false);
-  const toggle = () => {
-    setModal(!modal);
-  }
-
-  const dispatch = useDispatch();
-  const {users} = useSelector(state => state.users)
-
-  useEffect(() => {
-    dispatch(fetchUser())
-  },[dispatch])
-
-
-  const admin = users.filter((user) => user.position === "Admin");
-  const muellim = users.filter((user) => user.position === "Muellim");
-  const sagird = users.filter((user) => user.position === "sagird");
-
-
-  return (
+  render() {
+    const users = this.props.users;
+    return (
     <HashRouter>
       <div className="me-4" style={{ display: "flex", justifyContent: "end" }}>
         <Button
-          onClick={toggle}
+          /* onClick={toggle} */
           color="success"
           style={{
             display: "flex",
@@ -68,7 +53,7 @@ const Users = () => {
             İstifadəçi əlavə et
           </h3>
         </Button>
-        <Modal isOpen={modal} toggle={toggle}>
+        <Modal /* isOpen={modal} toggle={toggle} */>
           <ModalBody>
             <h2 className="text-center mb-5">İstifadəçi əlavə et</h2>
             <Form>
@@ -124,7 +109,7 @@ const Users = () => {
             </Form>
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={toggle}>
+            <Button color="secondary"/*  onClick={toggle} */>
               Ləğv et
             </Button>
           </ModalFooter>
@@ -136,26 +121,33 @@ const Users = () => {
           <CardTitle>Admin</CardTitle>
           <NavLink exact className="nav-link" to="/adminList">
             <FontAwesomeIcon className="icon" icon={faUserLock} />
-            <CardSubtitle className="card-text">{admin.length}</CardSubtitle>
+            <CardSubtitle className="card-text">{8}</CardSubtitle>
           </NavLink>
         </Card>
         <Card body inverse color="warning" className="teacher-list card col">
           <CardTitle>Müəllim</CardTitle>
           <NavLink exact className="nav-link" to="/teacherList">
             <FontAwesomeIcon className="icon" icon={faAddressBook} />
-            <CardSubtitle className="card-text">{muellim.length}</CardSubtitle>
+            <CardSubtitle className="card-text">{9}</CardSubtitle>
           </NavLink>
         </Card>
         <Card body inverse color="warning" className="student-list card col">
           <CardTitle>Şagird</CardTitle>
           <NavLink exact className="nav-link" to="/studentList">
             <FontAwesomeIcon className="icon" icon={faAddressBook} />
-            <CardSubtitle className="card-text">{sagird.length}</CardSubtitle>
+            <CardSubtitle className="card-text">{32}</CardSubtitle>
           </NavLink>
         </Card>
       </Row>
     </HashRouter>
-  );
+  )
+        }
 };
 
-export default Users;
+
+const mapStateToProps = state => {
+  return {
+    users:state.user.users
+  }
+} 
+export default connect(mapStateToProps,{getUsers})(Users) ;

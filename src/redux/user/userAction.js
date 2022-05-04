@@ -1,13 +1,13 @@
-import {LIST_COURSES} from "./courseActionTypes";
+import { LIST_USERS } from "./userActionTypes";
 import axios from "axios";
 
-export const getCourses = () => {
+export const getUsers = () => {
     return (dispatch) => {
-        axios.get("http://localhost:3002/courseData")
+        axios.get("http://localhost:3002/data")
         .then(response => {
             console.log(response);
             dispatch({
-                type: LIST_COURSES,
+                type: LIST_USERS,
                 payload: response.data
             })
         })
@@ -16,3 +16,4 @@ export const getCourses = () => {
         });
     }
 }
+
