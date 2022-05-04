@@ -5,7 +5,6 @@ export const getCourses = () => {
     return (dispatch) => {
         axios.get("http://localhost:3002/courseData")
         .then(response => {
-            console.log(response);
             dispatch({
                 type: LIST_COURSES,
                 payload: response.data

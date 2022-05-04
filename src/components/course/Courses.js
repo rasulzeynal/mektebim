@@ -21,22 +21,23 @@ import { connect } from "react-redux";
 import {getCourses} from "../../redux/course/courseActions"
 
 
-
 class Courses extends React.Component {
-  componentDidMount() { console.log(this.props.getUsers()); }
+  componentDidMount() {
+    this.props.getCourses();
+  }
   render() {
     const courses = this.props.courses;
   return (
     <Row className="row-classes">
       <Container className="col-7 container-classes">
-      {courses.map(course => (
+     {courses ? courses.map(course => ( 
         <Card
             body
             inverse
             className="add-user card"
             key={course.id}
           >
-            <CardTitle>{course.name}</CardTitle>
+            <CardTitle>{course.name} </CardTitle>
             <CardBody className="card-body">
               <NavLink exact className="nav-link" to="/classedit">
                 <FontAwesomeIcon className="icon" icon={faPenToSquare} />
@@ -50,7 +51,7 @@ class Courses extends React.Component {
               />
             </CardBody>
           </Card>
-      ))}
+      )) : null}
           
       </Container>
       <Container className="col-5" style={{ height: "100vh" }}>
@@ -100,7 +101,7 @@ class Courses extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    courses:state.couse.courses
+    courses:state.course.users
   }
 } 
 export default connect(mapStateToProps,{getCourses})(Courses) ;
