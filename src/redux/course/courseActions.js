@@ -1,4 +1,4 @@
-import {LIST_COURSES,ADD_COURSE} from "./courseActionTypes";
+import {LIST_COURSES,ADD_COURSE, DELETE_COURSE} from "./courseActionTypes";
 import axios from "axios";
 
 export const getCourses = () => {
@@ -20,7 +20,6 @@ export const addCourse = courseData => {
     return (dispatch) => {
         axios.post("http://localhost:3002/courseData",courseData)
         .then(response => {
-            console.log(response);
             dispatch({
                 type: ADD_COURSE,
                 payload: response.data
@@ -29,5 +28,24 @@ export const addCourse = courseData => {
         .catch(error => {
             console.log(error);
         });
+    }
+}
+
+
+
+export const deleteCourse = (id) => {
+    return (dispatch) => {
+        return axios.delete(`http://localhost:3002/courseData/${id}`)
+        .then(() => {
+            dispatch(deleteCourseSuccess(id));
+        })
+    }
+}
+export const deleteCourseSuccess = (id) => {
+    return {
+        type: DELETE_COURSE,
+        payload:{
+            id:id
+        }
     }
 }

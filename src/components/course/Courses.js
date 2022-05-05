@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import {getCourses,addCourse} from "../../redux/course/courseActions";
+import {getCourses,addCourse,deleteCourse} from "../../redux/course/courseActions";
 import { v4 as uuidv4 } from "uuid";
 import { NavLink } from "react-router-dom";
 import {
@@ -19,17 +19,18 @@ import {
   faTrash,
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
+import { bindActionCreators } from "redux";
 
 
 
 class Courses extends React.Component {
+  componentDidMount() {
+    this.props.getCourses();
+  }
   state={
     formIsOpen:false,
     id:uuidv4(),
     name:""
-  }
-  componentDidMount() {
-    this.props.getCourses();
   }
   openForm = () => {
     this.setState({
@@ -47,12 +48,14 @@ class Courses extends React.Component {
     name:""
     })
   }
+  
+  
   render() {
     const courses = this.props.courses;
   return (
     <Row className="row-classes">
       <Container className="col-7 container-classes">
-     {courses ? courses.map(course => ( 
+     {courses && courses.map(course => ( 
         <Card
             body
             inverse
@@ -69,11 +72,13 @@ class Courses extends React.Component {
                 icon={faTrash}
                 style={{
                   color: "#dc3545",
-                }} /* onClick={() => deleteCourse(course.id)} */
+                }}
+                onDelete = {this.props.onDelete}
+               /*  onClick={() => {this.deleteCourse(course.id)}} */
               />
             </CardBody>
           </Card>
-      )) : null}
+      ))}
           
       </Container>
       <Container className="col-5" style={{ height: "100vh" }}>
@@ -104,12 +109,13 @@ class Courses extends React.Component {
           <Form className="col-10"  onSubmit={this.handleOnSubmit} >
             <Input
               type="text"
-              block
+              block="true"
               className="form-control form-control mr-2 mb-2"
               name="name"
               placeholder="Kursun adı"
               onChange={this.handleTextChange} 
               value={this.state.name}
+              
             />
             <Button type="submit" color="secondary" block>
               Yarat
@@ -125,7 +131,17 @@ class Courses extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    courses:state.course.users
+    courses:state.course.users,
   }
 } 
-export default connect(mapStateToProps,{getCourses,addCourse})(Courses) ;
+const mapDispatchToProps = dispatch => {
+  bindActionCreators({
+    getCourses,addCourse
+  })
+  return {
+    onDelete: (id) => {
+      dispatch(deleteCourse(id));
+    }
+  }
+}
+export default connect(mapStateToProps,{getCourses,addCourse,deleteCourse})(Courses) ;

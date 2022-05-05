@@ -330,33 +330,74 @@
       "name": "Ingilis dili"
     },
     {
-      "id": 2,
-      "name": "IELTS"
+      "formIsOpen": true,
+      "id": "7aeec0a0-da79-45b3-8ef0-1780c9f5cebd",
+      "name": "Backend developer"
     },
     {
       "formIsOpen": true,
-      "id": "48d65958-fa4f-426e-a07a-c1a9fbc845b0",
-      "name": "toefl"
+      "id": "a0a09e46-a544-4243-80d5-cfc8e638f937",
+      "name": "test"
     },
     {
       "formIsOpen": true,
-      "id": "affd88b5-68c5-4076-a792-b983ce6f7bd1",
-      "name": "Broker"
+      "id": "1575beb0-5b91-4abf-9bd3-59fb5ab49ca2",
+      "name": "dsfdsf"
     },
     {
       "formIsOpen": true,
-      "id": "3f4bd09d-e7b7-41ff-83b7-75dc3f5ae4fb",
-      "name": "Fizika"
+      "id": "868eaaa9-2fc0-4b37-b1ce-984f13461392",
+      "name": "sdsfdsfsdf"
     },
     {
       "formIsOpen": true,
-      "id": "de1e46dd-317d-4f6f-a2e9-953df893d08e",
-      "name": "sdfgdsfsdf"
+      "id": "3f5df575-f04a-491f-857c-3f5dfc54069b",
+      "name": "dsfsfsdfsdf"
     },
     {
       "formIsOpen": true,
-      "id": "2bbf7965-eed0-4a32-9226-1f7ca3c88d11",
-      "name": "dfgdfgfd"
+      "id": "c579b109-4bba-46fb-be04-96382bdd75de",
+      "name": "dfgdfgdgfdg"
+    },
+    {
+      "formIsOpen": true,
+      "id": "5353494b-d398-46c2-890c-329dc2db5f9c",
+      "name": "Namiq"
+    },
+    {
+      "formIsOpen": true,
+      "id": "cc9c4216-732d-45a2-bd8d-01a821963ad2",
+      "name": "fgfdgdf"
+    },
+    {
+      "formIsOpen": true,
+      "id": "33c34c5f-4e1b-429f-a26c-6ed78f636323",
+      "name": "Eli"
+    },
+    {
+      "formIsOpen": true,
+      "id": "506f7b0a-cae8-4c6a-8c49-9060d7f99d69",
+      "name": "jghjg"
+    },
+    {
+      "formIsOpen": true,
+      "id": "7ace1dd6-f103-4b11-af83-db56a8ff5a9e",
+      "name": "sdsf"
+    },
+    {
+      "formIsOpen": true,
+      "id": "383f5e28-015d-4b1e-84af-1bc13b067a11",
+      "name": "aspaz"
+    },
+    {
+      "formIsOpen": true,
+      "id": "2bdb8e14-636a-4df9-86da-0b59f484e90f",
+      "name": "sdf"
+    },
+    {
+      "formIsOpen": true,
+      "id": "ca4b8ddf-a7f6-479e-ba04-d2c006b7f1fc",
+      "name": "12"
     }
   ]
 }
