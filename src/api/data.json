@@ -295,16 +295,68 @@
       "mail": "hikmet@mail.ru",
       "position": "sagird",
       "sifre": []
-    }
-  ],
-  "courseData":[
-    {
-        "id":1,
-        "name":"Ingilis dili"
     },
     {
-        "id":2,
-        "name":"IELTS"
-      }
-    ]
+      "modal": true,
+      "name": "Rasul",
+      "ata_adi": "Zeynal",
+      "mail": "r@mail.ru",
+      "position": "Admin",
+      "sifre": "sadsa",
+      "id": "rWJCj_z"
+    },
+    {
+      "modal": true,
+      "id": "61de78d8-c78f-4bd0-92d6-bb7b1cde26f3",
+      "name": "Cəmil Əhmədov",
+      "ata_adi": "Alı",
+      "mail": "cemil@mail.ru",
+      "position": "sagird",
+      "sifre": "dfgdfg"
+    },
+    {
+      "modal": true,
+      "id": "d04889b0-a5ad-47f2-823a-087ed5badd0d",
+      "name": "Cavid Hüseynov",
+      "ata_adi": "Rafael",
+      "mail": "cavid.pasayev@mail.ru",
+      "position": "Muellim",
+      "sifre": "dshghf"
+    }
+  ],
+  "courseData": [
+    {
+      "id": 1,
+      "name": "Ingilis dili"
+    },
+    {
+      "id": 2,
+      "name": "IELTS"
+    },
+    {
+      "formIsOpen": true,
+      "id": "48d65958-fa4f-426e-a07a-c1a9fbc845b0",
+      "name": "toefl"
+    },
+    {
+      "formIsOpen": true,
+      "id": "affd88b5-68c5-4076-a792-b983ce6f7bd1",
+      "name": "Broker"
+    },
+    {
+      "formIsOpen": true,
+      "id": "3f4bd09d-e7b7-41ff-83b7-75dc3f5ae4fb",
+      "name": "Fizika"
+    },
+    {
+      "formIsOpen": true,
+      "id": "de1e46dd-317d-4f6f-a2e9-953df893d08e",
+      "name": "sdfgdsfsdf"
+    },
+    {
+      "formIsOpen": true,
+      "id": "2bbf7965-eed0-4a32-9226-1f7ca3c88d11",
+      "name": "dfgdfgfd"
+    }
+  ]
 }

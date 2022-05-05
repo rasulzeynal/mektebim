@@ -1,29 +1,41 @@
-import React, { useEffect,useState} from 'react';
-import { useSelector,useDispatch } from 'react-redux';
-import { fetchUser } from '../../store/userSlice';
+import React, { Component} from 'react';
 import { Card, CardBody,
   CardTitle,Button,CardImg, Row } from 'reactstrap';
 import logo from "../../assets/img/user.png";
 import ReactPaginate from "react-paginate";
+import axios from 'axios';
 
-const StudentList =() => { 
+class StudentList extends Component{ 
+  state={
+    data:null,
+    searchQuery:"",
+    pageNumber:0,
+  }
 
-  const dispatch = useDispatch();
-  const {users} = useSelector(state => state.users)
 
-  useEffect(() => {
-    dispatch(fetchUser())
-  },[dispatch])
+   getData = () => {
+    this.setState({loading:true});
+    axios.get("http://localhost:3002/data")
+    .then(res => {
+      this.setState({
+        loading:false,
+        data:res.data
+      })
+    })
+   }
 
-  const student = users.filter((user) => user.position === "sagird");
-
-  const [searchQuery, setSearchQuery] = useState("");
-  const [pageNumber, setPageNumber] = useState(0);
+   componentDidMount() {
+    this.getData()
+  }
+  render(){
+  const students = this.state.data && this.state.data.filter((user) => user.position === "sagird");
   const usersPerPage = 14;
-  const pagesVisited = pageNumber * usersPerPage;
-  const pageCount = Math.ceil(student.length / usersPerPage);
+  const pagesVisited = this.state.pageNumber * usersPerPage;
+  const pageCount = Math.ceil(students && students.length / usersPerPage);
   const changePage = ({ selected }) => {
-      setPageNumber(selected);
+    this.setState({
+      pageNumber:selected
+    })
   };
 
 
@@ -35,14 +47,16 @@ const StudentList =() => {
           className="form-control mb-4 ms-4"
           placeholder="Axtar"
           onChange={(e) => {
-            setSearchQuery(e.target.value);
+            this.setState({
+              searchQuery:e.target.value
+            })
           }}
         />
-      {student.filter((val) => {
-        if (searchQuery === "") {
+      {students && students.filter((val) => {
+        if (this.state.searchQuery === "") {
           return val;
         }
-        else if (val.name.toLowerCase().includes(searchQuery.toLowerCase())) {
+        else if (val.name.toLowerCase().includes(this.state.searchQuery.toLowerCase())) {
           return val;
         }
         return false
@@ -76,4 +90,7 @@ const StudentList =() => {
     </Row>
     )
   }
+  }
+
+
 export default StudentList;

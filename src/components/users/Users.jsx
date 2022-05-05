@@ -2,6 +2,7 @@ import React from 'react';
 import {getUsers,addUser} from "../../redux/user/userAction";
 import {connect} from "react-redux";
 import { HashRouter, NavLink } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import {
   Row,
   Card,
@@ -28,6 +29,7 @@ import {
 class Users extends React.Component{  
   state = {
     modal:false,
+    id:uuidv4(),
     name:"",
     ata_adi:"",
     mail:"",
@@ -87,8 +89,8 @@ class Users extends React.Component{
         <Modal  isOpen={this.state.modal} toggle={this.toggle}>
           <ModalBody>
             <h2 className="text-center mb-5">İstifadəçi əlavə et</h2>
-            <Form>
-              <div className="form-outline mb-4" onSubmit={this.handleOnSubmit}>
+            <Form onSubmit={this.handleOnSubmit}>
+              <div className="form-outline mb-4" >
                 <Input
                   type="text"
                   className="form-control "
@@ -121,8 +123,8 @@ class Users extends React.Component{
               <select className="custom-select mb-4" required name='position' onChange={this.handleTextChange} >
                 <option value="">--</option>
                 <option value="Admin">Admin</option>
-                <option value="Müəllim">Müəllim</option>
-                <option value="Şagird">Şagird</option>
+                <option value="Muellim">Müəllim</option>
+                <option value="sagird">Şagird</option>
               </select>
               <div className="form-outline mb-4">
                 <Input

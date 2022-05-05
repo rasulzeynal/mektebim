@@ -1,6 +1,4 @@
 import React, { useEffect} from 'react';
-import { useSelector,useDispatch } from 'react-redux';
-import { fetchUser } from '../../store/userSlice';
 import { HashRouter,NavLink } from 'react-router-dom';
 import { Card, CardSubtitle, CardTitle,Row } from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -11,7 +9,7 @@ import "../../assets/scss/_main.scss";
 
 
 const Example = () => {
-
+/* 
   const dispatch = useDispatch();
   const {users} = useSelector(state => state.users)
 
@@ -24,7 +22,7 @@ const Example = () => {
   const muellim = users.filter((user) => user.position === "Muellim");
   const sagird = users.filter((user) => user.position === "sagird");
 
-  
+   */
   return (
     <HashRouter>
     <Row className='cards p-3'>
@@ -41,19 +39,19 @@ const Example = () => {
     <Card body inverse color="primary" className='admin card' >
         <CardTitle>Admin</CardTitle>
         <NavLink exact className="nav-link" to="/adminList" ><FontAwesomeIcon className='icon' icon={faUserLock}/>
-        <CardSubtitle className='card-text'>{admin.length}</CardSubtitle>
+        <CardSubtitle className='card-text'>admin.length</CardSubtitle>
         </NavLink>
       </Card>
       <Card body inverse color="warning" className='teacher-list card' >
         <CardTitle>Müəllim</CardTitle>
         <NavLink exact className="nav-link" to="/teacherList" ><FontAwesomeIcon className='icon' icon={faAddressBook} />
-        <CardSubtitle className='card-text'>{muellim.length}</CardSubtitle>
+        <CardSubtitle className='card-text'>muellim.length</CardSubtitle>
         </NavLink>
       </Card>
       <Card body inverse color="warning" className='student-list card'>
         <CardTitle>Şagird</CardTitle>
         <NavLink exact className="nav-link" to="/studentList" ><FontAwesomeIcon className='icon' icon={faAddressBook} />
-        <CardSubtitle className='card-text'>{sagird.length}</CardSubtitle>
+        <CardSubtitle className='card-text'>sagird.length</CardSubtitle>
         </NavLink>
       </Card>
       <Card body inverse color="info" className='add-student card'>

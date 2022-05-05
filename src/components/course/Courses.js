@@ -1,4 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
+import {getCourses,addCourse} from "../../redux/course/courseActions";
+import { v4 as uuidv4 } from "uuid";
 import { NavLink } from "react-router-dom";
 import {
   Container,
@@ -16,14 +19,33 @@ import {
   faTrash,
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
-import { v4 as uuidv4 } from "uuid";
-import { connect } from "react-redux";
-import {getCourses} from "../../redux/course/courseActions"
+
 
 
 class Courses extends React.Component {
+  state={
+    formIsOpen:false,
+    id:uuidv4(),
+    name:""
+  }
   componentDidMount() {
     this.props.getCourses();
+  }
+  openForm = () => {
+    this.setState({
+      formIsOpen: !this.state.formIsOpen
+    })
+  }
+  handleTextChange = event => {
+    const {target: {name,value}} = event;
+    this.setState({ [name]: value})
+  }
+  handleOnSubmit = event => {
+    event.preventDefault();
+    this.props.addCourse(this.state);
+    this.setState({
+    name:""
+    })
   }
   render() {
     const courses = this.props.courses;
@@ -78,16 +100,18 @@ class Courses extends React.Component {
             <h3 style={{ fontSize: "15px", color: "white" }}>Kurs əlavə et</h3>
           </Button>
         </div>
-        {this.formIsOpen ? (
-          <Form className="col-10" /* onSubmit={handleSubmit} */>
+        {this.state.formIsOpen ? (
+          <Form className="col-10"  onSubmit={this.handleOnSubmit} >
             <Input
               type="text"
               block
               className="form-control form-control mr-2 mb-2"
+              name="name"
               placeholder="Kursun adı"
-              /* onChange={onInputChange} */
+              onChange={this.handleTextChange} 
+              value={this.state.name}
             />
-            <Button color="secondary" block>
+            <Button type="submit" color="secondary" block>
               Yarat
             </Button>
           </Form>
@@ -104,4 +128,4 @@ const mapStateToProps = state => {
     courses:state.course.users
   }
 } 
-export default connect(mapStateToProps,{getCourses})(Courses) ;
+export default connect(mapStateToProps,{getCourses,addCourse})(Courses) ;
