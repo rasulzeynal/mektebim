@@ -335,9 +335,13 @@
   ],
   "courseData": [
     {
+      "id": 1,
+      "name": "Ielts"
+    },
+    {
       "formIsOpen": true,
-      "id": "a7f5612b-03c2-40d2-98ba-1dccbcba6301",
-      "name": "IELTS"
+      "id": "e40a7b9e-4278-44f0-b703-473232585d9c",
+      "name": "sdfsdf"
     }
   ]
 }

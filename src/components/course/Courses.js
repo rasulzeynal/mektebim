@@ -48,7 +48,7 @@ class Courses extends React.Component {
     name:""
     })
   }
-  deleteCourse = (id) => {
+  deleteSelectedCourse = (id) => {
     this.props.deleteCourse(id)
   }
   render() {
@@ -74,7 +74,7 @@ class Courses extends React.Component {
                 style={{
                   color: "#dc3545",
                 }}
-               onClick={() => {this.deleteCourse(course.id)}} 
+               onClick={() => {this.deleteSelectedCourse(course.id)}} 
               />
             </CardBody>
           </Card>
