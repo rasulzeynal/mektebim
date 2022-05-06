@@ -322,82 +322,22 @@
       "mail": "cavid.pasayev@mail.ru",
       "position": "Muellim",
       "sifre": "dshghf"
+    },
+    {
+      "modal": true,
+      "id": "93f1cb77-8be9-461a-a201-be0cd193483c",
+      "name": "Sahib Bagirov",
+      "ata_adi": "Vasif",
+      "mail": "sahibb@gmail.com",
+      "position": "Admin",
+      "sifre": "sdfsdf"
     }
   ],
   "courseData": [
     {
-      "id": 1,
-      "name": "Ingilis dili"
-    },
-    {
       "formIsOpen": true,
-      "id": "7aeec0a0-da79-45b3-8ef0-1780c9f5cebd",
-      "name": "Backend developer"
-    },
-    {
-      "formIsOpen": true,
-      "id": "a0a09e46-a544-4243-80d5-cfc8e638f937",
-      "name": "test"
-    },
-    {
-      "formIsOpen": true,
-      "id": "1575beb0-5b91-4abf-9bd3-59fb5ab49ca2",
-      "name": "dsfdsf"
-    },
-    {
-      "formIsOpen": true,
-      "id": "868eaaa9-2fc0-4b37-b1ce-984f13461392",
-      "name": "sdsfdsfsdf"
-    },
-    {
-      "formIsOpen": true,
-      "id": "3f5df575-f04a-491f-857c-3f5dfc54069b",
-      "name": "dsfsfsdfsdf"
-    },
-    {
-      "formIsOpen": true,
-      "id": "c579b109-4bba-46fb-be04-96382bdd75de",
-      "name": "dfgdfgdgfdg"
-    },
-    {
-      "formIsOpen": true,
-      "id": "5353494b-d398-46c2-890c-329dc2db5f9c",
-      "name": "Namiq"
-    },
-    {
-      "formIsOpen": true,
-      "id": "cc9c4216-732d-45a2-bd8d-01a821963ad2",
-      "name": "fgfdgdf"
-    },
-    {
-      "formIsOpen": true,
-      "id": "33c34c5f-4e1b-429f-a26c-6ed78f636323",
-      "name": "Eli"
-    },
-    {
-      "formIsOpen": true,
-      "id": "506f7b0a-cae8-4c6a-8c49-9060d7f99d69",
-      "name": "jghjg"
-    },
-    {
-      "formIsOpen": true,
-      "id": "7ace1dd6-f103-4b11-af83-db56a8ff5a9e",
-      "name": "sdsf"
-    },
-    {
-      "formIsOpen": true,
-      "id": "383f5e28-015d-4b1e-84af-1bc13b067a11",
-      "name": "aspaz"
-    },
-    {
-      "formIsOpen": true,
-      "id": "2bdb8e14-636a-4df9-86da-0b59f484e90f",
-      "name": "sdf"
-    },
-    {
-      "formIsOpen": true,
-      "id": "ca4b8ddf-a7f6-479e-ba04-d2c006b7f1fc",
-      "name": "12"
+      "id": "a7f5612b-03c2-40d2-98ba-1dccbcba6301",
+      "name": "IELTS"
     }
   ]
 }

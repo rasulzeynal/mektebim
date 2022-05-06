@@ -19,18 +19,18 @@ import {
   faTrash,
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
-import { bindActionCreators } from "redux";
 
 
 
 class Courses extends React.Component {
-  componentDidMount() {
-    this.props.getCourses();
-  }
+  
   state={
     formIsOpen:false,
     id:uuidv4(),
     name:""
+  }
+  componentDidMount() {
+    this.props.getCourses();
   }
   openForm = () => {
     this.setState({
@@ -48,8 +48,9 @@ class Courses extends React.Component {
     name:""
     })
   }
-  
-  
+  deleteCourse = (id) => {
+    this.props.deleteCourse(id)
+  }
   render() {
     const courses = this.props.courses;
   return (
@@ -73,8 +74,7 @@ class Courses extends React.Component {
                 style={{
                   color: "#dc3545",
                 }}
-                onDelete = {this.props.onDelete}
-               /*  onClick={() => {this.deleteCourse(course.id)}} */
+               onClick={() => {this.deleteCourse(course.id)}} 
               />
             </CardBody>
           </Card>
@@ -134,14 +134,5 @@ const mapStateToProps = state => {
     courses:state.course.users,
   }
 } 
-const mapDispatchToProps = dispatch => {
-  bindActionCreators({
-    getCourses,addCourse
-  })
-  return {
-    onDelete: (id) => {
-      dispatch(deleteCourse(id));
-    }
-  }
-}
+
 export default connect(mapStateToProps,{getCourses,addCourse,deleteCourse})(Courses) ;
