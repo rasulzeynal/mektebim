@@ -17,14 +17,6 @@
       "sifre": "rasula"
     },
     {
-      "id": "3",
-      "name": "Tərlan Qafarov",
-      "ata_adi": "Test",
-      "mail": "test.testov@gmail.com",
-      "position": "Admin",
-      "sifre": "tarlan"
-    },
-    {
       "id": "4",
       "name": "Aytən Əliyeva",
       "ata_adi": "Test",
@@ -297,70 +289,70 @@
       "sifre": []
     },
     {
-      "modal": true,
-      "name": "Rasul",
-      "ata_adi": "Zeynal",
-      "mail": "r@mail.ru",
+      "name": "Eli",
+      "ata_adi": "Kerim",
+      "mail": "eli@mail.ru",
       "position": "Admin",
-      "sifre": "sadsa",
-      "id": "rWJCj_z"
+      "sifre": "saas",
+      "id": "Jqiw0CG"
     },
     {
-      "modal": true,
-      "id": "61de78d8-c78f-4bd0-92d6-bb7b1cde26f3",
-      "name": "Cəmil Əhmədov",
-      "ata_adi": "Alı",
-      "mail": "cemil@mail.ru",
-      "position": "sagird",
-      "sifre": "dfgdfg"
-    },
-    {
-      "modal": true,
-      "id": "d04889b0-a5ad-47f2-823a-087ed5badd0d",
-      "name": "Cavid Hüseynov",
-      "ata_adi": "Rafael",
-      "mail": "cavid.pasayev@mail.ru",
+      "name": "dsfdsf",
+      "ata_adi": "nizami",
+      "mail": "n@mail.ru",
       "position": "Muellim",
-      "sifre": "dshghf"
+      "sifre": "saassa",
+      "id": "ZQ-9aRH"
     },
     {
-      "modal": true,
-      "id": "93f1cb77-8be9-461a-a201-be0cd193483c",
-      "name": "Sahib Bagirov",
-      "ata_adi": "Vasif",
-      "mail": "sahibb@gmail.com",
-      "position": "Admin",
-      "sifre": "sdfsdf"
+      "name": "asd",
+      "ata_adi": "sdsd",
+      "mail": "sdsdsdsd@mail.ru",
+      "position": "Muellim",
+      "sifre": "sdds",
+      "id": "BzN74LO"
     },
     {
-      "modal": true,
-      "id": "c6b6c8ac-1a14-430f-939d-85d20ae2172c",
-      "name": "İkram Mirzəyev",
+      "name": "Eli",
       "ata_adi": "Namizəd",
-      "mail": "ikramm@mail.ru",
+      "mail": "n@mail.ru",
       "position": "sagird",
-      "sifre": "ikram"
+      "sifre": "cvcv",
+      "id": "ptluOLS"
+    },
+    {
+      "name": "dffdg",
+      "ata_adi": "dfgdf",
+      "mail": "ikramm@mail.ru",
+      "position": "Muellim",
+      "sifre": "fdfdfd",
+      "id": "vDfmNk_"
+    },
+    {
+      "name": "dfgdfgdgfdg",
+      "ata_adi": "Namizəd",
+      "mail": "n@mail.ru",
+      "position": "Muellim",
+      "sifre": "sdsddd",
+      "id": "i6ye32T"
+    },
+    {
+      "name": "dd",
+      "ata_adi": "Kerim",
+      "mail": "kazim@mail.ru",
+      "position": "sagird",
+      "sifre": "';;llk",
+      "id": "kgXryUl"
     }
   ],
   "courseData": [
     {
-      "id": 1,
-      "name": "Ielts"
+      "name": "sdd",
+      "id": "Mks3-pg"
     },
     {
-      "formIsOpen": true,
-      "id": "e65b96f4-bba4-4e16-9350-f3051c3bc8e8",
-      "name": "Rasul Zeynalov"
-    },
-    {
-      "formIsOpen": true,
-      "id": "6179997f-fd10-4192-9da5-08b27981ab47",
-      "name": "Rasul Zeynalov"
-    },
-    {
-      "formIsOpen": true,
-      "id": "1661028f-0ad9-4c46-b026-a1b37a214da3",
-      "name": "TOEFL"
+      "name": "dsdsqwwq",
+      "id": "2yZVRUd"
     }
   ]
 }

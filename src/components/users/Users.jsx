@@ -1,8 +1,7 @@
 import React from 'react';
-import {getUsers,addUser} from "../../redux/user/userAction";
+import {getUsers} from "../../redux/user/userAction";
 import {connect} from "react-redux";
 import { HashRouter, NavLink } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
 import {
   Row,
   Card,
@@ -22,19 +21,17 @@ import {
   faPlus,
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
+import axios from 'axios';
 
 
 
 
 class Users extends React.Component{  
   state = {
-    modal:false,
-    id:uuidv4(),
-    name:"",
-    ata_adi:"",
-    mail:"",
-    position:"",
-    sifre:""
+    data: null,
+    showAddModal:false,
+    
+    
 
   }
   componentDidMount() { 
@@ -42,11 +39,35 @@ class Users extends React.Component{
    }
   toggle = () => {
     this.setState({
-      modal: !this.state.modal
+      showAddModal: !this.state.showAddModal
     })
   }
+
+  createData = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    let data = {};
+
+    for (const [key,value] of formData.entries()) {
+      data[key] = value;
+    }
+
+    axios.post("http://localhost:3002/data",data)
+    .then(res => {
+      console.log(res)
+      if (res.data.status === 201){
+      console.log(res.data.data)
+      this.setState(prevState => ({
+        data : [
+          ...prevState.data,
+          res.data
+        ]
+      }));
+  }})
+    e.target.reset();
+  }
   
-  handleTextChange = event => {
+  /* handleTextChange = event => {
     const {target: {name,value}} = event;
     this.setState({ [name]: value})
   }
@@ -61,7 +82,7 @@ class Users extends React.Component{
     sifre:""
     })
   }
-
+ */
   render() {
     const users = this.props.users;
     return (
@@ -86,18 +107,17 @@ class Users extends React.Component{
             İstifadəçi əlavə et
           </h3>
         </Button>
-        <Modal  isOpen={this.state.modal} toggle={this.toggle}>
+        <Modal  isOpen={this.state.showAddModal} toggle={this.toggle}>
           <ModalBody>
             <h2 className="text-center mb-5">İstifadəçi əlavə et</h2>
-            <Form onSubmit={this.handleOnSubmit}>
+            <Form onSubmit={this.createData}>
               <div className="form-outline mb-4" >
                 <Input
                   type="text"
                   className="form-control "
                   placeholder="Ad Soyad"
                   name="name"
-                  onChange={this.handleTextChange}
-                  value={this.state.name}
+                  id='name'
                 />
               </div>
               <div className="form-outline mb-4">
@@ -106,8 +126,7 @@ class Users extends React.Component{
                   className="form-control"
                   placeholder="Ata adı"
                   name="ata_adi"
-                  onChange={this.handleTextChange}
-                  value={this.state.ata_adi}
+                  id='ata_adi'
                 />
               </div>
               <div className="form-outline mb-4">
@@ -116,11 +135,15 @@ class Users extends React.Component{
                   className="form-control"
                   placeholder="Mail"
                   name="mail"
-                  onChange={this.handleTextChange}
-                  value={this.state.mail}
+                  id='mail'
                 />
               </div>
-              <select className="custom-select mb-4" required name='position' onChange={this.handleTextChange} >
+              <select 
+              className="custom-select mb-4" 
+              required
+              name='position'
+              id='position'
+              >
                 <option value="">--</option>
                 <option value="Admin">Admin</option>
                 <option value="Muellim">Müəllim</option>
@@ -132,8 +155,7 @@ class Users extends React.Component{
                   className="form-control"
                   placeholder="Şifrə"
                   name="sifre"
-                  onChange={this.handleTextChange}
-                  value={this.state.sifre}
+                  id='sifre'
                   />
               </div>
               <div className="d-flex justify-content-center">
@@ -164,7 +186,7 @@ class Users extends React.Component{
       <Row className="cards p-2 ">
         <Card body inverse color="primary" className="admin card col">
           <CardTitle>Admin</CardTitle>
-          <NavLink exact className="nav-link" to="/adminList">
+          <NavLink exact className="nav-link" to="/admin-list">
             <FontAwesomeIcon className="icon" icon={faUserLock} />
             <CardSubtitle className="card-text">{users ? users.filter(user => user.position === "Admin").length : 0}</CardSubtitle>
           </NavLink>
@@ -195,4 +217,4 @@ const mapStateToProps = state => {
     users:state.user.users
   }
 } 
-export default connect(mapStateToProps,{getUsers,addUser})(Users) ;
+export default connect(mapStateToProps,{getUsers})(Users) ;

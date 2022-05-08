@@ -1,7 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
-import {getCourses,addCourse,deleteCourse} from "../../redux/course/courseActions";
-import { v4 as uuidv4 } from "uuid";
 import { NavLink } from "react-router-dom";
 import {
   Container,
@@ -19,6 +16,7 @@ import {
   faTrash,
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 
 
@@ -26,41 +24,72 @@ class Courses extends React.Component {
   
   state={
     formIsOpen:false,
-    id:uuidv4(),
-    name:""
+    data:null
   }
-  componentDidMount() {
-    this.props.getCourses();
-    console.log("cdm")
-  }
+
+
   openForm = () => {
     this.setState({
       formIsOpen: !this.state.formIsOpen
     })
   }
-  handleTextChange = event => {
-    const {target: {name,value}} = event;
-    this.setState({ [name]: value})
-  }
-  handleOnSubmit = event => {
-    event.preventDefault();
-    this.props.addCourse(this.state);
-    this.setState({
-    name:""
+  getData = () => {
+    this.setState({loading:true});
+    axios.get("http://localhost:3002/courseData")
+    .then(res => {
+      this.setState({
+        loading:false,
+        data:res.data
+      })
     })
   }
-  deleteSelectedCourse = (id) => {
-    this.props.deleteCourse(id)
+
+  createData = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    let data = {};
+    for (const [key,value] of formData.entries()){
+      data[key] = value;
+    }
+
+    axios.post("http://localhost:3002/courseData",data)
+    .then(res => {
+      console.log(res)
+      if (res.data.status === 201){
+      console.log(res.data.data)
+      this.setState(prevState => ({
+        data : [
+          ...prevState.data,
+          res.data
+        ]
+      }));
+  }})
+    e.target.reset();
   }
   
+
+  removeData = (id) => {
+    axios.delete("http://localhost:3002/courseData/" + id)
+    .then(res => {
+      if (res.data.status === 201) {
+        let data = this.state.data;
+        this.setState({
+          data:data
+        });
+      }
+    })
+  }
+
+  componentDidMount() {
+    this.getData();
+  }
   render() {
     
     
-    const courses = this.props.courses;
   return (
     <Row className="row-classes">
       <Container className="col-7 container-classes">
-     {courses && courses.map(course => ( 
+     {this.state.data && this.state.data.map(course => ( 
         <Card
             body
             inverse
@@ -75,10 +104,11 @@ class Courses extends React.Component {
               <FontAwesomeIcon
                 className="icon"
                 icon={faTrash}
+                id="delete"
                 style={{
                   color: "#dc3545",
                 }}
-               onClick={() => {this.deleteSelectedCourse(course.id)}} 
+               onClick={() => this.removeData(course.id)} 
               />
             </CardBody>
           </Card>
@@ -110,15 +140,14 @@ class Courses extends React.Component {
           </Button>
         </div>
         {this.state.formIsOpen ? (
-          <Form className="col-10"  onSubmit={this.handleOnSubmit} >
+          <Form className="col-10"  onSubmit={this.createData} >
             <Input
               type="text"
               block="true"
               className="form-control form-control mr-2 mb-2"
               name="name"
+              id="name"
               placeholder="Kursun adı"
-              onChange={this.handleTextChange} 
-              value={this.state.name}
               
             />
             <Button type="submit" color="secondary" block>
@@ -132,11 +161,4 @@ class Courses extends React.Component {
         }
 };
 
-
-const mapStateToProps = state => {
-  return {
-    courses:state.course.users,
-  }
-} 
-
-export default connect(mapStateToProps,{getCourses,addCourse,deleteCourse})(Courses) ;
+export default Courses ;
