@@ -31,6 +31,7 @@ class Courses extends React.Component {
   }
   componentDidMount() {
     this.props.getCourses();
+    console.log("cdm")
   }
   openForm = () => {
     this.setState({
@@ -51,7 +52,10 @@ class Courses extends React.Component {
   deleteSelectedCourse = (id) => {
     this.props.deleteCourse(id)
   }
+  
   render() {
+    
+    
     const courses = this.props.courses;
   return (
     <Row className="row-classes">

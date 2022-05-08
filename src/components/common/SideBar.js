@@ -13,7 +13,7 @@ import logo from "../../assets/img/edu.png";
 
 class SideBar extends React.Component { 
   state={
-    role:"sagird"
+    role:"Admin"
   }
     render(){
     return (

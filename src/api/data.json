@@ -6,7 +6,7 @@
       "ata_adi": "Zeynal",
       "mail": "rasul.zeynalov.95@gmail.com",
       "position": "Admin",
-      "sifre": []
+      "sifre": "rasul"
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "ata_adi": "Test",
       "mail": "test.testov@gmail.com",
       "position": "sagird",
-      "sifre": []
+      "sifre": "rasula"
     },
     {
       "id": "3",
@@ -22,7 +22,7 @@
       "ata_adi": "Test",
       "mail": "test.testov@gmail.com",
       "position": "Admin",
-      "sifre": []
+      "sifre": "tarlan"
     },
     {
       "id": "4",
@@ -331,6 +331,15 @@
       "mail": "sahibb@gmail.com",
       "position": "Admin",
       "sifre": "sdfsdf"
+    },
+    {
+      "modal": true,
+      "id": "c6b6c8ac-1a14-430f-939d-85d20ae2172c",
+      "name": "İkram Mirzəyev",
+      "ata_adi": "Namizəd",
+      "mail": "ikramm@mail.ru",
+      "position": "sagird",
+      "sifre": "ikram"
     }
   ],
   "courseData": [
@@ -340,8 +349,18 @@
     },
     {
       "formIsOpen": true,
-      "id": "e40a7b9e-4278-44f0-b703-473232585d9c",
-      "name": "sdfsdf"
+      "id": "e65b96f4-bba4-4e16-9350-f3051c3bc8e8",
+      "name": "Rasul Zeynalov"
+    },
+    {
+      "formIsOpen": true,
+      "id": "6179997f-fd10-4192-9da5-08b27981ab47",
+      "name": "Rasul Zeynalov"
+    },
+    {
+      "formIsOpen": true,
+      "id": "1661028f-0ad9-4c46-b026-a1b37a214da3",
+      "name": "TOEFL"
     }
   ]
 }

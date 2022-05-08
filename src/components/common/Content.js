@@ -4,7 +4,6 @@ import Login from "../pages/Login"
 import NavBar from './NavBar';
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
-import Admin from "../admin/Admin";
 import Users from '../users/Users';
 import Teacher from "../teacher/Teacher";
 import Student from "../student/Student";
@@ -27,9 +26,8 @@ class Content extends React.Component {
               <Switch>
                 <Route path="/login" exact component={Login}/>
                 <Route path='/users' exact component={Users}/>
-                <Route path="/adminList" exact component={AdminList}/>
+                <Route path="/admin-list" exact component={AdminList}/>
                 <Route path="/" exact component={Home}/>
-                <Route path="/admin" exact component={Admin}/>
                 <Route path="/teacher" exact component={Teacher}/>
                 <Route path="/student" exact component={Student}/>
                 <Route path="/teacherList" exact component={TeacherList}/>
