@@ -98,7 +98,7 @@ class Courses extends React.Component {
           >
             <CardTitle>{course.name} </CardTitle>
             <CardBody className="card-body">
-              <NavLink exact className="nav-link" to="/classedit">
+              <NavLink exact className="nav-link" to="/course-info">
                 <FontAwesomeIcon className="icon" icon={faPenToSquare} />
               </NavLink>
               <FontAwesomeIcon

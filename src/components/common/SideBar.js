@@ -53,6 +53,11 @@ class SideBar extends React.Component {
                 </NavLink>
                 </NavItem>
                 <NavItem>
+                <NavLink exact className="nav-link" to="/tasks" >
+                <FontAwesomeIcon icon={faListCheck} className="mr-2"/>Tapşırıqlar
+                </NavLink>
+                </NavItem>
+                <NavItem>
                 <NavLink exact className="nav-link" to="/notifications" >
                 <FontAwesomeIcon icon={faMessage} className="mr-2"/>Bildirişlər
                 </NavLink>

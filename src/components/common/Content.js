@@ -13,7 +13,7 @@ import AdminList from '../admin/AdminList';
 import Notification from '../notification/Notification';
 import Register from '../pages/Register';
 import Tasks from "../pages/Tasks";
-import ClassEdit from "../course/ClassEdit"
+import CourseInfo from "../course/CourseInfo"
 import Courses from '../course/Courses'
 
 class Content extends React.Component {
@@ -36,7 +36,7 @@ class Content extends React.Component {
                 <Route path='/add-user' exact component={Register}/>
                 <Route path='/tasks' exact component={Tasks}/>
                 <Route path='/Courses' exact component={Courses}/>
-                <Route path='/classedit' exact component={ClassEdit}/>
+                <Route path='/course-info' exact component={CourseInfo}/>
                 <NotFound/>
               </Switch>
           </HashRouter>

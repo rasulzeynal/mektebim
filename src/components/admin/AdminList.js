@@ -28,7 +28,7 @@ class AdminList extends React.Component {
         this.setState({
           data:data
         });
-      }
+         }
     })
   }
 

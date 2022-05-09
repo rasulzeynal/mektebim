@@ -113,14 +113,6 @@
       "sifre": []
     },
     {
-      "id": "16",
-      "name": "Babək Salamov",
-      "ata_adi": "Test",
-      "mail": "test.testov@gmail.com",
-      "position": "sagird",
-      "sifre": []
-    },
-    {
       "id": "17",
       "name": "Cavad Cavadov",
       "ata_adi": "Test",
@@ -209,14 +201,6 @@
       "sifre": []
     },
     {
-      "id": "28",
-      "name": "Nəsrəddin Xıdırov",
-      "ata_adi": "Test",
-      "mail": "test.testov@gmail.com",
-      "position": "Muellim",
-      "sifre": []
-    },
-    {
       "id": "29",
       "name": "Şövqiyyə Zərbəliyeva",
       "ata_adi": "Test",
@@ -257,14 +241,6 @@
       "sifre": []
     },
     {
-      "id": "34",
-      "name": "Cavid Sevdimalıyev",
-      "ata_adi": "Test",
-      "mail": "test.testov@gmail.com",
-      "position": "sagird",
-      "sifre": []
-    },
-    {
       "id": "35",
       "name": "Emil Vəliyev",
       "ata_adi": "Test",
@@ -281,68 +257,20 @@
       "sifre": []
     },
     {
-      "id": "37",
-      "name": "Hikmet",
-      "ata_adi": "Etibar",
-      "mail": "hikmet@mail.ru",
-      "position": "sagird",
-      "sifre": []
-    },
-    {
-      "name": "Eli",
-      "ata_adi": "Kerim",
-      "mail": "eli@mail.ru",
-      "position": "Admin",
-      "sifre": "saas",
-      "id": "Jqiw0CG"
-    },
-    {
       "name": "dsfdsf",
-      "ata_adi": "nizami",
-      "mail": "n@mail.ru",
-      "position": "Muellim",
-      "sifre": "saassa",
-      "id": "ZQ-9aRH"
-    },
-    {
-      "name": "asd",
-      "ata_adi": "sdsd",
-      "mail": "sdsdsdsd@mail.ru",
-      "position": "Muellim",
-      "sifre": "sdds",
-      "id": "BzN74LO"
-    },
-    {
-      "name": "Eli",
-      "ata_adi": "Namizəd",
-      "mail": "n@mail.ru",
-      "position": "sagird",
-      "sifre": "cvcv",
-      "id": "ptluOLS"
-    },
-    {
-      "name": "dffdg",
-      "ata_adi": "dfgdf",
-      "mail": "ikramm@mail.ru",
-      "position": "Muellim",
-      "sifre": "fdfdfd",
-      "id": "vDfmNk_"
-    },
-    {
-      "name": "dfgdfgdgfdg",
-      "ata_adi": "Namizəd",
-      "mail": "n@mail.ru",
-      "position": "Muellim",
-      "sifre": "sdsddd",
-      "id": "i6ye32T"
-    },
-    {
-      "name": "dd",
       "ata_adi": "Kerim",
-      "mail": "kazim@mail.ru",
-      "position": "sagird",
-      "sifre": "';;llk",
-      "id": "kgXryUl"
+      "mail": "n@mail.ru",
+      "position": "Admin",
+      "sifre": "ssss",
+      "id": "Dq-8xUc"
+    },
+    {
+      "name": "Rasul Zeynalo",
+      "ata_adi": "Eliyev",
+      "mail": "ikramm@mail.ru",
+      "position": "Admin",
+      "sifre": "sdfsd",
+      "id": "rlcZ3UR"
     }
   ],
   "courseData": [
@@ -353,6 +281,10 @@
     {
       "name": "dsdsqwwq",
       "id": "2yZVRUd"
+    },
+    {
+      "name": "TOEFL",
+      "id": "l3kHZ8-"
     }
   ]
 }

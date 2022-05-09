@@ -24,6 +24,18 @@ class StudentList extends Component{
     })
    }
 
+   removeData = (id) => {
+    axios.delete("http://localhost:3002/data/" + id)
+    .then(res => {
+      if (res.data.status === 201) {
+        let data = this.state.data;
+        this.setState({
+          data:data
+        });
+         }
+    })
+  }
+
    componentDidMount() {
     this.getData()
   }
@@ -68,7 +80,8 @@ class StudentList extends Component{
           <CardImg top width="100%" src={logo} alt="Card image cap" style={{width:"100px",alignSelf:"center",marginTop:"15px"}} />
           <CardBody>
             <CardTitle>{user.name}</CardTitle>
-            <Button block color="info">Ətraflı</Button>
+            <Button block color="info"
+             onClick={() => this.removeData(user.id)}>Sil</Button>
           </CardBody>
         </Card>
         )
