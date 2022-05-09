@@ -5,7 +5,7 @@
       "name": "Rasul Zeynalov",
       "ata_adi": "Zeynal",
       "mail": "rasul.zeynalov.95@gmail.com",
-      "position": "Admin",
+      "role": "Admin",
       "sifre": "rasul"
     },
     {
@@ -249,28 +249,29 @@
       "sifre": []
     },
     {
-      "id": "36",
-      "name": "Nərmin Şirinova",
-      "ata_adi": "Test",
-      "mail": "test.testov@gmail.com",
-      "position": "sagird",
-      "sifre": []
+      "name": "Rasul Zeynalov",
+      "sifre": "rasul",
+      "id": "y96HQFG"
     },
     {
-      "name": "dsfdsf",
-      "ata_adi": "Kerim",
-      "mail": "n@mail.ru",
-      "position": "Admin",
-      "sifre": "ssss",
-      "id": "Dq-8xUc"
+      "name": "Rasul Zeynalov",
+      "sifre": "rasul",
+      "id": "5GimS7I"
     },
     {
-      "name": "Rasul Zeynalo",
-      "ata_adi": "Eliyev",
-      "mail": "ikramm@mail.ru",
-      "position": "Admin",
-      "sifre": "sdfsd",
-      "id": "rlcZ3UR"
+      "name": "Rasul Zeynalov",
+      "sifre": "rasul",
+      "id": "RipXdAr"
+    },
+    {
+      "name": "",
+      "sifre": "",
+      "id": "-mbCRG4"
+    },
+    {
+      "name": "Rasul Zeynalov",
+      "sifre": "rasul",
+      "id": "wIxR5vi"
     }
   ],
   "courseData": [

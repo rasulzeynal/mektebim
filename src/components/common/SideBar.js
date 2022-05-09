@@ -2,19 +2,15 @@ import React from 'react';
 import {HashRouter,NavLink} from "react-router-dom";
 import {Nav, NavItem} from 'reactstrap';
 import { connect } from 'react-redux';
-import {Card,CardTitle,Row} from "reactstrap";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
-  faMessage, faScrewdriverWrench,faUser,faUserGraduate,faListCheck
+  faMessage,faUser,faUserGraduate,faListCheck
 } from '@fortawesome/free-solid-svg-icons';
 import logo from "../../assets/img/edu.png";
 
 
 
 class SideBar extends React.Component { 
-  state={
-    role:"Admin"
-  }
     render(){
     return (
       <div className={'sidebar ' + (this.props.isOpen ? 'is-open' : '')}>
@@ -25,7 +21,7 @@ class SideBar extends React.Component {
           </div>
           <HashRouter>
             <Nav vertical className="list-unstyled p-3 mt-3 flex-column">
-              {this.state.role === "Admin" &&
+              {this.props.role === "Admin" &&
               <>
               <NavItem>
               <NavLink exact className="nav-link" to="/users" >
@@ -45,7 +41,7 @@ class SideBar extends React.Component {
             </>
               }
               {
-                this.state.role === "Muellim" &&
+                this.props.role === "Muellim" &&
                 <>
                 <NavItem>
                 <NavLink exact className="nav-link" to="/courses" >
@@ -65,7 +61,7 @@ class SideBar extends React.Component {
                 </>
               }
               {
-                this.state.role === "sagird" &&
+                this.props.role === "sagird" &&
                 <>
                 <NavItem>
                 <NavLink exact className="nav-link" to="/tasks" >
@@ -88,25 +84,5 @@ class SideBar extends React.Component {
   }
 }
 
-
-export default SideBar;
-
-
-/* 
-<NavItem>
-                  <NavLink exact className="nav-link" to="/admin" >
-                    <FontAwesomeIcon icon={faScrewdriverWrench} className="mr-2"/>Admin
-                  </NavLink>
-                </NavItem>
-               
-<NavItem>
-                  <NavLink exact className="nav-link" to="/teacher">
-                  <FontAwesomeIcon icon={faChalkboardUser} className="mr-2"/>Müəllimlər
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink exact className="nav-link" to="/student">
-                    <FontAwesomeIcon icon={faGraduationCap}  className='mr-2'/>Tələbələr
-                  </NavLink>
-                </NavItem>
-*/
+const mapStateToProps = store => store;
+export default connect(mapStateToProps)(SideBar);

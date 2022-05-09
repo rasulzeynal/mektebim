@@ -1,6 +1,4 @@
 import React from 'react';
-import {getUsers} from "../../redux/user/userAction";
-import {connect} from "react-redux";
 import { HashRouter, NavLink } from "react-router-dom";
 import {
   Row,
@@ -22,6 +20,7 @@ import {
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
+import {config} from "../../config"
 
 
 
@@ -41,6 +40,16 @@ class Users extends React.Component{
     })
   }
 
+  getData() {
+    this.setState({loading: true});
+    axios.get(config.apiURL + "data").then(res => {
+      this.setState({
+        loading: false,
+        data: res.data
+      });
+    });
+  }
+
   createData = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -50,7 +59,7 @@ class Users extends React.Component{
       data[key] = value;
     }
 
-    axios.post("http://localhost:3002/data",data)
+    axios.post(config.apiURL + "data/create",data)
     .then(res => {
       console.log(res)
       if (res.data.status === 201){
@@ -65,33 +74,11 @@ class Users extends React.Component{
     e.target.reset();
   }
   
-  /* handleTextChange = event => {
-    const {target: {name,value}} = event;
-    this.setState({ [name]: value})
-  }
-  handleOnSubmit = event => {
-    event.preventDefault();
-    this.props.addUser(this.state);
-    this.setState({
-    name:"",
-    ata_adi:"",
-    mail:"",
-    position:"",
-    sifre:""
-    })
-  }
- */
   componentDidMount() { 
-    this.props.getUsers();
-   }
-   componentDidUpdate = (prevProps, prevState) => {
-     if (prevState.data !== this.state.data){
-       this.props.getUsers();
-     }
+    this.getData();
    }
    
   render() {
-    const users = this.props.users;
     return (
     <HashRouter>
       <div className="me-4" style={{ display: "flex", justifyContent: "end" }}>
@@ -195,21 +182,21 @@ class Users extends React.Component{
           <CardTitle>Admin</CardTitle>
           <NavLink exact className="nav-link" to="/admin-list">
             <FontAwesomeIcon className="icon" icon={faUserLock} />
-            <CardSubtitle className="card-text">{users ? users.filter(user => user.position === "Admin").length : 0}</CardSubtitle>
+            <CardSubtitle className="card-text">{this.state.data ? this.state.data.filter(user => user.position === "Admin").length : 0}</CardSubtitle>
           </NavLink>
         </Card>
         <Card body inverse color="warning" className="teacher-list card col">
           <CardTitle>Müəllim</CardTitle>
           <NavLink exact className="nav-link" to="/teacherList">
             <FontAwesomeIcon className="icon" icon={faAddressBook} />
-            <CardSubtitle className="card-text">{users ? users.filter(user => user.position === "Muellim").length : 0}</CardSubtitle>
+            <CardSubtitle className="card-text">{this.state.data ? this.state.data.filter(user => user.position === "Muellim").length : 0}</CardSubtitle>
           </NavLink>
         </Card>
         <Card body inverse color="warning" className="student-list card col">
           <CardTitle>Şagird</CardTitle>
           <NavLink exact className="nav-link" to="/studentList">
             <FontAwesomeIcon className="icon" icon={faAddressBook} />
-            <CardSubtitle className="card-text">{users ? users.filter(user => user.position === "sagird").length : 0}</CardSubtitle>
+            <CardSubtitle className="card-text">{this.state.data ? this.state.data.filter(user => user.position === "sagird").length : 0}</CardSubtitle>
           </NavLink>
         </Card>
       </Row>
@@ -218,10 +205,4 @@ class Users extends React.Component{
         }
 };
 
-
-const mapStateToProps = state => {
-  return {
-    users:state.user.users
-  }
-} 
-export default connect(mapStateToProps,{getUsers})(Users) ;
+export default Users ;

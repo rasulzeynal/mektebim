@@ -17,6 +17,7 @@ import {
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import {config} from "../../config"
 
 
 
@@ -35,7 +36,7 @@ class Courses extends React.Component {
   }
   getData = () => {
     this.setState({loading:true});
-    axios.get("http://localhost:3002/courseData")
+    axios.get(config.apiURL + "courseData")
     .then(res => {
       this.setState({
         loading:false,
@@ -52,7 +53,7 @@ class Courses extends React.Component {
       data[key] = value;
     }
 
-    axios.post("http://localhost:3002/courseData",data)
+    axios.post(config.apiURL + "courseData",data)
     .then(res => {
       console.log(res)
       if (res.data.status === 201){
@@ -69,7 +70,7 @@ class Courses extends React.Component {
   
 
   removeData = (id) => {
-    axios.delete("http://localhost:3002/courseData/" + id)
+    axios.delete(config.apiURL + "courseData" + id)
     .then(res => {
       if (res.data.status === 201) {
         let data = this.state.data;

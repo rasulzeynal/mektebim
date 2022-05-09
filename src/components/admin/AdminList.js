@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardBody, CardTitle, Button, CardImg, Row } from "reactstrap";
 import logo from "../../assets/img/user.png";
 import axios from "axios";
+import {config} from "../../config"
 
 class AdminList extends React.Component {
   state = {
@@ -12,7 +13,7 @@ class AdminList extends React.Component {
     this.setState({
       loading: true,
     });
-    axios.get("http://localhost:3002/data").then((res) => {
+    axios.get(config.apiURL + "data").then((res) => {
       this.setState({
         loading: false,
         data: res.data,
@@ -21,7 +22,7 @@ class AdminList extends React.Component {
   };
 
   removeData = (id) => {
-    axios.delete("http://localhost:3002/data/" + id)
+    axios.delete(config.apiURL + "data" + id)
     .then(res => {
       if (res.data.status === 201) {
         let data = this.state.data;

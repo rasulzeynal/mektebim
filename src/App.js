@@ -1,5 +1,7 @@
 import SideBar from "./components/common/SideBar";
 import React from "react";
+import { connect } from "react-redux";
+import Login from "./components/pages/Login";
 import Content from "./components/common/Content";
 import "./assets/bootstrap/bootstrap.scss";
 import "./assets/scss/style.scss";
@@ -25,14 +27,16 @@ class App extends React.Component {
   render() {
     window.addEventListener("resize", this.updateDimensions)
   return (
+    this.props.isAuth ?
     <div className="wrapper">
       <SideBar toggle={this.toggle} isOpen={this.state.isOpen}/>
       <Content toggle={this.toggle} isOpen={this.state.isOpen}/>
-    </div>
+    </div> : <Login/>
   );
 }
 }
 
-export default App;
+const mapStateToProps = store => store;
+export default connect(mapStateToProps)(App);
 
 

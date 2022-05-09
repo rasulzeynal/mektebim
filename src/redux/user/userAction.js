@@ -1,5 +1,6 @@
 import {LIST_USERS, LOGIN, LOGOUT } from "./userActionTypes";
 import axios from "axios";
+import {config,staticDataUrls} from "../../config";
 
 
 export const parseJwt = (jwttoken) => {
@@ -30,19 +31,20 @@ export const logout = () => {
     }
   }
 
-export const getUsers = () => {
-    return (dispatch) => {
-        axios.get("http://localhost:3002/data")
-        .then(response => {
-            dispatch({
-                type: LIST_USERS,
-                payload: response.data
-            })
-        })
-        .catch(error => {
-            console.log(error);
-        });
-    }
+export const getUsers = (key,id,patch) => {
+   return async (dispatch,getState) => {
+       if (getState().staticData[key].length === 0 || id) {
+           let url = config.apiURL + staticDataUrls[key] + (id ? id : '') + (patch ? patch : '');
+           await axios.get(url).then(res => {
+               dispatch({
+                   type: LIST_USERS,
+                   data: res.data ? res.data : res.data.data,
+                   key:key,
+                   id: id
+               })
+           })
+       }
+   }
 }
 
 

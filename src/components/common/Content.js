@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {routes} from "../../routes";
 import {HashRouter, Switch, Route, Redirect} from "react-router-dom";
 import Login from "../pages/Login"
 import NavBar from './NavBar';
@@ -11,7 +13,6 @@ import TeacherList from "../teacher/TeacherList";
 import StudentList from "../student/StudentList";
 import AdminList from '../admin/AdminList';
 import Notification from '../notification/Notification';
-import Register from '../pages/Register';
 import Tasks from "../pages/Tasks";
 import CourseInfo from "../course/CourseInfo"
 import Courses from '../course/Courses'
@@ -23,8 +24,34 @@ class Content extends React.Component {
         <div className={'content ' + (this.props.isOpen ? 'is-open' : '')}>
           <HashRouter>
             <NavBar toggle={this.props.toggle}/>
+            <div className='p-3'>
               <Switch>
-                <Route path="/login" exact component={Login}/>
+                <Route path="/" exact component={Home}/>
+                {
+                  routes[this.props.role] &&
+                  routes[this.props.role].map((route,index) =>
+                  <Route key={index} path={route.path} component={route.component} exact={route.exact}/>
+                  )
+                }
+                <NotFound/>
+                </Switch>
+                </div>
+                {
+                  this.props.role === "Admin" ?
+                  <Redirect to="/users"/> :
+                  this.props.role === "Muellim" ?
+                  <Redirect to="/teacher"/> :
+                  this.props.role === "sagird" ?
+                  <Redirect to="/student"/> :
+                  <Redirect to="/"/>
+                }
+                </HashRouter>
+      </div>
+      </div>
+    );
+  }
+}
+                {/* <Route path="/login" exact component={Login}/>
                 <Route path='/users' exact component={Users}/>
                 <Route path="/admin-list" exact component={AdminList}/>
                 <Route path="/" exact component={Home}/>
@@ -33,18 +60,12 @@ class Content extends React.Component {
                 <Route path="/teacherList" exact component={TeacherList}/>
                 <Route path="/studentList" exact component={StudentList}/>
                 <Route path="/notifications" exact component={Notification}/>
-                <Route path='/add-user' exact component={Register}/>
                 <Route path='/tasks' exact component={Tasks}/>
                 <Route path='/Courses' exact component={Courses}/>
                 <Route path='/course-info' exact component={CourseInfo}/>
-                <NotFound/>
-              </Switch>
-          </HashRouter>
-        </div>
-      </div>
-    );
-  }
-}
+                <NotFound/> */}
+              
+          
 
-
-export default Content;
+const mapStateToProps = store => store;
+export default connect(mapStateToProps)(Content);

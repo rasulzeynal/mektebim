@@ -1,7 +1,11 @@
 import React from 'react';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import {parseJwt,login} from "../../redux/user/userAction";
 import {Button, Form, Input} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSignInAlt, faSyncAlt} from '@fortawesome/free-solid-svg-icons';
+import {config} from "../../config"
 
 class Login extends React.Component {
     constructor(props) {
@@ -10,6 +14,34 @@ class Login extends React.Component {
         this.state={
             loading: false
         }
+    }
+
+    submitUserPassForm = (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      let data = {};
+
+      for (const [key,value] of formData.entries()){
+        data[key] = value;
+      }
+
+      this.setState({loading:true});
+      axios.post(config.apiURL + 'data',data).then(res => {
+        console.log(res.data)
+        if (res.data.accessToken) {
+          localStorage.setItem('jwttoken',res.data.accessToken);
+          localStorage.setItem('refreshToken',res.data.refreshToken);
+          let encoded = parseJwt(res.data.accessToken);
+          encoded['role'] = encoded.data.userRole;
+
+          Object.keys(encoded).map(key =>
+            localStorage.setItem(key,encoded[key])
+             );
+             this.props.login(encoded['role']);
+        }
+      }).catch(error => {
+        this.setState({loading:false});
+      });
     }
   render() {
     return (
@@ -21,9 +53,9 @@ class Login extends React.Component {
               {
                 !this.state.loading ?
                   <div className="bg-white shadow rounded p-5">
-                    <Form>
-                      <Input name="username" type="text" placeholder="İstifadəçi adını daxil edin"/>
-                      <Input name="password" type="password" placeholder="Şifrəni daxil edin" className="mt-2"/>
+                    <Form onSubmit={this.submitUserPassForm}>
+                      <Input name="name" type="text" placeholder="İstifadəçi adını daxil edin"/>
+                      <Input name="sifre" type="password" placeholder="Şifrəni daxil edin" className="mt-2"/>
                       <Button color="success" className="mt-2" block>
                         <FontAwesomeIcon icon={faSignInAlt} className="mr-2"/>
                         Daxil ol
@@ -41,4 +73,10 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+const mapDispatchToProps = dispatch => {
+  return {
+    login: (role) => dispatch(login(role))
+  }
+}
+
+export default connect(null,mapDispatchToProps)(Login) ;

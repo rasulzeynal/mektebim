@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { logout } from '../../redux/user/userAction';
 import {NavLink} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faAlignLeft, faBars, faHome, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
@@ -45,7 +47,7 @@ class NavBar extends React.Component {
               </NavLink>
             </NavItem>
             <NavItem>
-                <a className="nav-link c-pointer">
+                <a className="nav-link c-pointer" onClick={this.props.logout}>
                 <FontAwesomeIcon icon={faSignOutAlt} className="mr-2 text-secondary" />
                 <strong>Çıxış</strong>
               </a>
@@ -57,6 +59,11 @@ class NavBar extends React.Component {
   }
 }
 
+const mapStateToProps = store => store;
+const mapDispatchToProps = dispatch => {
+  return {
+    logout: () => dispatch(logout())
+  }
+}
 
-
-export default NavBar;
+export default connect(mapStateToProps,mapDispatchToProps)(NavBar);

@@ -4,6 +4,7 @@ import { Card, CardBody,
 import logo from "../../assets/img/user.png";
 import ReactPaginate from "react-paginate";
 import axios from 'axios';
+import {config} from "../../config"
 
 class StudentList extends Component{ 
   state={
@@ -15,7 +16,7 @@ class StudentList extends Component{
 
    getData = () => {
     this.setState({loading:true});
-    axios.get("http://localhost:3002/data")
+    axios.get(config.apiURL + "data")
     .then(res => {
       this.setState({
         loading:false,
@@ -25,7 +26,7 @@ class StudentList extends Component{
    }
 
    removeData = (id) => {
-    axios.delete("http://localhost:3002/data/" + id)
+    axios.delete(config.apiURL + "data" + id)
     .then(res => {
       if (res.data.status === 201) {
         let data = this.state.data;

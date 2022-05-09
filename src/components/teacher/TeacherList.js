@@ -3,6 +3,7 @@ import { Card, CardBody,
   CardTitle,Button,CardImg, Row } from 'reactstrap';
 import logo from "../../assets/img/user.png"
 import axios from 'axios';
+import {config} from "../../config"
 
 class TeacherList extends Component{ 
   state={
@@ -11,7 +12,7 @@ class TeacherList extends Component{
 
   getData = () => {
     this.setState({loading:true});
-    axios.get("http://localhost:3002/data")
+    axios.get(config.apiURL + "data")
     .then(res => {
       this.setState({
         loading:false,
@@ -21,7 +22,7 @@ class TeacherList extends Component{
    }
 
    removeData = (id) => {
-    axios.delete("http://localhost:3002/data/" + id)
+    axios.delete(config.apiURL + "data" + id)
     .then(res => {
       if (res.data.status === 201) {
         let data = this.state.data;
