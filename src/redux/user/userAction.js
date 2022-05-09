@@ -1,4 +1,4 @@
-import { ADD_USER, LIST_USERS } from "./userActionTypes";
+import {LIST_USERS } from "./userActionTypes";
 import axios from "axios";
 
 export const getUsers = () => {
@@ -16,18 +16,4 @@ export const getUsers = () => {
     }
 }
 
-export const addUser = userData => {
-    return (dispatch) => {
-        axios.post("http://localhost:3002/data",userData)
-        .then(response => {
-            dispatch({
-                type: ADD_USER,
-                payload: response.data
-            })
-        })
-        .catch(error => {
-            console.log(error);
-        });
-    }
-}
 

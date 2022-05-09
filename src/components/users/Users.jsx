@@ -34,9 +34,7 @@ class Users extends React.Component{
     
 
   }
-  componentDidMount() { 
-    this.props.getUsers();
-   }
+  
   toggle = () => {
     this.setState({
       showAddModal: !this.state.showAddModal
@@ -83,6 +81,15 @@ class Users extends React.Component{
     })
   }
  */
+  componentDidMount() { 
+    this.props.getUsers();
+   }
+   componentDidUpdate = (prevProps, prevState) => {
+     if (prevState.data !== this.state.data){
+       this.props.getUsers();
+     }
+   }
+   
   render() {
     const users = this.props.users;
     return (
