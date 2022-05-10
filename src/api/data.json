@@ -227,20 +227,24 @@
       "position": "Admin",
       "sifre": "asassas",
       "id": "UFVGBat"
+    },
+    {
+      "name": "Rasul Zeynalov",
+      "fatherName": "adsd",
+      "email": "rasul.zeynalov.95@gmail.com",
+      "position": "ADMIN",
+      "password": "asdsda",
+      "id": "1t6jqm7"
     }
   ],
   "courseData": [
     {
-      "name": "sdd",
-      "id": "Mks3-pg"
-    },
-    {
-      "name": "dsdsqwwq",
-      "id": "2yZVRUd"
-    },
-    {
       "name": "TOEFL",
       "id": "l3kHZ8-"
+    },
+    {
+      "name": "Rasul Zeynalov",
+      "id": "aVcwVKp"
     }
   ]
 }

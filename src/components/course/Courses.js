@@ -70,8 +70,9 @@ class Courses extends React.Component {
   
 
   removeData = (id) => {
-    axios.delete(config.apiURL + "courseData" + id)
+    axios.delete(config.apiURL + "courseData/" + id)
     .then(res => {
+      console.log(res)
       if (res.data.status === 201) {
         let data = this.state.data;
         this.setState({

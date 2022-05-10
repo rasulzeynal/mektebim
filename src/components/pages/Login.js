@@ -6,7 +6,7 @@ import {faSignInAlt, faSyncAlt} from '@fortawesome/free-solid-svg-icons';
 import {useHistory} from "react-router-dom";
 import { useState } from 'react';
 
-const Login = () => {
+const Login = ({setLogOutUser}) => {
 
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
@@ -30,6 +30,7 @@ const Login = () => {
       setError("");
       setEmail("");
       setPassword("");
+      setLogOutUser(false);
       history.push("/");
     })
     .catch((error) => setError(error.response.data.message));
