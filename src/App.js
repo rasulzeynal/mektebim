@@ -1,42 +1,34 @@
 import SideBar from "./components/common/SideBar";
-import React from "react";
-import { connect } from "react-redux";
-import Login from "./components/pages/Login";
+import React, { useState } from "react";
 import Content from "./components/common/Content";
 import "./assets/bootstrap/bootstrap.scss";
 import "./assets/scss/style.scss";
+import Login from "./components/pages/Login";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 
 
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: window.innerWidth > 1100
-    }
+const App = () => {
+
+  const [isOpen,setIsOpen] = useState(window.innerWidth > 1100);
+  const [logOutUser,setLogOutUser] = useState(false)
+
+  const updateDimensions = () => {
+    setIsOpen(window.innerWidth > 1100);
   }
 
-  updateDimensions = () => {
-    this.setState({isOpen: window.innerWidth > 1100});
-  }
-
-  toggle = () => {
-    this.setState({isOpen: !this.state.isOpen});
-  }
-
-  render() {
-    window.addEventListener("resize", this.updateDimensions)
+  const isLoginTrue = JSON.parse(localStorage.getItem("login"));
+  console.log(isLoginTrue)
+  window.addEventListener("resize",updateDimensions)
   return (
-    this.props.isAuth ?
+    isLoginTrue ? 
     <div className="wrapper">
-      <SideBar toggle={this.toggle} isOpen={this.state.isOpen}/>
-      <Content toggle={this.toggle} isOpen={this.state.isOpen}/>
+      <SideBar setIsOpen={setIsOpen} isOpen = {isOpen}/>
+      <Content setIsOpen={setIsOpen} isOpen = {isOpen} logOutUser={logOutUser} setLogOutUser={setLogOutUser}/>
     </div> : <Login/>
   );
 }
-}
 
-const mapStateToProps = store => store;
-export default connect(mapStateToProps)(App);
+export default App;
 
 

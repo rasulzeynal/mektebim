@@ -59,7 +59,7 @@ class Users extends React.Component{
       data[key] = value;
     }
 
-    axios.post(config.apiURL + "data/create",data)
+    axios.post(config.apiURL + "data",data)
     .then(res => {
       console.log(res)
       if (res.data.status === 201){

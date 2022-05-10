@@ -1,6 +1,4 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { logout } from '../../redux/user/userAction';
+import React, { useEffect, useState } from 'react';
 import {NavLink} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faAlignLeft, faBars, faHome, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
@@ -11,34 +9,45 @@ import {
   Nav,
   NavItem,
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
-class NavBar extends React.Component {
-  constructor(props) {
-    super(props);
+const NavBar = (props) => {
+const  [isOpen,setIsOpen] = useState(false);
+const  [login,setLogin] = useState("");
 
-    this.state = {
-      isOpen: false
-    };
+  useEffect(()=>{
+    hydrateStateWithLocalStorage()
+  },[props.logOutUser]);
+
+  const logout = () =>{
+    localStorage.removeItem("login")
+    props.setLogOutUser(true);
   }
 
-  toggle = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
+  const hydrateStateWithLocalStorage = () => {
+    if (localStorage.hasOwnProperty("login")) {
+      let value = localStorage.getItem("login");
+      try {
+        value = JSON.parse(value);
+        setLogin(value)
+        } catch(e) {
+          setLogin("")
+      }
+    }
   }
+
   
   
-  render() {
     return (
       <Navbar className="navbar p-3 " expand="sm">
-        <Button color="light" onClick={this.props.toggle}>
+        <Button color="light" onClick={() =>props.setIsOpen(!props.isOpen)}>
           <FontAwesomeIcon icon={faAlignLeft}/>
         </Button>
-        <Button color="dark" onClick={this.toggle} className="d-block d-sm-none">
+        <Button color="dark"  className="d-block d-sm-none">
           <FontAwesomeIcon icon={faBars}/>
         </Button>
-        <Collapse isOpen={this.state.isOpen} navbar>
+        <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto mt-3 mt-sm-0" navbar>
             <NavItem>
               <NavLink exact to="/" className="nav-link c-pointer">
@@ -47,23 +56,27 @@ class NavBar extends React.Component {
               </NavLink>
             </NavItem>
             <NavItem>
-                <a className="nav-link c-pointer" onClick={this.props.logout}>
+            {login && login ? (
+              <a className="nav-link c-pointer" onClick={logout}>
+              <FontAwesomeIcon icon={faSignOutAlt} className="mr-2 text-secondary" />
+              <strong>Çıxış</strong>
+            </a>
+            ) : (
+              <Link to="/login">
+              <a className="nav-link c-pointer">
                 <FontAwesomeIcon icon={faSignOutAlt} className="mr-2 text-secondary" />
-                <strong>Çıxış</strong>
+                <strong>Giriş</strong>
               </a>
+              </Link>
+            )}
+                
             </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
     );
   }
-}
 
-const mapStateToProps = store => store;
-const mapDispatchToProps = dispatch => {
-  return {
-    logout: () => dispatch(logout())
-  }
-}
 
-export default connect(mapStateToProps,mapDispatchToProps)(NavBar);
+
+export default NavBar;

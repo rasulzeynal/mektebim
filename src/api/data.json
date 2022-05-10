@@ -2,9 +2,9 @@
   "data": [
     {
       "id": "1",
-      "name": "Rasul Zeynalov",
+      "name": "Rasul",
       "ata_adi": "Zeynal",
-      "mail": "rasul.zeynalov.95@gmail.com",
+      "email": "rasul.zeynalov.95@gmail.com",
       "role": "Admin",
       "sifre": "rasul"
     },
@@ -201,77 +201,32 @@
       "sifre": []
     },
     {
-      "id": "29",
-      "name": "Şövqiyyə Zərbəliyeva",
-      "ata_adi": "Test",
-      "mail": "test.testov@gmail.com",
-      "position": "sagird",
-      "sifre": []
+      "name": "Rasul",
+      "sifre": "rasul",
+      "id": "hltU8mY"
     },
     {
-      "id": "30",
-      "name": "Hüriyyə Sultanova",
-      "ata_adi": "Test",
-      "mail": "test.testov@gmail.com",
-      "position": "sagird",
-      "sifre": []
-    },
-    {
-      "id": "31",
-      "name": "Bəhərçin Yusubov",
-      "ata_adi": "Test",
-      "mail": "test.testov@gmail.com",
-      "position": "sagird",
-      "sifre": []
-    },
-    {
-      "id": "32",
-      "name": "Rəşad Yusublu",
-      "ata_adi": "Test",
-      "mail": "test.testov@gmail.com",
-      "position": "Muellim",
-      "sifre": []
-    },
-    {
-      "id": "33",
-      "name": "Bahar Səfərli",
-      "ata_adi": "Test",
-      "mail": "test.testov@gmail.com",
-      "position": "sagird",
-      "sifre": []
-    },
-    {
-      "id": "35",
-      "name": "Emil Vəliyev",
-      "ata_adi": "Test",
-      "mail": "test.testov@gmail.com",
-      "position": "sagird",
-      "sifre": []
+      "name": "Rasul Zeynalov",
+      "sifre": "RASUL",
+      "id": "AJPAbtI"
     },
     {
       "name": "Rasul Zeynalov",
       "sifre": "rasul",
-      "id": "y96HQFG"
+      "id": "78lntIV"
     },
     {
-      "name": "Rasul Zeynalov",
-      "sifre": "rasul",
-      "id": "5GimS7I"
+      "name": "rasul.zeynalovas",
+      "sifre": "as",
+      "id": "4oFbqvv"
     },
     {
-      "name": "Rasul Zeynalov",
-      "sifre": "rasul",
-      "id": "RipXdAr"
-    },
-    {
-      "name": "",
-      "sifre": "",
-      "id": "-mbCRG4"
-    },
-    {
-      "name": "Rasul Zeynalov",
-      "sifre": "rasul",
-      "id": "wIxR5vi"
+      "name": "rasul.zeynalov",
+      "ata_adi": "asas",
+      "mail": "sdsdgf@fdgfdgfd",
+      "position": "Admin",
+      "sifre": "asassas",
+      "id": "UFVGBat"
     }
   ],
   "courseData": [
