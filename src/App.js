@@ -4,6 +4,7 @@ import Content from "./components/common/Content";
 import "./assets/bootstrap/bootstrap.scss";
 import "./assets/scss/style.scss";
 import Login from "./components/pages/Login";
+import {useSelector } from 'react-redux';
 
 
 
@@ -15,11 +16,10 @@ const updateDimensions = () => {
   setIsOpen(window.innerWidth > 1100);
 }
 
-const isLoginTrue = JSON.parse(localStorage.getItem("login"));
-console.log("islogin",isLoginTrue)
+const {user} = useSelector(state => state.auth);
 window.addEventListener("resize",updateDimensions)
 return (
-  isLoginTrue ? 
+  user ? 
   <div className="wrapper">
     <SideBar setIsOpen={setIsOpen} isOpen = {isOpen}/>
     <Content setIsOpen={setIsOpen} isOpen = {isOpen} logOutUser={logOutUser} setLogOutUser={setLogOutUser}/>

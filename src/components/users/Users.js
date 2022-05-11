@@ -27,7 +27,6 @@ import {config} from "../../config"
 
 
 const Users = () => {  
-  
 const  [data,setData]= useState(null);
 const [error,setError] = useState("");
 const  [showAddModal,setShowAddModal] = useState(false);
@@ -79,31 +78,6 @@ const createData = (e) => {
     .catch((error) => setError(error.response.data.message));
   }
 
-
- /* const  createData = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    let data = {};
-
-    for (const [key,value] of formData.entries()) {
-      data[key] = value;
-    }
-
-    axios.post(config.apiURL + "data",data)
-    .then(res => {
-      console.log(res)
-      if (res.data.status === 201){
-      console.log(res.data.data)
-      setData(prevState => ({
-        data : [
-          ...prevState.data,
-          res.data
-        ]
-      }));
-  }})
-    e.target.reset();
-  } */
-  
   useEffect(()=>{
     getData()
   },[])

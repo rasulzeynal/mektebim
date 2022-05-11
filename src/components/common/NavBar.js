@@ -10,22 +10,28 @@ import {
   NavItem,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import {useSelector,useDispatch } from 'react-redux';
+import { logoutInitiate } from '../../redux/action';
 
 
 const NavBar = (props) => {
 const  [isOpen,setIsOpen] = useState(false);
-const  [login,setLogin] = useState("");
+// const  [login,setLogin] = useState("");
+const {user} = useSelector(state => state.auth);
+let dispatch = useDispatch();
 
-  useEffect(()=>{
+
+  /* useEffect(()=>{
     hydrateStateWithLocalStorage()
-  },[props.logOutUser]);
+  },[props.logOutUser]); */
 
   const logout = () =>{
-    localStorage.removeItem("login")
-    props.setLogOutUser(true);
+   /*  localStorage.removeItem("login")
+    props.setLogOutUser(true); */
+    dispatch(logoutInitiate());
   }
 
-  const hydrateStateWithLocalStorage = () => {
+  /* const hydrateStateWithLocalStorage = () => {
     if (localStorage.hasOwnProperty("login")) {
       let value = localStorage.getItem("login");
       try {
@@ -35,7 +41,7 @@ const  [login,setLogin] = useState("");
           setLogin("")
       }
     }
-  }
+  } */
 
   
   
@@ -56,7 +62,7 @@ const  [login,setLogin] = useState("");
               </NavLink>
             </NavItem>
             <NavItem>
-            {login && login ? (
+            {user && user ? (
               <a className="nav-link c-pointer" onClick={logout}>
               <FontAwesomeIcon icon={faSignOutAlt} className="mr-2 text-secondary" />
               <strong>Çıxış</strong>

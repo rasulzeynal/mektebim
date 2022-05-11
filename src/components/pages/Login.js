@@ -4,36 +4,31 @@ import {Button, Form, Input} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSignInAlt, faSyncAlt} from '@fortawesome/free-solid-svg-icons';
 import {useHistory} from "react-router-dom";
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
+import { useDispatch,useSelector } from 'react-redux';
+import { loginInitiate, setErrorEmpty } from '../../redux/action';
+
+
+
 
 const Login = ({setLogOutUser}) => {
 
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
-  const [error,setError] = useState("");
   let history = useHistory();
+  let dispatch = useDispatch();
+  const {user,error} = useSelector(state => state.auth);
+
+  useEffect(() => {
+    dispatch(setErrorEmpty())
+    if (user) {
+      history.push("/")
+    }
+  },[user])
  
   const login = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/api/auth/login",{
-      email,
-      password
-    }).then((response) => {
-      console.log("response",response);
-      localStorage.setItem(
-        "login",
-        JSON.stringify({
-          userLogin: true,
-          token: response.data.access_token,
-        })
-      );
-      setError("");
-      setEmail("");
-      setPassword("");
-      setLogOutUser(false);
-      history.push("/");
-    })
-    .catch((error) => setError(error.response.data.message));
+    dispatch(loginInitiate(email,password))
   }
     return (
         <div className="login">

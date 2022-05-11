@@ -15,6 +15,7 @@ import Tasks from "../pages/Tasks";
 import CourseInfo from "../course/CourseInfo"
 import Courses from '../course/Courses'
 
+
 const Content = (props) => {
     return (
       <div className="outer-border" >
