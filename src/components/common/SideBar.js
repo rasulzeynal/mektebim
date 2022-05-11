@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import {HashRouter,NavLink} from "react-router-dom";
 import {Nav, NavItem} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -6,7 +6,6 @@ import {
   faMessage,faUser,faUserGraduate,faListCheck
 } from '@fortawesome/free-solid-svg-icons';
 import logo from "../../assets/img/edu.png";
-import axios from 'axios';
 
 
 
@@ -14,6 +13,7 @@ import axios from 'axios';
 const SideBar = (props) => { 
 
     return (
+     
       <div className={'sidebar ' + (props.isOpen ? 'is-open' : '')}>
         <div className="fixed">
           <div className="sidebar-header">

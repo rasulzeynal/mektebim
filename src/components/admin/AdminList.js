@@ -13,7 +13,7 @@ class AdminList extends React.Component {
     this.setState({
       loading: true,
     });
-    axios.get(config.apiURL + "data").then((res) => {
+    axios.get(config.apiURL + "users").then((res) => {
       this.setState({
         loading: false,
         data: res.data,
@@ -22,7 +22,7 @@ class AdminList extends React.Component {
   };
 
   removeData = (id) => {
-    axios.delete(config.apiURL + "data" + id)
+    axios.delete(config.apiURL + "users" + id)
     .then(res => {
       if (res.data.status === 201) {
         let data = this.state.data;
@@ -39,7 +39,7 @@ class AdminList extends React.Component {
   render() {
     const admins =
       this.state.data &&
-      this.state.data.filter((user) => user.position === "Admin");
+      this.state.data.filter((user) => user.position === "ADMIN");
 
     return (
       <Row

@@ -1,8 +1,7 @@
 import React from 'react';
-import axios from 'axios';
 import {Button, Form, Input} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faSignInAlt, faSyncAlt} from '@fortawesome/free-solid-svg-icons';
+import {faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 import {useHistory} from "react-router-dom";
 import { useState,useEffect } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
@@ -11,7 +10,7 @@ import { loginInitiate, setErrorEmpty } from '../../redux/action';
 
 
 
-const Login = ({setLogOutUser}) => {
+const Login = () => {
 
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
@@ -45,7 +44,7 @@ const Login = ({setLogOutUser}) => {
                       type="text" 
                       placeholder="Mailinizi daxil edin"
                       value={email}
-                      onChange= {(e) => setEmail(e.target.value)}
+                      onChange= {(e) =>setEmail(e.target.value)}
                       />
                       <Input 
                       name="password" 

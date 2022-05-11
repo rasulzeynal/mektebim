@@ -10,7 +10,8 @@ import {useSelector } from 'react-redux';
 
 const App = () => {
 const [isOpen,setIsOpen] = useState(window.innerWidth > 1100);
-const [logOutUser,setLogOutUser] = useState(false)
+const [logOutUser,setLogOutUser] = useState(false);
+const [loginUser,setLoginUser] = useState(null);
 
 const updateDimensions = () => {
   setIsOpen(window.innerWidth > 1100);
@@ -21,9 +22,9 @@ window.addEventListener("resize",updateDimensions)
 return (
   user ? 
   <div className="wrapper">
-    <SideBar setIsOpen={setIsOpen} isOpen = {isOpen}/>
+    <SideBar setIsOpen={setIsOpen} isOpen = {isOpen} loginUser={loginUser}/>
     <Content setIsOpen={setIsOpen} isOpen = {isOpen} logOutUser={logOutUser} setLogOutUser={setLogOutUser}/>
-  </div> : <Login setLogOutUser={setLogOutUser}/>
+  </div> : <Login setLogOutUser={setLogOutUser} setLoginUser={setLoginUser} loginUser={loginUser}/>
 );
 }
 

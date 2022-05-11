@@ -44,7 +44,7 @@ const toggle = () => {
 
 const getData =() => {
   setLoading(true);
-  axios.get(config.apiURL + "data").then(res => {
+  axios.get(config.apiURL + "users").then(res => {
     setLoading(false);
     setData(res.data);
   });
@@ -194,21 +194,21 @@ const createData = (e) => {
           <CardTitle>Admin</CardTitle>
           <NavLink exact className="nav-link" to="/admin-list">
             <FontAwesomeIcon className="icon" icon={faUserLock} />
-            <CardSubtitle className="card-text">{data ? data.filter(user => user.position === "Admin").length : 0}</CardSubtitle>
+            <CardSubtitle className="card-text">{data ? data.filter(user => user.position === "ADMIN").length : 0}</CardSubtitle>
           </NavLink>
         </Card>
         <Card body inverse color="warning" className="teacher-list card col">
           <CardTitle>Müəllim</CardTitle>
           <NavLink exact className="nav-link" to="/teacherList">
             <FontAwesomeIcon className="icon" icon={faAddressBook} />
-            <CardSubtitle className="card-text">{data ? data.filter(user => user.position === "Muellim").length : 0}</CardSubtitle>
+            <CardSubtitle className="card-text">{data ? data.filter(user => user.position === "MUELLIM").length : 0}</CardSubtitle>
           </NavLink>
         </Card>
         <Card body inverse color="warning" className="student-list card col">
           <CardTitle>Şagird</CardTitle>
           <NavLink exact className="nav-link" to="/studentList">
             <FontAwesomeIcon className="icon" icon={faAddressBook} />
-            <CardSubtitle className="card-text">{data ? data.filter(user => user.position === "sagird").length : 0}</CardSubtitle>
+            <CardSubtitle className="card-text">{data ? data.filter(user => user.position === "SAGIRD").length : 0}</CardSubtitle>
           </NavLink>
         </Card>
       </Row>

@@ -16,7 +16,7 @@ class StudentList extends Component{
 
    getData = () => {
     this.setState({loading:true});
-    axios.get(config.apiURL + "data")
+    axios.get(config.apiURL + "users")
     .then(res => {
       this.setState({
         loading:false,
@@ -26,7 +26,7 @@ class StudentList extends Component{
    }
 
    removeData = (id) => {
-    axios.delete(config.apiURL + "data" + id)
+    axios.delete(config.apiURL + "users" + id)
     .then(res => {
       if (res.data.status === 201) {
         let data = this.state.data;
@@ -41,7 +41,7 @@ class StudentList extends Component{
     this.getData()
   }
   render(){
-  const students = this.state.data && this.state.data.filter((user) => user.position === "sagird");
+  const students = this.state.data && this.state.data.filter((user) => user.position === "SAGIRD");
   const usersPerPage = 14;
   const pagesVisited = this.state.pageNumber * usersPerPage;
   const pageCount = Math.ceil(students && students.length / usersPerPage);
