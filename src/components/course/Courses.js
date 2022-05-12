@@ -36,7 +36,7 @@ class Courses extends React.Component {
   }
   getData = () => {
     this.setState({loading:true});
-    axios.get(config.apiURL + "courseData")
+    axios.get(config.apiURL + "users")
     .then(res => {
       this.setState({
         loading:false,
@@ -53,7 +53,7 @@ class Courses extends React.Component {
       data[key] = value;
     }
 
-    axios.post(config.apiURL + "courseData",data)
+    axios.post(config.apiURL + "users",data)
     .then(res => {
       console.log(res)
       if (res.data.status === 201){

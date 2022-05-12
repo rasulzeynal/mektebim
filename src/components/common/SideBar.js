@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import {HashRouter,NavLink} from "react-router-dom";
 import {Nav, NavItem} from 'reactstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -6,14 +6,40 @@ import {
   faMessage,faUser,faUserGraduate,faListCheck
 } from '@fortawesome/free-solid-svg-icons';
 import logo from "../../assets/img/edu.png";
-
+import {useSelector } from 'react-redux';
+import jwtDecode from 'jwt-decode';
+import axios from 'axios';
+import { config } from '../../config';
 
 
 
 const SideBar = (props) => { 
 
+  const  [data,setData]= useState(null);
+
+
+const  getData = () => {
+    axios.get(config.apiURL + "users")
+    .then(res => {
+      setData({
+        data:res.data
+      })
+    })
+  }
+
+  useEffect(()=>{
+    getData()
+  },[])
+
+  const {user} = useSelector(state => state.auth);
+  const token = jwtDecode(user); // decode your token here;
+  const email = token.email
+  console.log("mail",email)
+  console.log("data",data)
+ // const a = JSON.parse(data)
+// const filteredData = data.data.filter((user) => user.email === email)
+ //console.log("filtered" , a)
     return (
-     
       <div className={'sidebar ' + (props.isOpen ? 'is-open' : '')}>
         <div className="fixed">
           <div className="sidebar-header">
