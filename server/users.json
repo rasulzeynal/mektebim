@@ -1,1 +1,74 @@
-{"users":[{"id":1,"name":"Rasul Zeynalov","fatherName":"Zeynal","email":"rasul.zeynalov.95@gmail.com","position":"ADMIN","password":"123456"},{"id":2,"name":"Gulana Zeynalova","fatherName":"Xudu","email":"gulana.zeynalova@gmail.com","position":"MUELLIM","password":"gulana"},{"id":14,"name":"Aytan Aliyeva","fatherName":"Vaqif","email":"aytennn@gmail.com","position":"MUELLIM","password":"147258"},{"id":15,"name":"Ayxan Cabbarli","fatherName":"Qudret","email":"ayxan.jabbarli@gmail.com","position":"SAGIRD","password":"ayxan"},{"id":16,"name":"Həsən Əliyev","fatherName":"Famil","email":"hasan.aliyev@gmail.com","position":"SAGIRD","password":"hasan"},{"id":17,"name":"Tərlan Qafarov","fatherName":"Nizam","email":"tarlan.qafarov@gmail.com","position":"SAGIRD","password":"tarlan"},{"id":18,"name":"Zeynəb Zeynallı","fatherName":"Rasul","email":"zeynab.zeynalli@gmail.com","position":"SAGIRD","password":"zeynab"}]}
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Rasul Zeynalov",
+      "fatherName": "Zeynal",
+      "email": "rasul.zeynalov.95@gmail.com",
+      "position": "ADMIN",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "name": "Gulana Zeynalova",
+      "fatherName": "Xudu",
+      "email": "gulana.zeynalova@gmail.com",
+      "position": "MUELLIM",
+      "password": "gulana"
+    },
+    {
+      "id": 14,
+      "name": "Aytan Aliyeva",
+      "fatherName": "Vaqif",
+      "email": "aytennn@gmail.com",
+      "position": "MUELLIM",
+      "password": "147258"
+    },
+    {
+      "id": 15,
+      "name": "Ayxan Cabbarli",
+      "fatherName": "Qudret",
+      "email": "ayxan.jabbarli@gmail.com",
+      "position": "SAGIRD",
+      "password": "ayxan"
+    },
+    {
+      "id": 16,
+      "name": "Həsən Əliyev",
+      "fatherName": "Famil",
+      "email": "hasan.aliyev@gmail.com",
+      "position": "SAGIRD",
+      "password": "hasan"
+    },
+    {
+      "id": 17,
+      "name": "Tərlan Qafarov",
+      "fatherName": "Nizam",
+      "email": "tarlan.qafarov@gmail.com",
+      "position": "SAGIRD",
+      "password": "tarlan"
+    },
+    {
+      "id": 18,
+      "name": "Zeynəb Zeynallı",
+      "fatherName": "Rasul",
+      "email": "zeynab.zeynalli@gmail.com",
+      "position": "SAGIRD",
+      "password": "zeynab"
+    },
+    {
+      "name": "TOEFL",
+      "id": 19
+    }
+  ],
+  "courses": [
+    {
+      "name": "TOEFL",
+      "id": "l3kHZ8-"
+    },
+    {
+      "name": "IELTS",
+      "id": "SddRHIh"
+    }
+  ]
+}

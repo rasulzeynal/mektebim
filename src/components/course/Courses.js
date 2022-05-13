@@ -36,7 +36,7 @@ class Courses extends React.Component {
   }
   getData = () => {
     this.setState({loading:true});
-    axios.get(config.apiURL + "users")
+    axios.get(config.apiURL + "courses")
     .then(res => {
       this.setState({
         loading:false,
@@ -53,7 +53,7 @@ class Courses extends React.Component {
       data[key] = value;
     }
 
-    axios.post(config.apiURL + "users",data)
+    axios.post(config.apiURL + "courses",data)
     .then(res => {
       console.log(res)
       if (res.data.status === 201){
@@ -70,7 +70,7 @@ class Courses extends React.Component {
   
 
   removeData = (id) => {
-    axios.delete(config.apiURL + "courseData/" + id)
+    axios.delete(config.apiURL + "courses/" + id)
     .then(res => {
       console.log(res)
       if (res.data.status === 201) {

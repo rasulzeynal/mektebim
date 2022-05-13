@@ -7,38 +7,28 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import logo from "../../assets/img/edu.png";
 import {useSelector } from 'react-redux';
-import jwtDecode from 'jwt-decode';
-import axios from 'axios';
-import { config } from '../../config';
+import jwt_decode from "jwt-decode";
+import axios from "axios";
+
 
 
 
 const SideBar = (props) => { 
+  const [data,setData] = useState(null);
+  const {user} = useSelector(state => state.auth);
+  const decoded = jwt_decode(user);
 
-  const  [data,setData]= useState(null);
-
-
-const  getData = () => {
-    axios.get(config.apiURL + "users")
-    .then(res => {
-      setData({
-        data:res.data
-      })
-    })
+  const getData =() => {
+    axios.get("http://localhost:3002/" + "users").then(res => {
+      setData(res.data);
+    });
   }
-
   useEffect(()=>{
     getData()
   },[])
 
-  const {user} = useSelector(state => state.auth);
-  const token = jwtDecode(user); // decode your token here;
-  const email = token.email
-  console.log("mail",email)
-  console.log("data",data)
- // const a = JSON.parse(data)
-// const filteredData = data.data.filter((user) => user.email === email)
- //console.log("filtered" , a)
+  const checkedUser  = data && data.filter(users => users.email === decoded.email) 
+  const role = checkedUser && checkedUser[0].position;
     return (
       <div className={'sidebar ' + (props.isOpen ? 'is-open' : '')}>
         <div className="fixed">
@@ -48,7 +38,10 @@ const  getData = () => {
           </div>
           <HashRouter>
             <Nav vertical className="list-unstyled p-3 mt-3 flex-column">
-              <NavItem>
+              {
+                role === "ADMIN" && 
+                <>
+                <NavItem>
               <NavLink exact className="nav-link" to="/users" >
                 <FontAwesomeIcon icon={faUser} className="mr-2"/>İstifadəçilər
               </NavLink>
@@ -63,6 +56,29 @@ const  getData = () => {
                 <FontAwesomeIcon icon={faMessage} className="mr-2"/>Bildirişlər
               </NavLink>
             </NavItem>
+            </>
+              }
+              {
+                (role === "MUELLIM"  || role === "SAGIRD") &&
+                <> 
+            <NavItem>
+              <NavLink exact className="nav-link" to="/courses" >
+                <FontAwesomeIcon icon={faUserGraduate} className="mr-2"/>Kurslar
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink exact className="nav-link" to="/tasks" >
+                <FontAwesomeIcon icon={faUser} className="mr-2"/>Tapşırıqlar
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink exact className="nav-link" to="/notifications" >
+                <FontAwesomeIcon icon={faMessage} className="mr-2"/>Bildirişlər
+              </NavLink>
+            </NavItem>
+                </>
+              }
+              
             </Nav>
             </HashRouter>
         </div>
