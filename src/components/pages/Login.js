@@ -33,10 +33,10 @@ const Login = () => {
         <div className="login">
         <div className="container">
           <div className="row mb-5">
-            <div className="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4" style={{borderRadius: "15px",border:"1px solid rgba(0,0,0,0.125)"}}>
-              <h1 className="text-center mb-4 display-4">Daxil ol</h1>
-                  <div className="bg-white shadow rounded p-5">
-                  {error && <p style={{color:"red"}}>{error}</p>}
+            <div className="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 border" >
+              <h1 className="text-center mt-4 display-4">Daxil ol</h1>
+                  <div className=" shadow rounded p-5">
+                  {error && <p className='login-error'>{error}</p>}
                     <Form noValidate onSubmit={login}>
                       <Input 
                       name="email" 

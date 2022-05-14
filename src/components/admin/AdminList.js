@@ -54,22 +54,14 @@ class AdminList extends React.Component {
           admins.map((user) => (
             <Card
               key={user.id}
-              style={{
-                width: "200px",
-                textAlign: "center",
-              }}
-              className="ms-4 shadow "
+              className="ms-4 shadow admin-card "
             >
               <CardImg
                 top
                 width="100%"
                 src={logo}
                 alt="Card image cap"
-                style={{
-                  width: "100px",
-                  alignSelf: "center",
-                  marginTop: "15px",
-                }}
+                className="card-img"
               />{" "}
               <CardBody>
                 <CardTitle> {user.name} </CardTitle>{" "}

@@ -16,34 +16,13 @@ import { logoutInitiate } from '../../redux/action';
 
 const NavBar = (props) => {
 const  [isOpen,setIsOpen] = useState(false);
-// const  [login,setLogin] = useState("");
 const {user} = useSelector(state => state.auth);
 let dispatch = useDispatch();
 
 
-  /* useEffect(()=>{
-    hydrateStateWithLocalStorage()
-  },[props.logOutUser]); */
-
   const logout = () =>{
-   /*  localStorage.removeItem("login")
-    props.setLogOutUser(true); */
     dispatch(logoutInitiate());
   }
-
-  /* const hydrateStateWithLocalStorage = () => {
-    if (localStorage.hasOwnProperty("login")) {
-      let value = localStorage.getItem("login");
-      try {
-        value = JSON.parse(value);
-        setLogin(value)
-        } catch(e) {
-          setLogin("")
-      }
-    }
-  } */
-
-  
   
     return (
       <Navbar className="navbar p-3 " expand="sm">

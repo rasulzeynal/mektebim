@@ -40,7 +40,7 @@ const SideBar = (props) => {
             <Nav vertical className="list-unstyled p-3 mt-3 flex-column">
               {
                 role === "ADMIN" && 
-                <>
+                <div>
                 <NavItem>
               <NavLink exact className="nav-link" to="/users" >
                 <FontAwesomeIcon icon={faUser} className="mr-2"/>İstifadəçilər
@@ -56,11 +56,11 @@ const SideBar = (props) => {
                 <FontAwesomeIcon icon={faMessage} className="mr-2"/>Bildirişlər
               </NavLink>
             </NavItem>
-            </>
+            </div>
               }
               {
                 (role === "MUELLIM"  || role === "SAGIRD") &&
-                <> 
+                <div> 
             <NavItem>
               <NavLink exact className="nav-link" to="/courses" >
                 <FontAwesomeIcon icon={faUserGraduate} className="mr-2"/>Kurslar
@@ -76,7 +76,7 @@ const SideBar = (props) => {
                 <FontAwesomeIcon icon={faMessage} className="mr-2"/>Bildirişlər
               </NavLink>
             </NavItem>
-                </>
+                </div>
               }
               
             </Nav>

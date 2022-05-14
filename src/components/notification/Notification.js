@@ -17,30 +17,23 @@ const Notification = () => {
   };
     return (
     <div >
-      <div className='me-3' style={{ display:"flex", justifyContent: "end" }}>
+      <div className='me-3 add-notification'>
       <Button
           onClick={toggle}
           color="success"
-          style={{
-            display: "flex",
-            transition: "ease",
-            borderRadius: "6px",
-            marginTop: "10px",
-
-          }}
+          className='add-button'
         >
           <FontAwesomeIcon
-            className="icon mr-2"
+            className="mr-2"
             icon={faPlus}
-            style={{ color: "white" }}
           />
-          <h3 style={{ fontSize: "15px", color: "white", margin: "0" }}>
+          <h3 >
             Mesaj əlavə et
           </h3>
         </Button>
       </div>
       <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader style={{display:"flex",justifyContent:"center"}}>
+        <ModalHeader>
         <h2 className="text-center mb-5">Mesaj əlavə et</h2>
         </ModalHeader>
         <ModalBody>
@@ -55,7 +48,7 @@ const Notification = () => {
           <div className="d-flex justify-content-center">
                 <Button
                   type="button"
-                  className="btn btn-success btn-block btn gradient-custom-4 text-body"
+                  className="btn btn-success btn-block btn gradient-custom-4 text-body sent"
                   style={{display:"flex",justifyContent:"center",alignItems:"center"}}
                 >
                   <FontAwesomeIcon

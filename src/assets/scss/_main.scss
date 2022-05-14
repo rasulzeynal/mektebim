@@ -174,7 +174,140 @@
     display: flex;
     min-height: 100vh;
     align-items: center;
+
+    .border {
+      border: 1px solid rgba(0,0,0,0.125);
+      border-radius: 15px;
+      background-color: #ffffff;
+
+    .login-error {
+      color: red;
+    }
+    }
   }
+  .task {
+    display: flex;
+    justify-content: center;
+    .task-info {
+      color: red;
+    }
+
+  }
+  .admin-card {
+    width: 200px;
+    text-align: center;
+
+    .card-img {
+      width: 100px;
+      align-self: center;
+      margin-top: 15px;
+    }
+  }
+
+  /* Courses */
+
+
+  .row-classes{
+    text-align: center;
+  
+    .container-classes {
+      border-right: 1px solid #e3e9e4;
+    }
+      .course-card {
+        border-radius: 10px;
+        background-color: #f0f0f0;
+        box-shadow:0 6px 10px 0 rgba(0, 0, 0, 0.19) ;
+        color: black;
+        margin: 15px;
+  
+        &:hover {
+          background-color: #e4e1e1;
+        }
+        
+        .card-title{
+          font-size: 20px;;
+          color: black;
+        }
+        .card-body {
+          display: flex;
+          justify-content: space-between;
+  
+          .edit-icon {
+            color: #f58a42;
+            font-size: 25px;
+            cursor: pointer;
+
+            &:hover {
+              color: #be540d;
+            }
+          }
+        }
+        .nav-link{
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+          color:rgb(110, 101, 101);
+        }
+        .delete-icon {
+          font-size:25px;
+          color: rgb(247, 19, 19) !important;
+          display: flex;
+          align-self: center;
+
+          &:hover{
+            color:rgb(167, 23, 23) !important;
+          }
+        }
+      }
+    .add-course {
+      height: 100vh;
+
+      .div-button {
+        display: flex;
+        justify-content: end;
+
+        .open-form-button {
+          display: flex;
+          transition: ease;
+          height: 32px;
+          border-radius: 6px;
+          margin: 15px 0;
+
+          .add-form-icon {
+            color: white;
+          }
+
+          h3{
+            font-size: 15px;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  /* Notification */
+  .add-notification {
+    display: flex;
+    justify-content: end;
+
+    .add-button{
+      display: flex;
+      transition: ease;
+      border-radius: 6px;
+      margin-top: 10px;
+
+    h3 {
+      font-size: 15px;
+      margin: 0;
+    }
+    }
+  }
+  .modal-header {
+    display: flex;
+    justify-content: center;
+  }
+  
   .cards {
     text-align: center;
 
@@ -269,51 +402,4 @@
 }
 .paginationActive{
     color: white;
-}
-.row-classes{
-  text-align: center;
-
-  .container-classes {
-    border-right: 1px solid #e3e9e4;
-  }
-    .card {
-      border-radius: 10px;
-      background-color: #f0f0f0;
-      box-shadow:0 6px 10px 0 rgba(0, 0, 0, 0.19) ;
-      color: black;
-      margin: 15px;
-
-      &:hover {
-        background-color: #e4e1e1;
-      }
-      
-      .card-title{
-        font-size: 20px;;
-        color: black;
-      }
-      .card-body {
-        display: flex;
-        justify-content: space-between;
-
-        .icon {
-          color: #f58a42;
-          font-size: 20px;
-          cursor: pointer;
-        }
-      }
-      .icon {
-        font-size:30px;
-        color: rgb(110, 101, 101);
-      }
-      .nav-link{
-        display: flex;
-        justify-content: space-between;
-        cursor: pointer;
-        color:rgb(110, 101, 101);
-
-      }
-      .card-text {
-        font-size: 25px;
-      }
-    }
 }

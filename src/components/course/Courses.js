@@ -95,21 +95,18 @@ class Courses extends React.Component {
         <Card
             body
             inverse
-            className="add-user card"
+            className="add-user course-card"
             key={course.id}
           >
             <CardTitle>{course.name} </CardTitle>
             <CardBody className="card-body">
               <NavLink exact className="nav-link" to="/course-info">
-                <FontAwesomeIcon className="icon" icon={faPenToSquare} />
+                <FontAwesomeIcon className="edit-icon" icon={faPenToSquare} />
               </NavLink>
               <FontAwesomeIcon
-                className="icon"
+                className="delete-icon"
                 icon={faTrash}
                 id="delete"
-                style={{
-                  color: "#dc3545",
-                }}
                onClick={() => this.removeData(course.id)} 
               />
             </CardBody>
@@ -117,28 +114,20 @@ class Courses extends React.Component {
       ))}
           
       </Container>
-      <Container className="col-5" style={{ height: "100vh" }}>
+      <Container className="col-5 add-course">
         <div
-          className="me-4"
-          style={{ display: "flex", justifyContent: "end" }}
+          className="me-4 div-button"
         >
           <Button
             onClick={this.openForm}
             color="success"
-            style={{
-              display: "flex",
-              transition: "ease",
-              height: "32px",
-              borderRadius: "6px",
-              margin: "15px 0",
-            }}
+            className="open-form-button"
           >
             <FontAwesomeIcon
-              className="icon mr-2"
+              className="icon mr-2 add-form-icon"
               icon={faPlus}
-              style={{ color: "white" }}
             />
-            <h3 style={{ fontSize: "15px", color: "white" }}>Kurs əlavə et</h3>
+            <h3>Kurs əlavə et</h3>
           </Button>
         </div>
         {this.state.formIsOpen ? (
@@ -153,7 +142,7 @@ class Courses extends React.Component {
               
             />
             <Button type="submit" color="secondary" block>
-              Yarat
+              Əlavə et
             </Button>
           </Form>
         ) : null}
