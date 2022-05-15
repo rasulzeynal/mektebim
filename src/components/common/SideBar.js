@@ -29,12 +29,14 @@ const SideBar = (props) => {
 
   const checkedUser  = data && data.filter(users => users.email === decoded.email) 
   const role = checkedUser && checkedUser[0].position;
+  console.log("user",decoded.email)
     return (
       <div className={'sidebar ' + (props.isOpen ? 'is-open' : '')}>
         <div className="fixed">
           <div className="sidebar-header">
             <a className="times" onClick={() => props.setIsOpen(!props.isOpen)}>&times;</a>
             <img src={logo} alt="school"/>
+            
           </div>
           <HashRouter>
             <Nav vertical className="list-unstyled p-3 mt-3 flex-column">

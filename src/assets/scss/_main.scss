@@ -3,10 +3,9 @@
   display: flex;
   overflow: hidden;
   align-items: stretch;
-  background-color: #34495e;
+  background-color: #4a745b;
   
 
-  
   .sidebar {
   color: #fff;
   font-family: 'Montserrat', sans-serif;
@@ -63,7 +62,7 @@
         bottom: 0;
         height: 100vh;
         overflow-y: auto;
-        background: #34495e;
+        background:#4a745b;
         -webkit-overflow-scrolling: auto;
         transition: 0.5s;
       }
@@ -94,7 +93,7 @@
           }
   
           &.active {
-            background: #2ecc71;
+            background: #14be5b;
           }
   
           &.dropdown-toggle {
@@ -169,7 +168,7 @@
       }
     }
   }
-  
+  /* Login */
   .login {
     display: flex;
     min-height: 100vh;
@@ -185,13 +184,19 @@
     }
     }
   }
+
+  /* Tasks */
   .task {
     display: flex;
     justify-content: center;
     .task-info {
       color: red;
     }
-
+  }
+  /* AdminList */
+  .admin-list {
+    display: flex;
+    float: left;
   }
   .admin-card {
     width: 200px;
@@ -219,6 +224,8 @@
         box-shadow:0 6px 10px 0 rgba(0, 0, 0, 0.19) ;
         color: black;
         margin: 15px;
+        width: 95%;
+        
   
         &:hover {
           background-color: #e4e1e1;
@@ -287,6 +294,7 @@
   }
 
   /* Notification */
+
   .add-notification {
     display: flex;
     justify-content: end;
@@ -303,61 +311,6 @@
     }
     }
   }
-  .modal-header {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .cards {
-    text-align: center;
-
-    .card {
-      width: 350px;
-      min-height: 120px;
-      border-radius: 10px;
-      font-weight: 600;
-      margin:0 10px 20px 10px;
-      
-      .card-title{
-        font-size: 20px;;
-      }
-
-      .icon {
-        font-size:40px;
-        margin-top: 18px;
-        text-align: left;
-        color: white;
-      }
-      .nav-link{
-        display: flex;
-        justify-content: space-between;
-        cursor: pointer;
-        color: white;
-
-        &:hover {
-          padding-left: 1.3rem;
-        }
-      }
-      .card-text {
-        font-size: 25px;
-        display: flex;
-        align-items:flex-end;
-      }
-    }
-    .admin {
-      opacity: 0.7;
-    }
-    .teacher-list {
-      opacity: 0.7;
-    }
-    .student-list {
-      background-color: #4a745b !important;
-      opacity: 0.8;
-    }
-    .notifications{
-      background-color:rgba(235, 113, 52 ,0.9) !important ;
-    }
-  }
   .alert {
     position: relative;
 
@@ -366,6 +319,31 @@
       right: 20px;
       font-size: 25px;
     }
+  }
+  .modal-header {
+    display: flex;
+    justify-content: center;
+  }
+  .sent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+      margin: 0;
+    }
+  }
+
+  /* StudentList */
+
+  .card{
+      width: 200px;
+      text-align: center;
+
+      .card-image {
+        width: 100px;
+        align-self: center;
+        margin-top: 15px;
+      }
   }
   .paginationBttns {
     width: 80%;
@@ -402,4 +380,79 @@
 }
 .paginationActive{
     color: white;
+}
+
+/* TeacherList */
+
+.teacher-list {
+  .card {
+    width: 200px;
+    text-align: center;
+    margin-top: 10px;
+
+    .card-img {
+      width: 100px;
+      align-self: center;
+      margin-top: 15px;
+    }
+  }
+}
+
+/* Users */
+
+.add-user {
+  display: flex;
+  justify-content: end;
+
+  .add-button {
+    display:flex ;
+    transition: ease;
+    border-radius: 6px;
+    margin-top: 10px;
+
+    h3 {
+      font-size: 15px;
+      margin: 0;
+    }
+  }
+}
+.user-cards {
+  text-align: center;
+  .card {
+    width: 350px;
+      min-height: 120px;
+      border-radius: 10px;
+      font-weight: 600;
+      margin:0 10px 20px 10px;
+      opacity: 0.8;
+
+      .cart-title {
+        font-size: 40px;
+      }
+
+      .nav-link {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        color: white;
+
+        &:hover {
+          padding-left: 1.3rem;
+        }
+
+        .icon {
+          font-size:35px;
+          margin-top: 18px;
+          text-align: left;
+        }
+        .card-text {
+        font-size: 25px;
+        display: flex;
+        align-items:flex-end;
+        }
+      } 
+  }
+  .student-card {
+    background-color: #4a745b;
+  }
 }

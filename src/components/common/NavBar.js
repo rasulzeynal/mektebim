@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import {NavLink} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faAlignLeft, faBars, faHome, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +9,6 @@ import {
   Nav,
   NavItem,
 } from 'reactstrap';
-import { Link } from 'react-router-dom';
 import {useSelector,useDispatch } from 'react-redux';
 import { logoutInitiate } from '../../redux/action';
 
@@ -42,17 +41,15 @@ let dispatch = useDispatch();
             </NavItem>
             <NavItem>
             {user && user ? (
-              <a className="nav-link c-pointer" onClick={logout}>
+              <NavLink className="nav-link c-pointer" to="/login" exact onClick={logout}>
               <FontAwesomeIcon icon={faSignOutAlt} className="mr-2 text-secondary" />
               <strong>Çıxış</strong>
-            </a>
+            </NavLink>
             ) : (
-              <Link to="/login">
-              <a className="nav-link c-pointer">
+              <NavLink className="nav-link c-pointer" exact to="/home">
                 <FontAwesomeIcon icon={faSignOutAlt} className="mr-2 text-secondary" />
                 <strong>Giriş</strong>
-              </a>
-              </Link>
+              </NavLink>
             )}
                 
             </NavItem>

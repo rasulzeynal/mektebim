@@ -43,11 +43,7 @@ class AdminList extends React.Component {
 
     return (
       <Row
-        style={{
-          display: "flex",
-          float: "left",
-        }}
-        className="container"
+        className="container admin-list"
       >
         {" "}
         {admins &&

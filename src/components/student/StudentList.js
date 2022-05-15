@@ -54,7 +54,7 @@ class StudentList extends Component{
 
 
     return (
-      <Row style={{display:"flex",marginRight:"40px"}} >
+      <Row className="student-list">
         <input
           type="text"
           className="form-control mb-4 ms-4"
@@ -77,8 +77,8 @@ class StudentList extends Component{
       .slice(pagesVisited,pagesVisited + usersPerPage)
       .map((user) => {
         return (
-          <Card key={user.id} style={{width:"180px",textAlign:"center"}} className="mb-3 ml-3 shadow ">
-          <CardImg top width="100%" src={logo} alt="Card image cap" style={{width:"100px",alignSelf:"center",marginTop:"15px"}} />
+          <Card key={user.id} className="mb-3 ml-3 shadow card ">
+          <CardImg top width="100%" src={logo} alt="Card image cap" className='card-image'/>
           <CardBody>
             <CardTitle>{user.name}</CardTitle>
             <Button block color="info"

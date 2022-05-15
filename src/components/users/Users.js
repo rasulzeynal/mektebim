@@ -59,7 +59,6 @@ const createData = (e) => {
       position,
       password
     }).then((response) => {
-      console.log("response",response);
       localStorage.setItem(
         "register",
         JSON.stringify({
@@ -84,25 +83,17 @@ const createData = (e) => {
    
     return (
     <HashRouter>
-      <div className="me-4" style={{ display: "flex", justifyContent: "end" }}>
+      <div className="me-4 add-user">
         <Button
           onClick={toggle} 
           color="success"
-          style={{
-            display: "flex",
-            transition: "ease",
-            borderRadius: "6px",
-            marginTop: "10px",
-          }}
+          className='add-button'
         >
           <FontAwesomeIcon
-            className="icon mr-2"
+            className="mr-2"
             icon={faPlus}
-            style={{ color: "white" }}
           />
-          <h3 style={{ fontSize: "15px", color: "white", margin: "0" }}>
-            İstifadəçi əlavə et
-          </h3>
+          <h3>İstifadəçi əlavə et</h3>
         </Button>
         <Modal  isOpen={showAddModal} toggle={toggle}>
           <ModalBody>
@@ -167,16 +158,14 @@ const createData = (e) => {
               <div className="d-flex justify-content-center">
                 <Button
                   type="submit"
-                  className="btn btn-success btn-block btn gradient-custom-4 text-body"
-                  style={{display:"flex",justifyContent:"center",alignItems:"center"}}
+                  className="btn btn-success btn-block btn gradient-custom-4 text-body d-flex justify-content-center align-items-center "
                 >
                   <FontAwesomeIcon
                     icon={faUserPlus}
                     size="sm"
                     className="mr-2 "
-                    style={{ color: "white"}}
                   />
-                  <p style={{ color: "white",margin:"0" }}>Əlavə et</p>
+                  <p className='m-0'>Əlavə et</p>
                 </Button>
               </div>
             </Form>
@@ -189,22 +178,22 @@ const createData = (e) => {
         </Modal>
       </div>
       <hr />
-      <Row className="cards p-2 ">
-        <Card body inverse color="primary" className="admin card col">
+      <Row className="p-2 user-cards">
+        <Card body inverse color="primary" className="card col">
           <CardTitle>Admin</CardTitle>
           <NavLink exact className="nav-link" to="/admin-list">
             <FontAwesomeIcon className="icon" icon={faUserLock} />
             <CardSubtitle className="card-text">{data ? data.filter(user => user.position === "ADMIN").length : 0}</CardSubtitle>
           </NavLink>
         </Card>
-        <Card body inverse color="warning" className="teacher-list card col">
+        <Card body inverse color="warning" className="card col">
           <CardTitle>Müəllim</CardTitle>
           <NavLink exact className="nav-link" to="/teacherList">
             <FontAwesomeIcon className="icon" icon={faAddressBook} />
             <CardSubtitle className="card-text">{data ? data.filter(user => user.position === "MUELLIM").length : 0}</CardSubtitle>
           </NavLink>
         </Card>
-        <Card body inverse color="warning" className="student-list card col">
+        <Card body inverse className="student-card card col">
           <CardTitle>Şagird</CardTitle>
           <NavLink exact className="nav-link" to="/studentList">
             <FontAwesomeIcon className="icon" icon={faAddressBook} />

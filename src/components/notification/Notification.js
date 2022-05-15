@@ -49,15 +49,13 @@ const Notification = () => {
                 <Button
                   type="button"
                   className="btn btn-success btn-block btn gradient-custom-4 text-body sent"
-                  style={{display:"flex",justifyContent:"center",alignItems:"center"}}
                 >
                   <FontAwesomeIcon
                     icon={faEnvelope}
                     size="sm"
-                    className="mr-2 "
-                    style={{ color: "white"}}
+                    className="mr-2"
                   />
-                  <p style={{ color: "white",margin:"0" }}>Göndər</p>
+                  <p>Göndər</p>
                 </Button>
               </div>
           </Form>

@@ -39,10 +39,10 @@ class TeacherList extends Component{
   render(){
     const teachers = this.state.data && this.state.data.filter((user) => user.position === "MUELLIM");
     return (
-      <Row style={{display:"flex",float:"left"}} className="container">
+      <Row className="teacher-list">
       {teachers && teachers.map(user =>
-        <Card  key={user.id}  style={{width:"200px",textAlign:"center"}} className="ml-4 shadow ">
-          <CardImg top width="100%" src={logo} alt="Card image cap" style={{width:"100px",alignSelf:"center",marginTop:"15px"}} />
+        <Card  key={user.id} className="ml-4 shadow card">
+          <CardImg top width="100%" src={logo} alt="Card image cap" className='card-img' />
           <CardBody>
             <CardTitle>{user.name}</CardTitle>
             <Button block color="info"

@@ -18,6 +18,7 @@ const updateDimensions = () => {
 
 const {user} = useSelector(state => state.auth);
 window.addEventListener("resize",updateDimensions)
+console.log("app",user)
 return (
   user ? 
   <div className="wrapper">

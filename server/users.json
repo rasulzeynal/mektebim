@@ -59,16 +59,20 @@
     {
       "name": "TOEFL",
       "id": 19
+    },
+    {
+      "id": 20,
+      "name": "Namiq Hacagayev",
+      "fatherName": "Qadir",
+      "email": "namiq.hacagayev@gmail.com",
+      "position": "SAGIRD",
+      "password": "namiq"
     }
   ],
   "courses": [
     {
       "name": "TOEFL",
-      "id": "l3kHZ8-"
-    },
-    {
-      "name": "IELTS",
-      "id": "SddRHIh"
+      "id": 1
     }
   ]
 }
