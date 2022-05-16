@@ -14,6 +14,7 @@ import Notification from '../notification/Notification';
 import Tasks from "../pages/Tasks";
 import CourseInfo from "../course/CourseInfo"
 import Courses from '../course/Courses'
+import CourseTest from '../course/CourseTest';
 
 
 const Content = (props) => {
@@ -35,7 +36,7 @@ const Content = (props) => {
                 <Route path="/notifications" exact component={Notification}/>
                 <Route path='/tasks' exact component={Tasks}/>
                 <Route path='/courses' exact component={Courses}/>
-                <Route path='/course-info' exact component={CourseInfo}/>
+                <Route path='/course-info' exact component={CourseTest}/>
                 <NotFound/>
               </Switch>
               </div>
