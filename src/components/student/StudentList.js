@@ -26,7 +26,7 @@ class StudentList extends Component{
    }
 
    removeData = (id) => {
-    axios.delete(config.apiURL + "users" + id)
+    axios.delete(config.apiURL + "users/" + id)
     .then(res => {
       if (res.data.status === 201) {
         let data = this.state.data;

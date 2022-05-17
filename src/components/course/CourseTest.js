@@ -3,24 +3,26 @@ import { connect } from 'react-redux'
 import { getData } from '../../redux/action';
 
 
-const CourseTest = ({state}) => {
+const CourseTest = ({auth}) => {
+  
 
   useEffect(() => {
-    getData()
+   getData();
   },[])
-  console.log("datafetch",state)
   return (
     <div>
+    {auth.data && auth.data.map(user => (
+      <h5 key={user.id}>{user.name}</h5>
+    ))}
       <p>fetching data</p>
     </div>
   )
 }
 
-const mapStateToProps = store => store;
-
+const mapStateToProps = state => state;
 const mapDispatchToProps = dispatch => {
   return {
-    getData : () => dispatch(getData())
+    getData: () => dispatch(getData())
   }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(CourseTest);
+export default connect(mapStateToProps,mapDispatchToProps)(CourseTest) ;

@@ -93,7 +93,7 @@
           }
   
           &.active {
-            background: #14be5b;
+            background: #86c59f;
           }
   
           &.dropdown-toggle {
@@ -260,6 +260,7 @@
           color: rgb(247, 19, 19) !important;
           display: flex;
           align-self: center;
+          cursor: pointer;
 
           &:hover{
             color:rgb(167, 23, 23) !important;
@@ -318,6 +319,7 @@
       position: absolute;
       right: 20px;
       font-size: 25px;
+      cursor: pointer;
     }
   }
   .modal-header {

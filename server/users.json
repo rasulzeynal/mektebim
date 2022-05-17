@@ -41,14 +41,6 @@
       "password": "hasan"
     },
     {
-      "id": 17,
-      "name": "Tərlan Qafarov",
-      "fatherName": "Nizam",
-      "email": "tarlan.qafarov@gmail.com",
-      "position": "SAGIRD",
-      "password": "tarlan"
-    },
-    {
       "id": 18,
       "name": "Zeynəb Zeynallı",
       "fatherName": "Rasul",
@@ -57,22 +49,38 @@
       "password": "zeynab"
     },
     {
-      "name": "TOEFL",
-      "id": 19
-    },
-    {
       "id": 20,
       "name": "Namiq Hacagayev",
       "fatherName": "Qadir",
       "email": "namiq.hacagayev@gmail.com",
       "position": "SAGIRD",
       "password": "namiq"
+    },
+    {
+      "id": 21,
+      "name": "Konul Shiraliyeva",
+      "fatherName": "Shirali",
+      "email": "konul.shiraliyeva@gmail.com",
+      "position": "SAGIRD",
+      "password": "konul"
+    },
+    {
+      "id": 22,
+      "name": "Tarlan Gafarov",
+      "fatherName": "Namiq",
+      "email": "tarlan.gafarov@gmail.com",
+      "position": "ADMIN",
+      "password": "tarlan"
     }
   ],
   "courses": [
     {
       "name": "TOEFL",
       "id": 1
+    },
+    {
+      "name": "IELTS",
+      "id": 2
     }
   ]
 }

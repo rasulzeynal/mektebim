@@ -1,6 +1,5 @@
 import * as types from "./actionTypes";
 import axios from "axios";
-import {config} from "../config"
 
 
 const loginStart = () => ({
@@ -25,6 +24,11 @@ export const setErrorEmpty = () => ({
     type: types.SET_ERROR_EMPTY,
 })
 
+export const fetchData = (data) => ({
+    type:types.GET_DATA,
+    payload: data
+})
+
 export const loginInitiate = (email,password) => {
     return function(dispatch) {
         dispatch(loginStart());
@@ -41,12 +45,12 @@ export const loginInitiate = (email,password) => {
 
 export const getData = () => {
     return async dispatch => {
-        await axios.get(config + "/users")
+        await axios.get("http://localhost:3002/users")
         .then(res => {
-            console.log("action",res)
-                dispatch({
-                    data:res.data
-                });
+            const data = res.data
+                dispatch(fetchData(data));
         })
         }
     }
+
+    
