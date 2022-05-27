@@ -2,8 +2,7 @@ import * as types from "./actionTypes";
 const initialState = {
     user: null,
     loading: false,
-    error: null,
-    data: null
+    error: null
 };
 
 const authReducer = (state = initialState,action) => {
@@ -34,11 +33,6 @@ const authReducer = (state = initialState,action) => {
             return {
                 ...state,
                 error:null,
-            }
-        case types.GET_DATA:
-            return {
-                ...state,
-                data: action.payload
             }
         default:
             return state;

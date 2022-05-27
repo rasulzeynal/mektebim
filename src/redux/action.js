@@ -24,10 +24,6 @@ export const setErrorEmpty = () => ({
     type: types.SET_ERROR_EMPTY,
 })
 
-export const fetchData = (data) => ({
-    type:types.GET_DATA,
-    payload: data
-})
 
 export const loginInitiate = (email,password) => {
     return function(dispatch) {
@@ -36,21 +32,8 @@ export const loginInitiate = (email,password) => {
       email,
       password
     }).then((response) => {
-      console.log("response",response);
       dispatch(loginSuccess(response.data.access_token))
     })
     .catch((error) => dispatch(loginFail(error.response.data.message)));
     }
 }
-
-export const getData = () => {
-    return async dispatch => {
-        await axios.get("http://localhost:3002/users")
-        .then(res => {
-            const data = res.data
-                dispatch(fetchData(data));
-        })
-        }
-    }
-
-    

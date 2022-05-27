@@ -81,6 +81,10 @@
     {
       "name": "IELTS",
       "id": 2
+    },
+    {
+      "name": "Web programming",
+      "id": 3
     }
   ]
 }
