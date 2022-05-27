@@ -37,3 +37,16 @@ export const loginInitiate = (email,password) => {
     .catch((error) => dispatch(loginFail(error.response.data.message)));
     }
 }
+<<<<<<< HEAD
+=======
+
+export const getData = () => {
+    return async dispatch => {
+        await axios.get("http://localhost:3002/users")
+        .then(res => {
+            const data = res.data
+                dispatch(fetchData(data));
+        })
+        }
+    }
+>>>>>>> 652ae4f69fd5099c5bcf0de8d70f9e0717a858c4
