@@ -1,68 +1,66 @@
-import React,{useState,useEffect} from 'react';
-import {useSelector } from 'react-redux';
-import jwt_decode from "jwt-decode";
-import axios from "axios";
-import {
-  Container,
-  Row,
-  Form,
-  Input,
-  Button
-} from "reactstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlus
-} from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from 'react';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import classnames from 'classnames';
+
 
 const CourseInfo = () => {
-  const [formIsOpen,setFormIsOpen] = useState(false);
-  const [data,setData] = useState(null);
-  const {user} = useSelector(state => state.auth);
-  const decoded = jwt_decode(user);
 
-  const openForm = () => {
-    setFormIsOpen(!formIsOpen)
+  const [activeTab,setActiveTab] = useState("1")
+
+const toggle = (tab) => {
+  if (activeTab !== tab) {
+    setActiveTab(tab);
   }
-
-  const getData =() => {
-    axios.get("http://localhost:3002/" + "users").then(res => {
-      setData(res.data);
-    });
-  }
-  useEffect(()=>{
-    getData()
-  },[])
-
-  const checkedUser  = data && data.filter(users => users.email === decoded.email) 
-  const role = checkedUser && checkedUser[0].position;
-  console.log("courseInfoRole",role)
+}
 
   return (
-    <Row className="row-classes">
-      <Container className="col-8 container-classes">
-          No data
-      </Container>
-      <Container className="col-4 add-course">
-        <div className="me-4 div-button">
-          <Button
-            onClick={openForm}
-            color="success"
-            className="open-form-button"
-          >
-            <FontAwesomeIcon
-              className="icon mr-2 add-form-icon"
-              icon={faPlus}
-            />
-            <h3>İştirakçı əıavə et</h3>
-          </Button>
-        </div>
-        {formIsOpen ? (
-          <Form className="col-10" >
-            form
-          </Form>
-        ) : null}
-      </Container>
-    </Row>
+    <div>
+    <Nav tabs>
+      <NavItem>
+        <NavLink
+          className={classnames({ active:activeTab === '1' })}
+          onClick={() => {toggle('1'); }}
+        >
+          Kursa istifadəçi əlavə et
+        </NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink
+          className={classnames({ active: activeTab === '2' })}
+          onClick={() => { toggle('2'); }}
+        >
+          Kursun adını dəyiş
+        </NavLink>
+      </NavItem>
+    </Nav>
+    <TabContent activeTab={activeTab}>
+      <TabPane tabId="1">
+        <Row>
+          <Col sm="12">
+            <h4>Tab 1 Contents</h4>
+          </Col>
+        </Row>
+      </TabPane>
+      <TabPane tabId="2">
+        <Row>
+          <Col sm="6">
+            <Card body>
+              <CardTitle>Special Title Treatment</CardTitle>
+              <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+              <Button>Go somewhere</Button>
+            </Card>
+          </Col>
+          <Col sm="6">
+            <Card body>
+              <CardTitle>Special Title Treatment</CardTitle>
+              <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+              <Button>Go somewhere</Button>
+            </Card>
+          </Col>
+        </Row>
+      </TabPane>
+    </TabContent>
+  </div>
   )
 }
 

@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
   faMessage,faUser,faUserGraduate,faListCheck
 } from '@fortawesome/free-solid-svg-icons';
-import logo from "../../assets/img/edu.png";
+import logo from "../../assets/img/profile_icon.png";
 import {useSelector } from 'react-redux';
 import jwt_decode from "jwt-decode";
 import axios from "axios";
@@ -29,13 +29,16 @@ const SideBar = (props) => {
 
   const checkedUser  = data && data.filter(users => users.email === decoded.email) 
   const role = checkedUser && checkedUser[0].position;
-  console.log("user",decoded.email)
+  const name = checkedUser && checkedUser[0].name.split(" ")[0];
+  console.log("user",name)
     return (
       <div className={'sidebar ' + (props.isOpen ? 'is-open' : '')}>
         <div className="fixed">
           <div className="sidebar-header">
             <a className="times" onClick={() => props.setIsOpen(!props.isOpen)}>&times;</a>
-            <img src={logo} alt="school"/>
+            <img src={logo} alt="school" style={{width:"80px",border:"2px solid white",borderRadius:"50%",padding:"10px",marginBottom:"10px"}}/>
+            <h5>{name}</h5>
+            <p style={{opacity:"0.7",fontSize:"12px"}}>{role}</p>
             
           </div>
           <HashRouter>
