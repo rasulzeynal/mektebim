@@ -38,7 +38,7 @@ const SideBar = (props) => {
             <a className="times" onClick={() => props.setIsOpen(!props.isOpen)}>&times;</a>
             <img src={logo} alt="school" style={{width:"80px",border:"2px solid white",borderRadius:"50%",padding:"10px",marginBottom:"10px"}}/>
             <h5>{name}</h5>
-            <p style={{opacity:"0.7",fontSize:"12px"}}>{role}</p>
+            <p style={{opacity:"0.7",fontSize:"12px",marginBottom:"100px"}}>{role}</p>
             
           </div>
           <HashRouter>
