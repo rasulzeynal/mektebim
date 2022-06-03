@@ -135,7 +135,7 @@ class Courses extends React.Component {
             <Input
               type="text"
               block="true"
-              className="form-control form-control mr-2 mb-2"
+              className="form-control mr-2 mb-2"
               name="name"
               id="name"
               placeholder="Kursun adı"

@@ -77,6 +77,10 @@
     {
       "name": "Web programming",
       "id": 3
+    },
+    {
+      "name": "IT",
+      "id": 4
     }
   ]
 }
