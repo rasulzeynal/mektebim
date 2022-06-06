@@ -34,14 +34,6 @@ const toggle = (tab) => {
           Kursa istifadəçi əlavə et
         </NavLink>
       </NavItem>
-      <NavItem>
-        <NavLink
-          className={classnames({ active: activeTab === '3' })}
-          onClick={() => { toggle('3'); }}
-        >
-          Kursun adını dəyiş
-        </NavLink>
-      </NavItem>
     </Nav>
     <TabContent activeTab={activeTab}>
     <TabPane tabId="1">
@@ -52,11 +44,6 @@ const toggle = (tab) => {
       <TabPane tabId="2">
         <Row>
           <AddUserToCourse/>
-        </Row>
-      </TabPane>
-      <TabPane tabId="3">
-        <Row>
-          <ChangeCourseName/>
         </Row>
       </TabPane>
     </TabContent>
