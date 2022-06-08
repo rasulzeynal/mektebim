@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row} from 'reactstrap';
 import classnames from 'classnames';
 import AddUserToCourse from './AddUserToCourse';
-import ChangeCourseName from './ChangeCourseName';
 
 
 const CourseInfo = () => {
