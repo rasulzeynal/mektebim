@@ -25,13 +25,14 @@ class Courses extends React.Component {
   
   state={
     formIsOpen:false,
-    data:null
+    data:null,
   }
 
 
   openForm = () => {
     this.setState({
-      formIsOpen: !this.state.formIsOpen
+      formIsOpen: !this.state.formIsOpen,
+      
     })
   }
   getData = () => {
@@ -57,7 +58,6 @@ class Courses extends React.Component {
     .then(res => {
       console.log(res)
       if (res.data.status === 201){
-      console.log(res.data.data)
       this.setState(prevState => ({
         data : [
           ...prevState.data,
@@ -87,7 +87,6 @@ class Courses extends React.Component {
   }
   render() {
     
-    
   return (
     <Row className="row-classes">
       <Container className="col-7 container-classes">
@@ -100,8 +99,13 @@ class Courses extends React.Component {
           >
             <CardTitle>{course.name} </CardTitle>
             <CardBody className="card-body">
-              <NavLink exact className="nav-link" to="/course-info">
-                <FontAwesomeIcon className="edit-icon" icon={faPenToSquare} />
+              <NavLink exact className="nav-link" to={{
+                pathname:`/course-info:${course.id}`,
+                state:{course:course}
+              }}>
+                <FontAwesomeIcon 
+                className="edit-icon" 
+                icon={faPenToSquare}/>
               </NavLink>
               <FontAwesomeIcon
                 className="delete-icon"

@@ -5,30 +5,41 @@ import { useState,useEffect } from 'react';
 import {config} from "../../config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faEye,
-  faEyeSlash,
-  faKey,
-  faTimes
+  faPlus,
+  faCheck
 } from "@fortawesome/free-solid-svg-icons";
 import { Button,UncontrolledTooltip } from 'reactstrap';
+import { useLocation } from 'react-router-dom';
+/* import { config } from '../../config'; */
 
 const AddUserToCourse = () => {
     const [data,setData] = useState([]);
+    let {state} = useLocation();
+
+
 
     const fetchData = () => {
         axios(config.apiURL + "users").then(res => {
+          console.log("dfgdf",data)
             setData(res.data)
         } )
     }
    useEffect(() => {
       fetchData();
-       },[])
+       },[]);
+    const addUser = (id) => {
+      axios.post(config.apiURL + `courses/${state.course.id}/members`, id)
+    } 
 
     const columns = [
         {
             dataField: "name",
             text: "Ad Soyad"
         },
+        {
+          dataField: "fatherName",
+          text: "Ata adı"
+      },
         {
             dataField: "position",
             text: "Pozisiya",
@@ -40,47 +51,20 @@ const AddUserToCourse = () => {
             formatter: (cell,row,index) => {
                 return <div style={{minWidth: '80px'}}>
           <Button
-            color="light ml-2"
+            color="warning ml-2"
             size="sm"
-            id={"status" + index}
-            onClick={() => this.toggleStatus(row.id, index, row.status)}
+            id={"add" + index}
+            onClick={() => addUser(row.id)} 
+            style={{width:"60px"}}
           >
             <FontAwesomeIcon
-              icon={cell === 1 ? faEye : faEyeSlash}
-              className="c-pointer"
-            />
-          </Button>
-          <Button
-            color="light ml-2"
-            size="sm"
-            id={"reset" + index}
-            onClick={() => this.toggleResetModal(row.id)}
-          >
-            <FontAwesomeIcon
-              icon={faKey}
-              className="c-pointer"
-            />
-          </Button>
-          <Button
-            color="danger ml-2"
-            size="sm"
-            id={"delete" + index}
-            onClick={() => this.removeData(row.id, index)}
-          >
-            <FontAwesomeIcon
-              icon={faTimes}
-              className="c-pointer"
+              icon={faPlus}
             />
           </Button>
 
-          <UncontrolledTooltip placement="top" target={"status" + index}>
-            İstifadəçini {cell === 1 ? "deaktivləşdir" : "aktivləşdir"}
-          </UncontrolledTooltip>
-          <UncontrolledTooltip placement="top" target={"reset" + index}>
-            Şifrəni sıfırla
-          </UncontrolledTooltip>
-          <UncontrolledTooltip placement="top" target={"delete" + index}>
-            İstifadəçini sil
+
+          <UncontrolledTooltip placement="top" target={"add" + index}>
+            İstifadəçini kursa əlavə et
           </UncontrolledTooltip>
         </div>;
             }

@@ -35,7 +35,7 @@ const Content = (props) => {
                 <Route path="/notifications" exact component={Notification}/>
                 <Route path='/tasks' exact component={Tasks}/>
                 <Route path='/courses' exact component={Courses}/>
-                <Route path='/course-info' exact component={CourseInfo}/>
+                <Route path='/course-info:id' exact component={CourseInfo}/>
                 <NotFound/>
               </Switch>
               </div>

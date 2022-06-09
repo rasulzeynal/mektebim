@@ -68,7 +68,8 @@
   "courses": [
     {
       "name": "TOEFL",
-      "id": 1
+      "id": 1,
+      "members": []
     },
     {
       "name": "IELTS",
