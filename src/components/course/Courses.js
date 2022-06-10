@@ -72,7 +72,6 @@ class Courses extends React.Component {
   removeData = (id) => {
     axios.delete(config.apiURL + "courses/" + id)
     .then(res => {
-      console.log(res)
       if (res.data.status === 201) {
         let data = this.state.data;
         this.setState({
@@ -99,10 +98,7 @@ class Courses extends React.Component {
           >
             <CardTitle>{course.name} </CardTitle>
             <CardBody className="card-body">
-              <NavLink exact className="nav-link" to={{
-                pathname:`/course-info:${course.id}`,
-                state:{course:course}
-              }}>
+              <NavLink exact className="nav-link" to={`/course-info:${course.id}`}>
                 <FontAwesomeIcon 
                 className="edit-icon" 
                 icon={faPenToSquare}/>

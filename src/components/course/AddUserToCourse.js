@@ -4,32 +4,22 @@ import axios from 'axios';
 import { useState,useEffect } from 'react';
 import {config} from "../../config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlus,
-  faCheck
-} from "@fortawesome/free-solid-svg-icons";
+import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import { Button,UncontrolledTooltip } from 'reactstrap';
-import { useLocation } from 'react-router-dom';
-/* import { config } from '../../config'; */
 
 const AddUserToCourse = () => {
     const [data,setData] = useState([]);
-    let {state} = useLocation();
-
 
 
     const fetchData = () => {
         axios(config.apiURL + "users").then(res => {
-          console.log("dfgdf",data)
             setData(res.data)
         } )
     }
-   useEffect(() => {
+  useEffect(() => {
       fetchData();
-       },[]);
-    const addUser = (id) => {
-      axios.post(config.apiURL + `courses/${state.course.id}/members`, id)
-    } 
+  },[]);
+
 
     const columns = [
         {
@@ -54,7 +44,6 @@ const AddUserToCourse = () => {
             color="warning ml-2"
             size="sm"
             id={"add" + index}
-            onClick={() => addUser(row.id)} 
             style={{width:"60px"}}
           >
             <FontAwesomeIcon

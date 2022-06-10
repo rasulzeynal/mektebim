@@ -30,7 +30,6 @@ const SideBar = (props) => {
   const checkedUser  = data && data.filter(users => users.email === decoded.email) 
   const role = checkedUser && checkedUser[0].position;
   const name = checkedUser && checkedUser[0].name.split(" ")[0];
-  console.log("user",name)
     return (
       <div className={'sidebar ' + (props.isOpen ? 'is-open' : '')}>
         <div className="fixed">
