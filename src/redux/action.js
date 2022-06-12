@@ -22,8 +22,12 @@ export const logoutInitiate = () => ({
 
 export const setErrorEmpty = () => ({
     type: types.SET_ERROR_EMPTY,
-})
+});
 
+export const saveCourse = (course) => ({
+    type: types.SAVE_COURSE,
+    payload: course
+});
 
 export const loginInitiate = (email,password) => {
     return function(dispatch) {

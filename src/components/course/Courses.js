@@ -17,7 +17,9 @@ import {
   faPenToSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
-import {config} from "../../config"
+import {config} from "../../config";
+import {connect} from "react-redux";
+import { saveCourse } from "../../redux/action";
 
 
 
@@ -84,8 +86,8 @@ class Courses extends React.Component {
   componentDidMount() {
     this.getData();
   }
+
   render() {
-    
   return (
     <Row className="row-classes">
       <Container className="col-7 container-classes">
@@ -101,7 +103,8 @@ class Courses extends React.Component {
               <NavLink exact className="nav-link" to={`/course-info:${course.id}`}>
                 <FontAwesomeIcon 
                 className="edit-icon" 
-                icon={faPenToSquare}/>
+                icon={faPenToSquare}
+                onClick = {() => this.props.savecourse(course)}/>
               </NavLink>
               <FontAwesomeIcon
                 className="delete-icon"
@@ -151,5 +154,8 @@ class Courses extends React.Component {
   )
         }
 };
+const mapStateToProps = (state) => {
+  return state;
+}
 
-export default Courses ;
+export default connect(mapStateToProps,{saveCourse})(Courses)  ;

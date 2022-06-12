@@ -2,7 +2,8 @@ import * as types from "./actionTypes";
 const initialState = {
     user: null,
     loading: false,
-    error: null
+    error: null,
+    course : null
 };
 
 const authReducer = (state = initialState,action) => {
@@ -33,6 +34,11 @@ const authReducer = (state = initialState,action) => {
             return {
                 ...state,
                 error:null,
+            }
+        case types.SAVE_COURSE:
+            return {
+                ...state,
+                course: action.payload
             }
         default:
             return state;

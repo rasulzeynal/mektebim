@@ -24,16 +24,25 @@ const AddUserToCourse = () => {
     const columns = [
         {
             dataField: "name",
-            text: "Ad Soyad"
+            text: "Ad Soyad",
+            headerStyle: () => {
+              return { width: '200px'};
+            }
         },
         {
           dataField: "fatherName",
-          text: "Ata adı"
+          text: "Ata adı",
+          headerStyle: (colum, colIndex) => {
+            return { width: '150px'};
+          }
       },
         {
             dataField: "position",
             text: "Pozisiya",
-            sort: true
+            sort: true,
+            headerStyle: (colum, colIndex) => {
+              return { width: '150px'};
+            }
         },
         {
             dataField:"",
@@ -61,7 +70,7 @@ const AddUserToCourse = () => {
         }
     ]
   return (
-    <div>
+    <div style={{margin:"20px 0 0 40px"}}>
         <BootstrapTable 
         keyField='id'
         data={data} 
