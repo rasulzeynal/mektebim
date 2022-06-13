@@ -6,10 +6,11 @@ import {config} from "../../config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import { Button,UncontrolledTooltip } from 'reactstrap';
+import {connect} from "react-redux";
 
-const AddUserToCourse = () => {
+const AddUserToCourse = ({auth}) => {
     const [data,setData] = useState([]);
-
+ 
 
     const fetchData = () => {
         axios(config.apiURL + "users").then(res => {
@@ -54,6 +55,7 @@ const AddUserToCourse = () => {
             size="sm"
             id={"add" + index}
             style={{width:"60px"}}
+            onClick = {() => sendToGroup(row.id,index)}
           >
             <FontAwesomeIcon
               icon={faPlus}
@@ -69,6 +71,14 @@ const AddUserToCourse = () => {
 
         }
     ]
+
+    const sendToGroup = (index) => {
+      const user = data && data.filter(user => (user.id === index))[0]
+      console.log("gfg",user)
+      axios.post(config.apiURL + `courses/${auth.course.id}`,user)
+    }
+    console.log("state",auth.course.id);
+    
   return (
     <div style={{margin:"20px 0 0 40px"}}>
         <BootstrapTable 
@@ -82,4 +92,6 @@ const AddUserToCourse = () => {
   )
 }
 
-export default AddUserToCourse
+const mapStateToProps = (state) => state
+
+export default connect(mapStateToProps)(AddUserToCourse);

@@ -104,7 +104,7 @@ class Courses extends React.Component {
                 <FontAwesomeIcon 
                 className="edit-icon" 
                 icon={faPenToSquare}
-                onClick = {() => this.props.savecourse(course)}/>
+                onClick = {() => this.props.saveCourse(course)}/>
               </NavLink>
               <FontAwesomeIcon
                 className="delete-icon"
@@ -154,8 +154,6 @@ class Courses extends React.Component {
   )
         }
 };
-const mapStateToProps = (state) => {
-  return state;
-}
 
-export default connect(mapStateToProps,{saveCourse})(Courses)  ;
+
+export default connect(null,{saveCourse})(Courses)  ;
