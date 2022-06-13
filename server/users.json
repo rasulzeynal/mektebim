@@ -69,23 +69,17 @@
     {
       "name": "TOEFL",
       "id": 1,
-      "members": [
-        {
-          "id": 20,
-          "name": "Namiq Hacagayev",
-          "fatherName": "Qadir",
-          "email": "namiq.hacagayev@gmail.com",
-          "position": "SAGIRD"
-        }
-      ]
+      "members": []
     },
     {
       "name": "IELTS",
-      "id": 2
+      "id": 2,
+      "members": []
     },
     {
       "name": "IT",
-      "id": 4
+      "id": 4,
+      "members": []
     }
   ]
 }

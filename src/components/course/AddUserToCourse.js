@@ -21,6 +21,11 @@ const AddUserToCourse = ({auth}) => {
       fetchData();
   },[]);
 
+  const sendToGroup = (index) => {
+    const user = data && data.filter(user => (user.id === index))[0]
+    console.log("gfg",user)
+    axios.post(config.apiURL + `courses/${auth.course.id}/members `,user)
+  }
 
     const columns = [
         {
@@ -55,7 +60,7 @@ const AddUserToCourse = ({auth}) => {
             size="sm"
             id={"add" + index}
             style={{width:"60px"}}
-            onClick = {() => sendToGroup(row.id,index)}
+            onClick = {() => sendToGroup(index)}
           >
             <FontAwesomeIcon
               icon={faPlus}
@@ -71,16 +76,9 @@ const AddUserToCourse = ({auth}) => {
 
         }
     ]
-
-    const sendToGroup = (index) => {
-      const user = data && data.filter(user => (user.id === index))[0]
-      console.log("gfg",user)
-      axios.post(config.apiURL + `courses/${auth.course.id}`,user)
-    }
-    console.log("state",auth.course.id);
     
   return (
-    <div style={{margin:"20px 0 0 40px"}}>
+    <div style={{margin:"10px 0 0 40px"}}>
         <BootstrapTable 
         keyField='id'
         data={data} 
