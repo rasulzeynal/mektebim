@@ -15,7 +15,7 @@ const AddUserToCourse = ({auth}) => {
     const fetchData = () => {
         axios(config.apiURL + "users").then(res => {
             setData(res.data)
-        } )
+        } ) 
     }
   useEffect(() => {
       fetchData();
@@ -23,8 +23,9 @@ const AddUserToCourse = ({auth}) => {
 
   const sendToGroup = (index) => {
     const user = data && data.filter(user => (user.id === index))[0]
-    console.log("gfg",user)
-    axios.post(config.apiURL + `courses/${auth.course.id}/members `,user)
+    console.log("user",user);
+    console.log("auth",auth.course.name)
+    axios.post(config.apiURL + `${auth.course.name}`,{"name":user.name})
   }
 
     const columns = [
