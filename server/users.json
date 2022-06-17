@@ -82,9 +82,15 @@
       "members": []
     }
   ],
+<<<<<<< HEAD
   "TOEFL" : [
     {
       "name":"Tarlan Gafarov"
     }
+=======
+  "TOEFL":[
+    { "name":"Tarlan Gafarov"},
+    {"name":"Konul Shiraliyeva"}
+>>>>>>> a4d02c3e2722b1ec9387ed85da2bc75267a7ef97
   ]
 }
