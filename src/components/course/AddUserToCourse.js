@@ -23,15 +23,10 @@ const AddUserToCourse = ({auth}) => {
 
   const sendToGroup = (index) => {
     const user = data && data.filter(user => (user.id === index))[0]
-<<<<<<< HEAD
-    console.log("gfg",user);
-    console.log("tes",auth.course.id)
-    axios.post(config.apiURL + `${auth.course.name}`,user.name)
-=======
+
     console.log("user",user);
     console.log("auth",auth.course.name)
     axios.post(config.apiURL + `${auth.course.name}`,{"name":user.name})
->>>>>>> a4d02c3e2722b1ec9387ed85da2bc75267a7ef97
   }
 
     const columns = [
