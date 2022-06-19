@@ -68,18 +68,56 @@
   "courses": [
     {
       "name": "TOEFL",
-      "id": 1,
-      "members": []
+      "id": 1
     },
     {
       "name": "IELTS",
-      "id": 2,
-      "members": []
+      "id": 2
     },
     {
       "name": "IT",
-      "id": 4,
-      "members": []
+      "id": 4
     }
+  ],
+  "members": [
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": "Rasul Zeynalov",
+      "id": 1
+    },
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": "Rasul Zeynalov",
+      "id": 2
+    },
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": "Gulana Zeynalova",
+      "id": 3
+    },
+    {
+      "course": {
+        "name": "IELTS",
+        "id": 2
+      },
+      "user": "Gulana Zeynalova",
+      "id": 4
+    },
+    [
+      {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "Gulana Zeynalova"
+    ]
   ]
 }

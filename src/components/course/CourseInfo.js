@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row} from 'reactstrap';
 import classnames from 'classnames';
 import AddUserToCourse from './AddUserToCourse';
+import CourseUserList from './CourseUserList';
 
 
 const CourseInfo = () => {
@@ -37,7 +38,7 @@ const toggle = (tab) => {
     <TabContent activeTab={activeTab}>
     <TabPane tabId="1">
         <Row>
-          Users
+          <CourseUserList/>
         </Row>
       </TabPane>
       <TabPane tabId="2">

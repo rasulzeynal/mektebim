@@ -25,8 +25,10 @@ const AddUserToCourse = ({auth}) => {
     const user = data && data.filter(user => (user.id === index))[0]
 
     console.log("user",user);
-    console.log("auth",auth.course.name)
-    axios.post(config.apiURL + `${auth.course.name}`,{"name":user.name})
+    console.log("auth",auth.course.id);
+    console.log("dfg",index)
+    axios.post(config.apiURL + `members`,{"course":auth.course,
+    "user": user.name})
   }
 
     const columns = [
