@@ -8,7 +8,6 @@ const CourseUserList = () => {
   const fetchData = () => {
     axios.get(config.apiURL + "members").then(res => {
       setData(res);
-      console.log("courseusers",data)
     })
   };
   useEffect(() => {

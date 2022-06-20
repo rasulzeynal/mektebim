@@ -21,18 +21,18 @@ const AddUserToCourse = ({auth}) => {
   useEffect(() => {
       fetchData();
   },[]);
- const rowEvents = {
+/*  const rowEvents = {
       onClick: (e,row) => {
         console.log(row.name)
         setUser(row.name);  
       }
-    }
-  const sendToGroup = (index) => {
+    } */
+  const sendToGroup = () => {
   /*   const user = data && data.filter(user => (user.id === index))[0]
 
     console.log("user",user);  */
-    console.log("user",user)
     console.log("auth",auth.course.id);
+    console.log("user",user)
     axios.post(config.apiURL + `members`,{"course":auth.course,
     "user": user})
   }
@@ -70,7 +70,7 @@ const AddUserToCourse = ({auth}) => {
             size="sm"
             id={"add" + index}
             style={{width:"60px"}}
-            onClick = {sendToGroup()}
+            onClick = {(name) => console.log(name)}
           >
             <FontAwesomeIcon
               icon={faPlus}
@@ -98,7 +98,7 @@ const AddUserToCourse = ({auth}) => {
         striped
         hover
         condensed
-        rowEvents={rowEvents}/>
+       /*  rowEvents={rowEvents} *//>
     </div>
   )
 }
