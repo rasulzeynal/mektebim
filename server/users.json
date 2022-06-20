@@ -93,7 +93,7 @@
         "name": "TOEFL",
         "id": 1
       },
-      "user": "Rasul Zeynalov",
+      "user": [],
       "id": 2
     },
     {
@@ -101,23 +101,112 @@
         "name": "TOEFL",
         "id": 1
       },
-      "user": "Gulana Zeynalova",
+      "user": [],
       "id": 3
     },
     {
       "course": {
-        "name": "IELTS",
-        "id": 2
-      },
-      "user": "Gulana Zeynalova",
-      "id": 4
-    },
-    [
-      {
         "name": "TOEFL",
         "id": 1
       },
-      "Gulana Zeynalova"
-    ]
+      "user": [],
+      "id": 4
+    },
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": [],
+      "id": 5
+    },
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": [],
+      "id": 6
+    },
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": [],
+      "id": 7
+    },
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": [],
+      "id": 8
+    },
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": [],
+      "id": 9
+    },
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": [],
+      "id": 10
+    },
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": [],
+      "id": 11
+    },
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": [],
+      "id": 12
+    },
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": [],
+      "id": 13
+    },
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": [],
+      "id": 14
+    },
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": [],
+      "id": 15
+    },
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": [],
+      "id": 16
+    }
   ]
 }

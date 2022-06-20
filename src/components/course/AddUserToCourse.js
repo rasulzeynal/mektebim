@@ -9,9 +9,10 @@ import { Button,UncontrolledTooltip } from 'reactstrap';
 import {connect} from "react-redux";
 
 const AddUserToCourse = ({auth}) => {
-    const [data,setData] = useState([]);
+    const [data,setData] = useState([])
+    const [user,setUser] = useState([]);
  
-
+ 
     const fetchData = () => {
         axios(config.apiURL + "users").then(res => {
             setData(res.data)
@@ -20,15 +21,20 @@ const AddUserToCourse = ({auth}) => {
   useEffect(() => {
       fetchData();
   },[]);
-
+ const rowEvents = {
+      onClick: (e,row) => {
+        console.log(row.name)
+        setUser(row.name);  
+      }
+    }
   const sendToGroup = (index) => {
-    const user = data && data.filter(user => (user.id === index))[0]
+  /*   const user = data && data.filter(user => (user.id === index))[0]
 
-    console.log("user",user);
+    console.log("user",user);  */
+    console.log("user",user)
     console.log("auth",auth.course.id);
-    console.log("dfg",index)
     axios.post(config.apiURL + `members`,{"course":auth.course,
-    "user": user.name})
+    "user": user})
   }
 
     const columns = [
@@ -64,7 +70,7 @@ const AddUserToCourse = ({auth}) => {
             size="sm"
             id={"add" + index}
             style={{width:"60px"}}
-            onClick = {() => sendToGroup(index)}
+            onClick = {sendToGroup()}
           >
             <FontAwesomeIcon
               icon={faPlus}
@@ -81,6 +87,8 @@ const AddUserToCourse = ({auth}) => {
         }
     ]
     
+   
+
   return (
     <div style={{margin:"10px 0 0 40px"}}>
         <BootstrapTable 
@@ -89,7 +97,8 @@ const AddUserToCourse = ({auth}) => {
         columns={columns}
         striped
         hover
-        condensed/>
+        condensed
+        rowEvents={rowEvents}/>
     </div>
   )
 }
