@@ -25,11 +25,11 @@ const AddUserToCourse = ({auth}) => {
         console.log(row.name)
       }
     }  */
-  const sendToGroup = (index) => {
-  const user = users && users.filter(user => (user.id === index))[0]
+  const sendToGroup = (id) => {
+  const user = users && users.filter(user => (user.id === id))[0]
 
-    console.log("user",user); 
-    console.log("auth",auth.course.id);
+    console.log("secilmis user:",user.name); 
+    console.log("secilmis kurs id:",auth.course.id);
     axios.post(config.apiURL + `members`,{"course":auth.course,
     "user": user})
   }
@@ -67,7 +67,7 @@ const AddUserToCourse = ({auth}) => {
             size="sm"
             id={"add" + index}
             style={{width:"60px"}}
-            onClick = {(rowIndex,index) =>console.log("sdasd",rowIndex)/*  sendToGroup(index) */ }
+            onClick = {() => sendToGroup(row.id) }
           >
             <FontAwesomeIcon
               icon={faPlus}

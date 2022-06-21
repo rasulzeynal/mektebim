@@ -93,6 +93,21 @@
         "id": 1
       },
       "id": 2
+    },
+    {
+      "course": {
+        "name": "TOEFL",
+        "id": 1
+      },
+      "user": {
+        "id": 16,
+        "name": "Həsən Əliyev",
+        "fatherName": "Famil",
+        "email": "hasan.aliyev@gmail.com",
+        "position": "SAGIRD",
+        "password": "hasan"
+      },
+      "id": 3
     }
   ]
 }
