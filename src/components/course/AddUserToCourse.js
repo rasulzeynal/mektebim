@@ -9,30 +9,27 @@ import { Button,UncontrolledTooltip } from 'reactstrap';
 import {connect} from "react-redux";
 
 const AddUserToCourse = ({auth}) => {
-    const [data,setData] = useState([])
-    const [user,setUser] = useState([]);
+    const [users,setUsers] = useState([])
  
  
     const fetchData = () => {
         axios(config.apiURL + "users").then(res => {
-            setData(res.data)
+            setUsers(res.data)
         } ) 
     }
   useEffect(() => {
       fetchData();
   },[]);
-/*  const rowEvents = {
+  /* const rowEvents = {
       onClick: (e,row) => {
         console.log(row.name)
-        setUser(row.name);  
       }
-    } */
-  const sendToGroup = () => {
-  /*   const user = data && data.filter(user => (user.id === index))[0]
+    }  */
+  const sendToGroup = (index) => {
+  const user = users && users.filter(user => (user.id === index))[0]
 
-    console.log("user",user);  */
+    console.log("user",user); 
     console.log("auth",auth.course.id);
-    console.log("user",user)
     axios.post(config.apiURL + `members`,{"course":auth.course,
     "user": user})
   }
@@ -48,7 +45,7 @@ const AddUserToCourse = ({auth}) => {
         {
           dataField: "fatherName",
           text: "Ata adı",
-          headerStyle: (colum, colIndex) => {
+          headerStyle: () => {
             return { width: '150px'};
           }
       },
@@ -56,7 +53,7 @@ const AddUserToCourse = ({auth}) => {
             dataField: "position",
             text: "Pozisiya",
             sort: true,
-            headerStyle: (colum, colIndex) => {
+            headerStyle: () => {
               return { width: '150px'};
             }
         },
@@ -70,7 +67,7 @@ const AddUserToCourse = ({auth}) => {
             size="sm"
             id={"add" + index}
             style={{width:"60px"}}
-            onClick = {(name) => console.log(name)}
+            onClick = {(rowIndex,index) =>console.log("sdasd",rowIndex)/*  sendToGroup(index) */ }
           >
             <FontAwesomeIcon
               icon={faPlus}
@@ -93,12 +90,12 @@ const AddUserToCourse = ({auth}) => {
     <div style={{margin:"10px 0 0 40px"}}>
         <BootstrapTable 
         keyField='id'
-        data={data} 
+        data={users} 
         columns={columns}
         striped
         hover
         condensed
-       /*  rowEvents={rowEvents} *//>
+       /*  rowEvents={rowEvents}  *//>
     </div>
   )
 }
