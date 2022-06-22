@@ -26,7 +26,7 @@ const AddUserToCourse = ({ auth }) => {
     console.log("secilmis kurs id:", auth.course.id);
     axios
       .post(config.apiURL + `members`, {
-        course: auth.course.id,
+        courseId: auth.course.id,
         user: user.name,
         checked: true,
       })
@@ -70,7 +70,7 @@ const AddUserToCourse = ({ auth }) => {
       formatter: (cell, row, index) => {
         return (
           <div style={{ minWidth: "80px" }}>
-          {checkedUsers.checked ? (<Button
+           <Button
             color="warning ml-2"
             size="sm"
             id={"add" + index}
@@ -78,17 +78,7 @@ const AddUserToCourse = ({ auth }) => {
             onClick={() => sendToGroup(row.id)}
           >
             <FontAwesomeIcon icon={faPlus} />
-          </Button>) : ( <Button
-            color="warning ml-2"
-            size="sm"
-            id={"add" + index}
-            style={{ width: "60px" }}
-            onClick={() => sendToGroup(row.id)}
-          >
-            <FontAwesomeIcon icon={faPlus} />
-          </Button>)}
-          
-
+          </Button>
             <UncontrolledTooltip placement="top" target={"add" + index}>
               İstifadəçini kursa əlavə et
             </UncontrolledTooltip>
