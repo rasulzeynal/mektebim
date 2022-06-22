@@ -1,10 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { config } from '../../config';
-import Test from './Test';
 
 const CourseUserList = () => {
-/*   const [data,setData] = useState([]);
+  const [data,setData] = useState([]);
 
   const fetchData = () => {
     axios.get(config.apiURL + "members").then(res => {
@@ -14,10 +13,10 @@ const CourseUserList = () => {
   useEffect(() => {
     fetchData();
   },[])
- */
+
   return (
     <div>
-      <Test/>
+      test
     </div>
   )
 }

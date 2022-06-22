@@ -1,8 +1,9 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import { config } from '../../config';
 
-const Test = () => {
+const Test = (props) => {
     const [data,setData] = useState([]);
     const fetchData = () => {
         axios.get(config.apiURL + "members").then(res => {
@@ -11,12 +12,13 @@ const Test = () => {
         }
         )
     }
-    data.filter(data => (data.course.name === "TOEFL"));
-    console.log("filter",data)
+     const datas = data.filter(data => data.course === props.auth.course.id); 
+     console.log("filter",datas)  
 
     useEffect(() => {
         fetchData();
     },[])
+    console.log('state',props.auth.course.id)
   return (
     <div>
       test
@@ -24,4 +26,6 @@ const Test = () => {
   )
 }
 
-export default Test
+const mapStateToProps = state => state
+
+export default connect(mapStateToProps)(Test); 
