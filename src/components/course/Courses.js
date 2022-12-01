@@ -68,6 +68,7 @@ class Courses extends React.Component {
       }));
   }})
     e.target.reset();
+    this.getData()
   }
   
 

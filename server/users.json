@@ -77,6 +77,14 @@
     {
       "name": "IT",
       "id": 4
+    },
+    {
+      "name": "rasul.zeynalov",
+      "id": 5
+    },
+    {
+      "name": "Tarlan",
+      "id": 6
     }
   ],
   "members": [
@@ -163,6 +171,18 @@
       "user": "Gulana Zeynalova",
       "checked": true,
       "id": 14
+    },
+    {
+      "course": 1,
+      "user": "Rasul Zeynalov",
+      "checked": true,
+      "id": 15
+    },
+    {
+      "course": 1,
+      "user": "Gulana Zeynalova",
+      "checked": true,
+      "id": 16
     }
   ]
 }
