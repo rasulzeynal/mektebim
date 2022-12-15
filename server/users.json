@@ -55,50 +55,36 @@
       "email": "konul.shiraliyeva@gmail.com",
       "position": "SAGIRD",
       "password": "konul"
-    },
-    {
-      "id": 22,
-      "name": "Tarlan Gafarov",
-      "fatherName": "Namiq",
-      "email": "tarlan.gafarov@gmail.com",
-      "position": "ADMIN",
-      "password": "tarlan"
     }
   ],
   "courses": [
-    {
-      "name": "TOEFL",
-      "id": 1
-    },
     {
       "name": "IELTS",
       "id": 2
     },
     {
-      "name": "IT",
-      "id": 4
-    },
-    {
-      "name": "rasul.zeynalov",
-      "id": 5
-    },
-    {
-      "name": "Tarlan",
-      "id": 6
+      "name": "Web programming",
+      "id": 7
     }
   ],
   "members": [
     {
-      "courseId": 1,
-      "user": "Gulana Zeynalova",
+      "course": 1,
+      "user": "Rasul Zeynalov",
       "checked": true,
-      "id": 1
+      "id": 3
     },
     {
-      "courseId": 1,
-      "user": "Namiq Hacagayev",
+      "course": 1,
+      "user": "Gulana Zeynalova",
       "checked": true,
-      "id": 2
+      "id": 4
+    },
+    {
+      "course": 1,
+      "user": "Rasul Zeynalov",
+      "checked": true,
+      "id": 5
     }
   ]
 }

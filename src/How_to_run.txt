@@ -1,0 +1,12 @@
+//Fake api
+ => cd server
+ npm run auth
+
+ // json server
+
+ => cd server
+  npx json-server --watch users.json --port 3002
+
+// start project
+
+npm start
