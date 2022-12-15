@@ -89,100 +89,16 @@
   ],
   "members": [
     {
-      "course": 1,
+      "courseId": 1,
       "user": "Gulana Zeynalova",
       "checked": true,
       "id": 1
     },
     {
-      "course": 1,
-      "user": "Konul Shiraliyeva",
-      "checked": true,
-      "id": 2
-    },
-    {
-      "course": 1,
-      "user": "Rasul Zeynalov",
-      "checked": true,
-      "id": 3
-    },
-    {
-      "course": 1,
-      "user": "Konul Shiraliyeva",
-      "checked": true,
-      "id": 4
-    },
-    {
-      "course": 1,
-      "user": "Zeynəb Zeynallı",
-      "checked": true,
-      "id": 5
-    },
-    {
-      "course": 1,
-      "user": "Konul Shiraliyeva",
-      "checked": true,
-      "id": 6
-    },
-    {
-      "course": 1,
-      "user": "Zeynəb Zeynallı",
-      "checked": true,
-      "id": 7
-    },
-    {
-      "course": 1,
-      "user": "Ayxan Cabbarli",
-      "checked": true,
-      "id": 8
-    },
-    {
-      "course": 1,
-      "user": "Gulana Zeynalova",
-      "checked": true,
-      "id": 9
-    },
-    {
-      "course": 1,
-      "user": "Həsən Əliyev",
-      "checked": true,
-      "id": 10
-    },
-    {
-      "course": 1,
-      "user": "Zeynəb Zeynallı",
-      "checked": true,
-      "id": 11
-    },
-    {
-      "course": 1,
-      "user": "Zeynəb Zeynallı",
-      "checked": true,
-      "id": 12
-    },
-    {
-      "course": 1,
+      "courseId": 1,
       "user": "Namiq Hacagayev",
       "checked": true,
-      "id": 13
-    },
-    {
-      "course": 1,
-      "user": "Gulana Zeynalova",
-      "checked": true,
-      "id": 14
-    },
-    {
-      "course": 1,
-      "user": "Rasul Zeynalov",
-      "checked": true,
-      "id": 15
-    },
-    {
-      "course": 1,
-      "user": "Gulana Zeynalova",
-      "checked": true,
-      "id": 16
+      "id": 2
     }
   ]
 }
